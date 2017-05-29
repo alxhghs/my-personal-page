@@ -16,6 +16,6 @@ class Resume(models.Model):
         ('4Winter', 'Winter'),
     )
     _max_length = 128
-    _type = models.Charfield(max_length=_max_length, choices=TYPE_CHOICES)
-    title = models.Charfield(max_length=_max_length)
-    organization = models.Charfield(max_length=_max_length)
+    _type = models.CharField(max_length=_max_length, choices=TYPE_CHOICES)
+    title = models.CharField(max_length=_max_length)
+    organization = models.CharField(max_length=_max_length)
