@@ -13,9 +13,9 @@ class Resume(models.Model):
         ('Volunteer', 'Volunteer'),
         ('Work', 'Work'),
         ('Education', 'Education'),
-        ('4Winter', 'Winter'),
+        ('Skills', 'Skills'),
     )
     _max_length = 128
     _type = models.CharField(max_length=_max_length, choices=TYPE_CHOICES)
     title = models.CharField(max_length=_max_length)
-    organization = models.CharField(max_length=_max_length)
+    organization = models.CharField(max_length=_max_length, blank=True)
