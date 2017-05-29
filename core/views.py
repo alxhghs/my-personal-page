@@ -4,9 +4,9 @@ from core.models import Project
 
 def index(request):
     title = "Alex Hughes"
-    projects = Project.objects.order_by('-date')
+    # projects = Project.objects.order_by('-date')
     context_dict = {
-                    'projects': projects,
+                    # 'projects': projects,
                     'title': title,
                     }
     return render(request, 'core/templates/index.html', context_dict)

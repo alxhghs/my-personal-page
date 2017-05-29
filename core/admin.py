@@ -1,3 +1,14 @@
 from django.contrib import admin
+from core.models import Project, Resume
 
-# Register your models here.
+
+class ProjectAdmin(admin.ModelAdmin):
+    list_display = ('img', 'description')
+
+
+class ResumeAdmin(admin.ModelAdmin):
+    list_display = ('_type', 'title', 'organization')
+
+
+admin.site.register(Project, ProjectAdmin)
+admin.site.register(Resume, ResumeAdmin)

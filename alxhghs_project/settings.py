@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TEMPLATE_DIR = os.path.join(BASE_DIR)  # removing , 'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR)
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
@@ -30,6 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['www.alxhghs.com',
                  '192.168.1.6',
                  '192.168.1.3',
+                 '127.0.0.1',
                  ]
 
 
