@@ -16,19 +16,19 @@
         {% if work %}
           <h2>Work</h2>
             {% for w in work %}
-              <div>{{ w.organization }} --- {{ w.title }} --- {{ w.date }}</div>
+              <div>{{ w.date }} --- {{ w.organization }} --- {{ w.title }}</div>
             {% endfor %}
         {% endif %}
         {% if education %}
           <h2>Education</h2>
           {% for e in education %}
-            <div>{{ e.organization }} --- {{ e.title }} --- {{ e.date }}</div>
+            <div>{{ e.date }} --- {{ e.organization }} --- {{ e.title }}</div>
           {% endfor %}
         {% endif %}
         {% if volunteer %}
           <h2>Volunteer</h2>
           {% for v in volunteer %}
-            <div>{{ v.organization }} --- {{ v.title }} --- {{ v.date }}</div>
+            <div>{{ v.date }} --- {{ v.organization }} --- {{ v.title }}</div>
           {% endfor %}
         {% endif %}
         {% if skill %}

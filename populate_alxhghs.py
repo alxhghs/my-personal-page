@@ -25,7 +25,7 @@ def populate():
         {"type": "Work",
          "title": "Program Manager",
          "organization": "City Year Boston",
-         "date": "2016 - present"},
+         "date": "2016 - Present"},
         {"type": "Work",
          "title": "Translation Contractor",
          "organization": "Mercy Corps",
