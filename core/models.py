@@ -1,4 +1,4 @@
-import datetime
+from django.utils import timezone
 from django.db import models
 from versatileimagefield.fields import VersatileImageField
 
@@ -9,7 +9,7 @@ class Project(models.Model):
     img = VersatileImageField('Image', upload_to='project_images/')
     title = models.CharField(max_length=_max_length, default="Project")
     description = models.TextField()
-    date = models.DateField(default=datetime.datetime.now())
+    date = models.DateField(default=timezone.now)
 
 
 class Resume(models.Model):
@@ -20,7 +20,7 @@ class Resume(models.Model):
         ('Skills', 'Skills'),
     )
 
-    _type = models.CharField(max_length=_max_length, choices=TYPE_CHOICES)
+    sub_type = models.CharField(max_length=_max_length, choices=TYPE_CHOICES)
     title = models.CharField(max_length=_max_length)
     organization = models.CharField(max_length=_max_length, blank=True)
     date = models.CharField(max_length=_max_length)

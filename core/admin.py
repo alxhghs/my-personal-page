@@ -7,7 +7,7 @@ class ProjectAdmin(admin.ModelAdmin):
 
 
 class ResumeAdmin(admin.ModelAdmin):
-    list_display = ('_type', 'title', 'organization', 'date')
+    list_display = ('sub_type', 'title', 'organization', 'date')
 
 
 admin.site.register(Project, ProjectAdmin)

@@ -8,6 +8,23 @@
         <title>Alexander Hughes, MPA</title>
     </head>
     <body>
+      <h1>Alex Hughes, MPA</h1>
+      {% for r in resume %}
+        {% if resume._type == "Work" %}
+          <h2>Work</h2>
 
+        {% endif %}
+        {% if resume._type == "Volunteer" %}
+          <h2>Volunteer</h2>
+
+        {% endif %}
+        {% if resume._type == "Education" %}
+          <h2>Education</h2>
+
+        {% endif %}
+        {% if resume._type == "Skills" %}
+          <h2>Skills</h2>
+
+        {% endif %}
     </body>
 </html>

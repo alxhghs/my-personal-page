@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from core.models import Project
+from core.models import Project, Resume
 
 
 def index(request):
@@ -11,9 +11,8 @@ def index(request):
 
 
 def resume(request):
-    resume = Resume.objects.order_by('-date')
+    resume_element = Resume.objects.order_by('-date')
     context_dict = {
-                    'title': title,
-                    'resume': resume,
+                    'resume': resume_element,
                     }
     return render(request, 'core/templates/resume.html', context_dict)
