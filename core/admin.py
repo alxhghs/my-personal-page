@@ -3,7 +3,7 @@ from core.models import Project, Resume
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('img', 'description', 'date')
+    list_display = ('title', 'img', 'description', 'date')
 
 
 class ResumeAdmin(admin.ModelAdmin):

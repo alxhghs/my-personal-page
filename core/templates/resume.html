@@ -1,31 +1,44 @@
-<!DOCTYPE html>
+{% extends 'templates/base.html' %}
 
 {% load staticfiles %}
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Alexander Hughes, MPA</title>
-    </head>
-    <body>
-      <h1>Alex Hughes, MPA</h1>
-      {% for r in resume %}
-        {% if resume.sub_type == "Work" %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <br /><br /><br /><h1>Alex Hughes, MPA</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        {% if work %}
           <h2>Work</h2>
-
+            {% for w in work %}
+              <div>{{ w.organization }} --- {{ w.title }} --- {{ w.date }}</div>
+            {% endfor %}
         {% endif %}
-        {% if resume.sub_type == "Volunteer" %}
-          <h2>Volunteer</h2>
-
-        {% endif %}
-        {% if resume.sub_type == "Education" %}
+        {% if education %}
           <h2>Education</h2>
-
+          {% for e in education %}
+            <div>{{ e.organization }} --- {{ e.title }} --- {{ e.date }}</div>
+          {% endfor %}
         {% endif %}
-        {% if resume.sub_type == "Skills" %}
+        {% if volunteer %}
+          <h2>Volunteer</h2>
+          {% for v in volunteer %}
+            <div>{{ v.organization }} --- {{ v.title }} --- {{ v.date }}</div>
+          {% endfor %}
+        {% endif %}
+        {% if skill %}
           <h2>Skills</h2>
-
+          {% for s in skill %}
+            <div>{{ s.organization }} --- {{ s.title }}</div>
+          {% endfor %}
         {% endif %}
-    {% endfor %}
-    </body>
-</html>
+        <br /><br />
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -13,7 +13,7 @@ def populate():
         {"img": "/img/cold_stream_pond.jpg",
          "title": "Cold Stream Pond Camp Owners' Association",
          "description": "Developed using Python, Django, Bootstrap, HTML, CSS and JavaScript",
-         "date": ""},
+         },
     ]
 
     resumes = [
@@ -25,7 +25,7 @@ def populate():
         {"type": "Work",
          "title": "Program Manager",
          "organization": "City Year Boston",
-         "date": "2014 - present"},
+         "date": "2016 - present"},
         {"type": "Work",
          "title": "Translation Contractor",
          "organization": "Mercy Corps",
@@ -68,6 +68,31 @@ def populate():
          "title": "Board Secretary",
          "organization": "Public Administration Student Association",
          "date": "2015 - 2016"},
+        # Skills
+        {"type": "Skills",
+         "title": "Python",
+         "organization": "",
+         "date": ""},
+        {"type": "Skills",
+         "title": "CSS",
+         "organization": "",
+         "date": ""},
+        {"type": "Skills",
+         "title": "HTML",
+         "organization": "",
+         "date": ""},
+        {"type": "Skills",
+         "title": "Django",
+         "organization": "",
+         "date": ""},
+        {"type": "Skills",
+         "title": "SPSS",
+         "organization": "",
+         "date": ""},
+        {"type": "Skills",
+         "title": "Typing 100 WPM",
+         "organization": "",
+         "date": ""},
     ]
 
     for project in projects:
@@ -76,7 +101,7 @@ def populate():
                     )
 
     for resume in resumes:
-        add_resume(_type=resume["type"],
+        add_resume(sub_type=resume["type"],
                    title=resume["title"],
                    organization=resume["organization"],
                    date=resume["date"]
@@ -90,8 +115,8 @@ def add_project(img, description):
     return project
 
 
-def add_resume(_type, title, organization, date):
-    resume = Resume.objects.get_or_create(_type=_type, title=title)[0]
+def add_resume(sub_type, title, organization, date):
+    resume = Resume.objects.get_or_create(sub_type=sub_type, title=title)[0]
     resume.organization = organization
     resume.date = date
     resume.save()

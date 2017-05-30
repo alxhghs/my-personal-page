@@ -23,7 +23,7 @@ class Resume(models.Model):
     sub_type = models.CharField(max_length=_max_length, choices=TYPE_CHOICES)
     title = models.CharField(max_length=_max_length)
     organization = models.CharField(max_length=_max_length, blank=True)
-    date = models.CharField(max_length=_max_length)
+    date = models.CharField(max_length=_max_length, blank=True)
 
     class Meta:
         verbose_name_plural = "Resume"

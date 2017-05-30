@@ -11,8 +11,14 @@ def index(request):
 
 
 def resume(request):
-    resume_element = Resume.objects.order_by('-date')
+    work = Resume.objects.filter(sub_type="Work").order_by('-date')
+    volunteer = Resume.objects.filter(sub_type="Volunteer").order_by('-date')
+    skill = Resume.objects.filter(sub_type="Skills").order_by('title')
+    education = Resume.objects.filter(sub_type="Education").order_by('-date')
     context_dict = {
-                    'resume': resume_element,
+                    'work': work,
+                    'volunteer': volunteer,
+                    'skill': skill,
+                    'education': education,
                     }
     return render(request, 'core/templates/resume.html', context_dict)
