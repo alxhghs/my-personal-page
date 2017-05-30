@@ -10,21 +10,22 @@
     <body>
       <h1>Alex Hughes, MPA</h1>
       {% for r in resume %}
-        {% if resume._type == "Work" %}
+        {% if resume.sub_type == "Work" %}
           <h2>Work</h2>
 
         {% endif %}
-        {% if resume._type == "Volunteer" %}
+        {% if resume.sub_type == "Volunteer" %}
           <h2>Volunteer</h2>
 
         {% endif %}
-        {% if resume._type == "Education" %}
+        {% if resume.sub_type == "Education" %}
           <h2>Education</h2>
 
         {% endif %}
-        {% if resume._type == "Skills" %}
+        {% if resume.sub_type == "Skills" %}
           <h2>Skills</h2>
 
         {% endif %}
+    {% endfor %}
     </body>
 </html>
