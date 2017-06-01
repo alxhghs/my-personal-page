@@ -93,6 +93,19 @@ def populate():
          "title": "Typing 100 WPM",
          "organization": "",
          "date": ""},
+        # Meetups
+        {"type": "Meetup",
+         "title": "",
+         "organization": "Code for Boston",
+         "date": 2017},
+        {"type": "Meetup",
+         "title": "",
+         "organization": "Boston Python Users Group",
+         "date": 2017},
+        {"type": "Meetup",
+         "title": "",
+         "organization": "Django Boston",
+         "date": 2017},
     ]
 
     for project in projects:

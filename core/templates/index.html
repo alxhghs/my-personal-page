@@ -24,9 +24,6 @@
                             <li>
                                 <a href="https://www.linkedin.com/in/alxhughes/" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                             </li>
-			<!--    <a href="#about" class="btn btn-circle page-scroll">
-                               <i class="fa fa-angle-double-down animated"></i>
-                            </a> -->
                         </ul>
                     </div>
                 </div>
@@ -39,7 +36,6 @@
     <!-- /.intro-header -->
 
     <!-- Page Content -->
-
 	<a name="projects"></a>
     <div class="content-section-a">
         <div class="container">
@@ -53,9 +49,12 @@
                       <p class="lead">{{ project.description }}</p>
                   </div>
                   <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <div class="light-rounded">
                       <a href="http://alxhghs.pythonanywhere.com">
-                          <img class="img-responsive" src="{{ MEDIA_URL }}{{ project.img }}" alt="">
-                      </a>
+                          <img class="img-responsive light-rounded" src="{{ MEDIA_URL }}{{ project.img }}" alt="">
+                      </a><br />
+                      <p align="center"><a href="">click to view</a></p>
+                    </div>
                   </div>
                 {% endfor %}
               {% endif %}

@@ -18,10 +18,11 @@ class Resume(models.Model):
         ('Work', 'Work'),
         ('Education', 'Education'),
         ('Skills', 'Skills'),
+        ('Meetup', 'Meetup'),
     )
 
     sub_type = models.CharField(max_length=_max_length, choices=TYPE_CHOICES)
-    title = models.CharField(max_length=_max_length)
+    title = models.CharField(max_length=_max_length, blank=True)
     organization = models.CharField(max_length=_max_length, blank=True)
     date = models.CharField(max_length=_max_length, blank=True)
 
