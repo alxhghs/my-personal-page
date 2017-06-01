@@ -10,9 +10,10 @@ from core.models import Project, Resume
 def populate():
 
     projects = [
-        {"img": "/img/cold_stream_pond.jpg",
+        {"img": "project_images/cold_stream_pond.jpg",
          "title": "Cold Stream Pond Camp Owners' Association",
          "description": "Developed using Python, Django, Bootstrap, HTML, CSS and JavaScript",
+         "url": "http://alxhghs.pythonanywhere.com"
          },
     ]
 
@@ -109,8 +110,10 @@ def populate():
     ]
 
     for project in projects:
-        add_project(img=project["img"],
+        add_project(title=project["title"],
+                    img=project["img"],
                     description=project["description"],
+                    url=project["url"],
                     )
 
     for resume in resumes:
@@ -121,9 +124,11 @@ def populate():
                    )
 
 
-def add_project(img, description):
-    project = Project.objects.get_or_create(img=img)[0]
+def add_project(title, img, description, url):
+    project = Project.objects.get_or_create(title=title, img=img)[0]
+    project.title = title
     project.description = description
+    project.url = url
     project.save()
     return project
 

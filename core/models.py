@@ -10,6 +10,7 @@ class Project(models.Model):
     title = models.CharField(max_length=_max_length, default="Project")
     description = models.TextField()
     date = models.DateField(default=timezone.now)
+    url = models.URLField()
 
 
 class Resume(models.Model):

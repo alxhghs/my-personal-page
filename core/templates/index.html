@@ -36,52 +36,51 @@
     <!-- /.intro-header -->
 
     <!-- Page Content -->
-	<a name="projects"></a>
-    <div class="content-section-a">
-        <div class="container">
-            <div class="row">
-              {% if projects %}
-                {% for project in projects %}
-                  <div class="col-lg-5 col-sm-6">
-                      <hr class="section-heading-spacer">
-                      <div class="clearfix"></div>
-                      <h2 class="section-heading">{{ project.title }}</h2>
-                      <p class="lead">{{ project.description }}</p>
-                  </div>
-                  <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <div class="light-rounded">
-                      <a href="http://alxhghs.pythonanywhere.com">
-                          <img class="img-responsive light-rounded" src="{{ MEDIA_URL }}{{ project.img }}" alt="">
-                      </a><br />
-                      <p align="center"><a href="">click to view</a></p>
-                    </div>
-                  </div>
-                {% endfor %}
-              {% endif %}
+  {% if projects %}
+    {% for project in projects %}
+      <a name="projects"></a>
+	      <div class="content-section-a">
+            <div class="container">
+                <div class="row">
+                      <div class="col-lg-5 col-sm-6">
+                          <hr class="section-heading-spacer">
+                          <div class="clearfix"></div>
+                          <h2 class="section-heading">{{ project.title }}</h2>
+                          <p class="lead">{{ project.description }}</p>
+                      </div>
+                      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                        <div class="light-rounded">
+                          <a href="{{ project.url }}">
+                              <img class="img-responsive light-rounded" src="{{ MEDIA_URL }}{{ project.img }}" alt="">
+                          </a><br />
+                          <p align="center"><a href="{{ project.url }}">click to view</a></p>
+                        </div>
+                      </div>
+                </div>
             </div>
+            <!-- /.container -->
         </div>
-        <!-- /.container -->
-
-    </div>
+    {% endfor %}
+  {% endif %}
     <!-- /.content-section-a -->
 
-    <!-- <div class="content-section-b">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
-                    <hr class="section-heading-spacer">
-                    <div class="clearfix"></div>
-                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
-                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
-                </div>
-                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/dog.png" alt="">
-                </div>
-            </div>
-
-        </div> -->
+{#    <div class="content-section-b">#}
+{# {% if projects|length > 0 %}#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">#}
+{#                    <hr class="section-heading-spacer">#}
+{#                    <div class="clearfix"></div>#}
+{#                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>#}
+{#                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>#}
+{#                </div>#}
+{#                <div class="col-lg-5 col-sm-pull-6  col-sm-6">#}
+{#                    <img class="img-responsive light-rounded" src="project.url" alt="">#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#        </div> -->#}
+{#  {% endif %}#}
         <!-- /.container -->
 
     <!-- </div> -->
