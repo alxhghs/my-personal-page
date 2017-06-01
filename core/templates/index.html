@@ -27,6 +27,9 @@
                         </ul>
                     </div>
                 </div>
+                <div class="col-lg-12">
+                  <p>(scroll down)</p><i class="fa fa-arrow-down fa-2x"></i>
+                </div>
             </div>
 
         </div>
@@ -36,6 +39,11 @@
     <!-- /.intro-header -->
 
     <!-- Page Content -->
+{#  {% if projects|length > 0 %}#}
+{#    <div class="content-section-a">#}
+{#     <h1 align="center">My Projects</h1>#}
+{#    </div>#}
+{#  {% endif %}#}
   {% if projects %}
     {% for project in projects %}
       <a name="projects"></a>
