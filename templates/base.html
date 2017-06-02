@@ -51,17 +51,7 @@
                 <a class="navbar-brand topnav" href="{% url 'index' %}">Alex Hughes</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-          <script>
-            $('a[href^="#"]').on('click', function(event) {
-    var target = $(this.getAttribute('href'));
-    if( target.length ) {
-        event.preventDefault();
-        $('html, body').stop().animate({
-            scrollTop: target.offset().top
-        }, 1000);
-    }
-});
-          </script>
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -75,6 +65,8 @@
                     </li>
                 </ul>
             </div>
+
+
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
@@ -108,6 +100,7 @@
                 </div>
             </div>
         </div>
+
     </footer>
 
     <!-- jQuery -->
