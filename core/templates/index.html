@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                  <p>(scroll down)</p><i class="fa fa-arrow-down fa-2x"></i>
+                  <a href="#projects"><p style="color:white;">(scroll down)</p><i class="fa fa-arrow-down fa-2x" style="color:white;"></i></a>
                 </div>
             </div>
         </div>
@@ -144,16 +144,4 @@
 
     </div>
     <!-- /.banner -->
-{#  Trying to get scroll to element to work#}
-{#                            <script>#}
-{#            $('a[href^="#"]').on('click', function(event) {#}
-{#    var target = $(this.getAttribute('href'));#}
-{#    if( target.length ) {#}
-{#        event.preventDefault();#}
-{#        $('html, body').stop().animate({#}
-{#            scrollTop: target.offset().top#}
-{#        }, 1000);#}
-{#    }#}
-{#});#}
-{#          </script>#}
 {% endblock %}
