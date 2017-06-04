@@ -94,17 +94,16 @@ def populate():
          "title": "Typing 100 WPM",
          "organization": "",
          "date": ""},
-        # Meetups
+    ]
+
+    meetups = [
         {"type": "Meetup",
-         "title": "",
          "organization": "Code for Boston",
          "date": 2017},
         {"type": "Meetup",
-         "title": "",
          "organization": "Boston Python Users Group",
          "date": 2017},
         {"type": "Meetup",
-         "title": "",
          "organization": "Django Boston",
          "date": 2017},
     ]
@@ -123,6 +122,12 @@ def populate():
                    date=resume["date"]
                    )
 
+    for meetup in meetups:
+        add_meetup(sub_type=meetup["type"],
+                   organization=meetup["organization"],
+                   date=meetup["date"],
+                   )
+
 
 def add_project(title, img, description, url):
     project = Project.objects.get_or_create(title=title, img=img)[0]
@@ -139,6 +144,14 @@ def add_resume(sub_type, title, organization, date):
     resume.date = date
     resume.save()
     return resume
+
+
+def add_meetup(sub_type, organization, date):
+    meetup = Resume.objects.get_or_create(sub_type=sub_type,
+                                          organization=organization)[0]
+    meetup.date = date
+    meetup.save()
+    return meetup
 
 # Start execution here!
 if __name__ == '__main__':

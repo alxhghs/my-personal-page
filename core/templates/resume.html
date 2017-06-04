@@ -37,8 +37,12 @@
             <div>{{ s.organization }} --- {{ s.title }}</div>
           {% endfor %}
         {% endif %}
-{#      TODO add meetups to resume#}
-
+        {% if meetup %}
+          <h2>Meetups</h2>
+          {% for m in meetup %}
+            <div>--- {{ m.organization }}</div>
+          {% endfor %}
+        {% endif %}
         <br /><br />
       </div>
     </div>

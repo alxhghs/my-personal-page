@@ -15,10 +15,12 @@ def resume(request):
     volunteer = Resume.objects.filter(sub_type="Volunteer").order_by('-date')
     skill = Resume.objects.filter(sub_type="Skills").order_by('title')
     education = Resume.objects.filter(sub_type="Education").order_by('-date')
+    meetup = Resume.objects.filter(sub_type="Meetup").order_by('-date')
     context_dict = {
                     'work': work,
                     'volunteer': volunteer,
                     'skill': skill,
                     'education': education,
+                    'meetup': meetup,
                     }
     return render(request, 'core/templates/resume.html', context_dict)
