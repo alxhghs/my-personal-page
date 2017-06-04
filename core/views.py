@@ -3,9 +3,11 @@ from core.models import Project, Resume
 
 
 def index(request):
-    projects = Project.objects.order_by('-date')
+    project1 = Project.objects.order_by('-date')[0]
+    project2 = Project.objects.order_by('-date')[1]
     context_dict = {
-        'projects': projects
+        'project1': project1,
+        'project2': project2,
     }
     return render(request, 'core/templates/index.html', context_dict)
 

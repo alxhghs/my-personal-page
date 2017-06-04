@@ -45,8 +45,7 @@
 {#    </div>#}
 {#  {% endif %}#}
 
-  {% if projects %}
-    {% for project in projects %}
+  {% if project1 %}
       <div id="projects">
 	      <div class="content-section-a">
             <div class="container">
@@ -54,16 +53,16 @@
                       <div class="col-lg-5 col-sm-6">
                           <hr class="section-heading-spacer">
                           <div class="clearfix"></div>
-                          <h2 class="section-heading">{{ project.title }}</h2>
-                          <p class="lead">{{ project.description }}</p>
+                          <h2 class="section-heading">{{ project1.title }}</h2>
+                          <p class="lead">{{ project1.description }}</p>
                       </div>
                       <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                         <br />
                         <div class="light-rounded">
-                          <a href="{{ project.url }}">
-                              <img class="img-responsive light-rounded" src="{{ MEDIA_URL }}{{ project.img }}" alt="">
+                          <a href="{{ project1.url }}">
+                              <img class="img-responsive light-rounded" src="{{ MEDIA_URL }}{{ project1.img }}" alt="">
                           </a><br />
-                          <p align="center"><a href="{{ project.url }}">click to view</a></p>
+                          <p align="center"><a href="{{ project1.url }}">click to view</a></p>
                         </div>
                       </div>
                 </div>
@@ -71,28 +70,28 @@
             <!-- /.container -->
         </div>
       </div>
-    {% endfor %}
   {% endif %}
     <!-- /.content-section-a -->
 
 {#  TODO content B section#}
-{#    <div class="content-section-b">#}
-{# {% if projects|length > 0 %}#}
-{#        <div class="container">#}
-{#            <div class="row">#}
-{#                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">#}
-{#                    <hr class="section-heading-spacer">#}
-{#                    <div class="clearfix"></div>#}
-{#                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>#}
-{#                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>#}
-{#                </div>#}
-{#                <div class="col-lg-5 col-sm-pull-6  col-sm-6">#}
-{#                    <img class="img-responsive light-rounded" src="project.url" alt="">#}
-{#                </div>#}
-{#            </div>#}
-{##}
-{#        </div> -->#}
-{#  {% endif %}#}
+ {% if project2 %}
+   <div class="content-section-b">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">{{ project2.title }}</h2>
+                    <p class="lead">{{ project2.description }}</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <br /><img class="img-responsive light-rounded" src="{{ MEDIA_URL }}{{ project2.img }}" alt="">
+                    <br />
+                    <p align="center" style="padding-bottom: 45px"><a href="{{ project1.url }}">click to view</a></p>
+                </div>
+            </div>
+        </div>
+  {% endif %}
         <!-- /.container -->
 
     <!-- </div> -->

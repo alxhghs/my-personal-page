@@ -11,9 +11,14 @@ def populate():
 
     projects = [
         {"img": "project_images/cold_stream_pond.jpg",
-         "title": "Cold Stream Pond Camp Owners' Association",
+         "title": "Cold Stream Pond",
          "description": "Developed using Python, Django, Bootstrap, HTML, CSS and JavaScript",
          "url": "http://alxhghs.pythonanywhere.com"
+         },
+        {"img": "project_images/usaid.jpg",
+         "title": "How to Work with USAID",
+         "description": "Collaborated on e-learning materials in Spanish and English using Articulate Presenter",
+         "url": "https://www.usaid.gov/work-usaid/how-to-work-with-usaid"
          },
     ]
 
