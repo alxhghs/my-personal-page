@@ -1,6 +1,6 @@
 {% extends 'templates/base.html' %}
 
-{% load staticfiles %}
+{#{% load staticfiles %}#}  <!-- are staticfiles necessary here since in base.html? -->
 
 {% block content %}
     <!-- Header -->
@@ -27,7 +27,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-12">  <!-- arrow to scroll down -->
                   <a href="#projects"><i class="fa fa-arrow-down fa-2x" style="color:white;"></i></a>
                 </div>
             </div>
@@ -149,4 +149,5 @@
     </div>
     <!-- /.banner -->
   </div>
+
 {% endblock %}
