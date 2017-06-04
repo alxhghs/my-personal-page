@@ -35,10 +35,30 @@ $('a[href*="#"]')
     }
   });
 
-if (jQuery(window).width() < 960) {
-    jQuery('.collapse.navbar-collapse').click(function (e) {
-        if( jQuery(e.target).is('a') && jQuery(e.target).attr('class') != 'dropdown-toggle' ) {
-            jQuery('.navbar-collapse').collapse('toggle');
-        }
-    });
-}
+$(window).on('resize', function(){
+    var win = $(this);
+    if (win.width() >= 767) {
+        $('.collapse.navbar-collapse').click(function (e) {
+            if( jQuery(e.target).is('a') && jQuery(e.target).attr('class') != 'dropdown-toggle' ) {
+                jQuery('.navbar-collapse').collapse('toggle');
+            }
+        });
+    }
+});
+//
+// if ($(window).width() < 767) {
+//     $('.collapse.navbar-collapse').click(function (e) {
+//         if( jQuery(e.target).is('a') && jQuery(e.target).attr('class') != 'dropdown-toggle' ) {
+//             jQuery('.navbar-collapse').collapse('toggle');
+//         }
+//     });
+// }
+
+// this works but with a strange animation on wider screens
+// if ($(window).width() < 768) {
+//     $('.collapse.navbar-collapse').click(function (e) {
+//         if( jQuery(e.target).is('a') && jQuery(e.target).attr('class') != 'dropdown-toggle' ) {
+//             jQuery('.navbar-collapse').collapse('toggle');
+//         }
+//     });
+// }
