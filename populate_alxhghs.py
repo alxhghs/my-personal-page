@@ -18,7 +18,7 @@ def populate():
         {"img": "project_images/usaid.jpg",
          "title": "How to Work with USAID",
          "description": "Collaborated on e-learning materials in Spanish and English using Articulate Presenter",
-         "url": "https://www.usaid.gov/work-usaid/how-to-work-with-usaid"
+         "url": "https://www.usaid.gov/work-usaid/get-grant-or-contract/trainings-how-work-usaid"
          },
     ]
 
