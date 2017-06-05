@@ -13,12 +13,17 @@ def populate():
         {"img": "project_images/cold_stream_pond.jpg",
          "title": "Cold Stream Pond",
          "description": "Developed using Python, Django, Bootstrap, HTML, CSS and JavaScript",
-         "url": "http://alxhghs.pythonanywhere.com"
+         "url": "http://alxhghs.pythonanywhere.com",
          },
         {"img": "project_images/usaid.jpg",
          "title": "How to Work with USAID",
          "description": "Collaborated on e-learning materials in Spanish and English using Articulate Presenter",
          "url": "https://www.usaid.gov/work-usaid/get-grant-or-contract/trainings-how-work-usaid"
+         },
+        {"img": "project_images/mepi.jpg",
+         "title": "Portland State University",
+         "description": "Used Drupal and HTML to develop and maintain several university websites",
+         "url": "https://www.pdx.edu/hatfieldschool/student-leaders-program-slp"
          },
     ]
 
