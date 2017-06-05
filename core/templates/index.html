@@ -87,17 +87,16 @@
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <br /><a href="{{ project2.url }}"><img class="img-responsive light-rounded" src="{{ MEDIA_URL }}{{ project2.img }}" alt="">
                     <br />
-                    <p align="center" style="padding-bottom: 45px">click to view</p></a>
+                    <p align="center">click to view</p></a>
                 </div>
             </div>
         </div>
   {% endif %}
         <!-- /.container -->
-
-    <!-- </div> -->
+  </div>
     <!-- /.content-section-b -->
-
-    <!-- <div class="content-section-a">
+  {% if project3 %}
+    <div class="content-section-a">
 
         <div class="container">
 
@@ -105,20 +104,22 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                    <h2 class="section-heading">{{ project3.title }}</h2>
+                    <p class="lead">{{ project3.description }}</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/phones.png" alt="">
+                    <a href="{{ project3.url }}"><img class="img-responsive" src="{{ MEDIA_URL }}{{ project3.img }}" alt="">
+                    <br />
+                    <p align="center">click to view</p></a>
                 </div>
             </div>
 
-        </div> -->
+        </div>
         <!-- /.container -->
 
-    <!-- </div> -->
+    </div>
     <!-- /.content-section-a -->
-
+  {% endif %}
 	<div id="contact">
     <div class="banner">
 
