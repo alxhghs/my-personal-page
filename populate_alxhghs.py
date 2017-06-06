@@ -16,7 +16,7 @@ def populate():
          "url": "http://alxhghs.pythonanywhere.com",
          },
         {"img": "project_images/usaid.jpg",
-         "title": "How to Work with USAID",
+         "title": "USAID Online Learning Modules",
          "description": "Collaborated on e-learning materials in Spanish and English using Articulate Presenter",
          "url": "https://www.usaid.gov/work-usaid/get-grant-or-contract/trainings-how-work-usaid"
          },
@@ -101,7 +101,7 @@ def populate():
          "organization": "",
          "date": ""},
         {"type": "Skills",
-         "title": "Typing 100 WPM",
+         "title": "Spanish Fluency",
          "organization": "",
          "date": ""},
     ]
