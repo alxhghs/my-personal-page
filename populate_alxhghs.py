@@ -13,7 +13,7 @@ def populate():
         {"img": "project_images/cold_stream_pond.jpg",
          "title": "Cold Stream Pond",
          "description": "Developed using Python, Django, Bootstrap, HTML, CSS and JavaScript",
-         "url": "http://alxhghs.pythonanywhere.com"
+         "url": "http://alxhghs.pythonanywhere.com",
          },
         {"img": "project_images/usaid.jpg",
          "title": "How to Work with USAID",
