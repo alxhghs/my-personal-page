@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'versatileimagefield',
     'core',
+    'blog',
+    'mail',
     'django_cleanup',
 ]
 
@@ -78,6 +80,21 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'alxhghs_project.wsgi.application'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+    'theme_advanced_buttons1': 'bold,italic,underline,separator,bullist,'
+                               'numlist,separator,link,unlink',
+    'theme_advanced_buttons2': '',
+    'theme_advanced_buttons3': '',
+    'theme_advanced_toolbar_location': 'top',
+    'theme_advanced_toolbar_align': 'left',
+    'paste_text_sticky': True,
+    'paste_text_sticky_default': True,
+    'valid_styles': 'font-weight,font-style,text-decoration',
+    'width': '768',
+    'height': 300,
+}  # testing to see if this adds more options
 
 
 # Database

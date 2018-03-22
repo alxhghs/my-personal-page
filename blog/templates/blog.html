@@ -1,0 +1,47 @@
+{% extends 'templates/base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="sub-header" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="sub-message">
+        <h1>My blog</h1>
+      </div>
+    </div>
+  </div>
+  <!-- /.container -->
+</div>
+  <!-- /.intro-header -->
+
+  {% if blog %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% for b in blog %}
+          <p class="img-responsive blog-image"><img src="{{ MEDIA_URL }}{{ b.img }}"/></p>
+          <h2 class="blog-title">{{ b.title }}</h2>
+          <p class="blog-date">{{ b.date }}</p>
+          <p class="blog-text">{{ b.text|safe|linebreaksbr }}</p>
+          {% endfor %}
+        </div>
+      <div class="col-md-4 archives">
+        <h2>Archives</h2>
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+{#    TODO generate urls#}
+{#    <div class="col-md-2">#}
+{#      <h3>Archives</h3>#}
+{#      {% for _ in blog %}#}
+{#        <p><a href="{{ blog.url }}"</p>#}
+{#      {% endfor %}#}
+{#    </div>#}
+  {% endif %}
+
+{% endblock %}
