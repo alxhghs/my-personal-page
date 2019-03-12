@@ -9,7 +9,7 @@ import React from "react"
 import styled from "@emotion/styled";
 import { StaticQuery, graphql } from "gatsby"
 
-import { Header } from "./header"
+import { Header } from "../components"
 
 const Wrapper = styled("div")`
     font-family: sans-serif;

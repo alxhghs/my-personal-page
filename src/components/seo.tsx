@@ -6,11 +6,42 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title }) {
+type Props = {
+  description: string;
+  lang: string;
+  meta: { 
+    name: string; 
+    content: any; 
+    property?: undefined; } 
+  | { 
+      property: string; 
+      content: any; 
+      name?: undefined; } 
+  | ConcatArray<{
+      name: string; 
+      content: any; 
+      property?: undefined; } 
+  | { 
+      property: string; 
+      content: any; 
+      name?: undefined; 
+  }>
+  keywords: string[];
+  title: string;
+};
+
+const DefaultProps: Props = {
+  lang: "en",
+  description: "",
+  title: "AFH",
+  meta: [],
+  keywords: []
+};
+
+export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -71,9 +102,9 @@ function SEO({ description, lang, meta, keywords, title }) {
         .concat(
           keywords.length > 0
             ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
+              name: `keywords`,
+              content: keywords.join(`, `),
+            }
             : []
         )
         .concat(meta)}
@@ -81,18 +112,4 @@ function SEO({ description, lang, meta, keywords, title }) {
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  keywords: [],
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.array,
-  keywords: PropTypes.arrayOf(PropTypes.string),
-  title: PropTypes.string.isRequired,
-}
-
-export default SEO
+SEO.defaultProps = DefaultProps;

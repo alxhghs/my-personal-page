@@ -22,7 +22,7 @@ export const Header: React.FC<Props> = ({ siteTitle }) => (
         <Link
           to="/"
         >
-          {siteTitle}
+          Home
         </Link>
         <Link
           to="/posts"
