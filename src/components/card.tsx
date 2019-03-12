@@ -10,7 +10,6 @@ export const Card = styled("div")`
         font-style: italic;
     }
     max-width: 400px;
-    margin: 30px 0;
     box-shadow: 0 17.125px 70px -12.125px rgba(0,0,0,0.3);
 `;
 
