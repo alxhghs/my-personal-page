@@ -78,10 +78,12 @@ type IndexPageProps = {
                         }
                     }
                     content: {
-                        content: string;
+                        childContentfulRichText: {
+                            html: string;
+                        }
                     }
                 }
-            }
+            }[]
         }
     }
 };
@@ -96,8 +98,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             <p>{ author }</p>
             <ul>
                 {
-                    blogPosts.map((post: any, index: string) => (
-                        <Card>
+                    blogPosts.map((post, index) => (
+                        <Card key={index}>
                             <img src={post.hero && post.hero.fluid.src} />
                             <h2>{ post.title }</h2>
                             <h3>{ post.dateCreated }</h3>
