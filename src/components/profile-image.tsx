@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import styled from "@emotion/styled";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,19 +14,24 @@ import Img from "gatsby-image"
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-export const Image: React.FC = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
+const Image = styled(Img)`
+    border-radius: 50%;
+    width: 200px;
+`;
+
+export const ProfileImage: React.FC = () => (
+    <StaticQuery
+        query={graphql`
+        query {
+            placeholderImage: file(relativePath: { eq: "me.JPG" }) {
+                childImageSharp {
+                    fluid(maxWidth: 300) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
             }
-          }
         }
-      }
     `}
-    render={data => <Img fluid={data.placeholderImage.childImageSharp.fluid} />}
-  />
+        render={data => <Image fluid={data.placeholderImage.childImageSharp.fluid} />}
+    />
 )
