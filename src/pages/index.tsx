@@ -7,13 +7,13 @@ const Wrapper = styled("div")`
     align-content: center;
     justify-content: center;
     text-align: center;
-    margin-top: 45px;
+    height: 100%;
 `;
 
 const Links = styled("div")`
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 45px;
 `;
 
 const ExternalLink = styled("a")`

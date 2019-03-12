@@ -21,7 +21,6 @@ const StyledHeader = styled("header")`
     gap: 30px;
     background: linear-gradient(130deg, #000, #119);
     background-size: 200% 200%;
-    margin-bottom: 15px;
     justify-content: center;
     animation: ${Animation} 10s ease infinite;
 `;

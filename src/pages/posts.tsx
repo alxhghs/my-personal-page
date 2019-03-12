@@ -40,6 +40,7 @@ export const postPageQuery = graphql`
                 #            height
                 #        }
                     }
+                    slug
                 }
             }
         }
@@ -83,6 +84,7 @@ type PostPageProps = {
                             html: string;
                         }
                     }
+                    slug: string;
                 }
             }[]
         }
@@ -112,6 +114,7 @@ const PageWrapper = styled("div")`
     align-content: center;
     justify-content: center;
     text-align: center;
+    height: 100%;
 `;
 
 const P = styled("p")`
@@ -130,7 +133,7 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
                 <PostsWrapper>
                     {
                         blogPosts.map((post, index) => (
-                            <Card key={index} to="/">
+                            <Card key={index} to={post.slug}>
                                 <Image src={post.hero && post.hero.fluid.src} />
                                 <h2>{post.title}</h2>
                                 <h3>{post.dateCreated}</h3>

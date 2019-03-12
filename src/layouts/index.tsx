@@ -46,7 +46,7 @@ const Layout: React.FC = ({ children }) => (
                 <main>{children}</main>
                 <Footer>
                     © {new Date().getFullYear()} | Alex Fenwood Hughes
-        </Footer>
+                </Footer>
             </Wrapper>
         )}
     />
