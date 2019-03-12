@@ -2,7 +2,7 @@ require(`dotenv`).config({path: `.env`})
 
 module.exports = {
   siteMetadata: {
-    title: `Alex Fenwood Hughes personal site`,
+    title: `Alex Fenwood Hughes`,
     description: `Personal webpage for Alex Fenwood Hughes`,
     author: `Alex Fenwood Hughes`,
   },

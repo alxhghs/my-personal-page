@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby";
+import styled from "@emotion/styled";
 
 export const indexPageQuery = graphql`
     query IndexPageQuery {
@@ -57,6 +58,20 @@ type IndexPageProps = {
     }
 };
 
+const Card = styled("div")`
+    font-family: sans-serif;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 15px;
+    h3 {
+        color: gray;
+        font-size: 12px;
+        font-style: italic;
+    }
+    max-width: 400px;
+    margin: 30px 0;
+`;
+
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
     const { title, description, author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
@@ -68,11 +83,12 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             <ul>
                 {
                     blogPosts.map((post: any, index: string) => (
-                        <React.Fragment>
+                        <Card>
+                            <img src={post.hero && post.hero.resolutions.src} />
                             <h2>{ post.title }</h2>
                             <h3>{ post.dateCreated }</h3>
                             <p>{ post.content && post.content.content }</p>
-                        </React.Fragment>
+                        </Card>
                     ))
                 }
             </ul>
