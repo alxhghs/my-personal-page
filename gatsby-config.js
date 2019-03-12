@@ -1,8 +1,10 @@
+require(`dotenv`).config({path: `.env`})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Alex Fenwood Hughes personal site`,
+    description: `Personal webpage for Alex Fenwood Hughes`,
+    author: `Alex Fenwood Hughes`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,5 +32,14 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `4t5qq325u56f`,
+        accessToken: `e02207aaf2da890ddd4cdc00c6304b43d3dd3c475a901ee23dc97615a73c824d`
+      }
+    },
+    `gatsby-plugin-emotion`,
   ],
 }
