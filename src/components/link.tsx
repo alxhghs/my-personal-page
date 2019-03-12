@@ -11,6 +11,7 @@ const StyledLink = styled(GatsbyLink)`
 type Props = {
     to: string;
 };
+
 export const Link: React.FC<Props> = ({ to, children }) => (
     <StyledLink to={to}>
         { children }

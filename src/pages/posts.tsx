@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby";
 import { Card, Layout, SEO } from "../components";
 
-export const indexPageQuery = graphql`
+export const postPageQuery = graphql`
     query IndexPageQuery {
         site {
             siteMetadata {
@@ -45,7 +45,7 @@ export const indexPageQuery = graphql`
     }
 `;
 
-type IndexPageProps = {
+type PostPageProps = {
     data: {
         site: {
             siteMetadata: {
@@ -88,7 +88,7 @@ type IndexPageProps = {
     }
 };
 
-const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
+const PostPage: React.FC<PostPageProps> = ({ data }) => {
     const { title, description, author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
     return (
@@ -115,4 +115,4 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
     )
 };
 
-export default IndexPage;
+export default PostPage;

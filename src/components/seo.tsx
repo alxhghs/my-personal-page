@@ -28,7 +28,7 @@ type Props = {
       property: string; 
       content: any; 
       name?: undefined; 
-  }>
+  }>;
   keywords: string[];
   title: string;
 };

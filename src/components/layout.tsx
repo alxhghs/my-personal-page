@@ -28,7 +28,7 @@ export const Layout: React.FC = ({ children }) => (
     `}
     render={data => (
       <Wrapper>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
         <div
           style={{
             margin: `0 auto`,

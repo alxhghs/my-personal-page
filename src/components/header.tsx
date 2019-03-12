@@ -1,10 +1,7 @@
 import React from "react";
 import { Link } from "../components";
 
-type Props = {
-  siteTitle: string;
-};
-export const Header: React.FC<Props> = ({ siteTitle }) => (
+export const Header: React.FC = () => (
   <header
     style={{
       background: `rebeccapurple`,
@@ -19,14 +16,10 @@ export const Header: React.FC<Props> = ({ siteTitle }) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-        >
+        <Link to="/" >
           Home
         </Link>
-        <Link
-          to="/posts"
-        >
+        <Link to="/posts" >
           Posts
         </Link>
       </h1>
