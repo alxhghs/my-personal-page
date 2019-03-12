@@ -92,7 +92,7 @@ type PostPageProps = {
 const PostsWrapper = styled("div")`
     display: grid;
     grid-template-columns: auto;
-    gap: 30px;
+    gap: 15px;
     padding: 30px 0;
     @media screen and (min-width: 756px) {
         grid-template-columns: repeat(2, auto);
@@ -107,28 +107,41 @@ const Image = styled("img")`
     width: 100%;
 `;
 
+const PageWrapper = styled("div")`
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+`;
+
+const P = styled("p")`
+    color: grey;
+`;
+
 const PostPage: React.FC<PostPageProps> = ({ data }) => {
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
     return (
         <Layout>
             <SEO title="Posts" />
-            <h1>Blog Posts</h1>
-            <p>by { author }</p>
-            <PostsWrapper>
-                {
-                    blogPosts.map((post, index) => (
-                        <Card key={index} to="/">
-                            <Image src={post.hero && post.hero.fluid.src} />
-                            <h2>{ post.title }</h2>
-                            <h3>{ post.dateCreated }</h3>
-                            {/* <div dangerouslySetInnerHTML={{
+            <PageWrapper>
+                <h1>Blog Posts</h1>
+                <P>by {author}</P>
+                <PostsWrapper>
+                    {
+                        blogPosts.map((post, index) => (
+                            <Card key={index} to="/">
+                                <Image src={post.hero && post.hero.fluid.src} />
+                                <h2>{post.title}</h2>
+                                <h3>{post.dateCreated}</h3>
+                                {/* <div dangerouslySetInnerHTML={{
                                 __html: post.content.childContentfulRichText.html
                             }}></div> */}
-                        </Card>
-                    ))
-                }
-            </PostsWrapper>
+                            </Card>
+                        ))
+                    }
+                </PostsWrapper>
+            </PageWrapper>
         </Layout>
     )
 };

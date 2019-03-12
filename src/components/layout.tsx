@@ -8,11 +8,24 @@
 import React from "react"
 import styled from "@emotion/styled";
 import { StaticQuery, graphql } from "gatsby"
+import "./layout.css";
 
 import { Header } from "../components"
 
 const Wrapper = styled("div")`
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     font-family: sans-serif;
+    height: 100%;
+`;
+
+const Footer = styled("footer")`
+    background-color: #000;
+    color: white;
+    position: sticky;
+    bottom: 0;
+    text-align: center;
+    padding: 15px;
 `;
 
 export const Layout: React.FC = ({ children }) => (
@@ -29,19 +42,10 @@ export const Layout: React.FC = ({ children }) => (
     render={data => (
       <Wrapper>
         <Header />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}
-          </footer>
-        </div>
+        <main>{children}</main>
+        <Footer>
+          © {new Date().getFullYear()}
+        </Footer>
       </Wrapper>
     )}
   />

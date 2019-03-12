@@ -15,8 +15,13 @@ import styled from "@emotion/styled";
  */
 
 const Image = styled(Img)`
+    justify-self: center;
     border-radius: 50%;
     width: 200px;
+    transition: .2s ease;
+    &:hover {
+        transform: scale(1.03);
+    }
 `;
 
 export const ProfileImage: React.FC = () => (
