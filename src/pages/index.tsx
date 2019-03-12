@@ -1,7 +1,10 @@
 import React from "react";
+import { Layout } from "../components";
 
 const App: React.FC = () => (
-    <h1>hello, world!</h1>
+    <Layout>
+        <h1>hello, world!</h1>
+    </Layout>
 );
 
 export default App;

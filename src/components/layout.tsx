@@ -6,13 +6,16 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
+import styled from "@emotion/styled";
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-// import "./layout.css"
+import { Header } from "./header"
 
-const Layout = ({ children }) => (
+const Wrapper = styled("div")`
+    font-family: sans-serif;
+`;
+
+export const Layout: React.FC = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -24,7 +27,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <Wrapper>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
@@ -41,13 +44,7 @@ const Layout = ({ children }) => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer>
         </div>
-      </>
+      </Wrapper>
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout

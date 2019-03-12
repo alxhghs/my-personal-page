@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby";
-import { Card } from "../components";
+import { Card, Layout } from "../components";
 
 export const indexPageQuery = graphql`
     query IndexPageQuery {
@@ -92,7 +92,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
     const { title, description, author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
     return (
-        <>
+        <Layout>
             <h1>{ title }</h1>
             <p>{ description }</p>
             <p>{ author }</p>
@@ -110,7 +110,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
                     ))
                 }
             </ul>
-        </>
+        </Layout>
     )
 };
 
