@@ -1,12 +1,29 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/core";
 import { Link } from "../components";
 
+const Animation = keyframes`
+    0% {
+        background-position: 10% 0%;
+    }
+    50% {
+        background-position: 91% 100%;
+    }
+    100% {
+        background-position: 10% 0%;
+    }
+`;
+
 const StyledHeader = styled("header")`
-    display: flex;
-    background-color: #000;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+    background: linear-gradient(130deg, #000, #119);
+    background-size: 200% 200%;
     margin-bottom: 15px;
     justify-content: center;
+    animation: ${Animation} 10s ease infinite;
 `;
 
 export const Header: React.FC = () => (

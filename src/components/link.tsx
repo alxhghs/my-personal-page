@@ -9,7 +9,6 @@ type StyledLinkProps = {
 const StyledLink = styled(GatsbyLink)<StyledLinkProps>`
     color: ${props => props.color ? props.color : "white"};
     text-decoration: none;
-    margin-right: 15px;
     &:hover {
         color: ${props => props.hoverColor ? props.hoverColor : "intial"}
     }

@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import { Card, Layout, SEO } from "../components";
+import { Card, SEO } from "../components";
 
 export const postPageQuery = graphql`
     query IndexPageQuery {
@@ -122,7 +122,7 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
     return (
-        <Layout>
+        <>
             <SEO title="Posts" />
             <PageWrapper>
                 <h1>Blog Posts</h1>
@@ -142,7 +142,7 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
                     }
                 </PostsWrapper>
             </PageWrapper>
-        </Layout>
+        </>
     )
 };
 

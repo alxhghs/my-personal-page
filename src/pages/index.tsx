@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Layout, Link, SEO, ProfileImage } from "../components";
+import { Link, SEO, ProfileImage } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
@@ -26,7 +26,7 @@ const ExternalLink = styled("a")`
 `;
 
 const App: React.FC = () => (
-    <Layout>
+    <>
         <SEO />
         <Wrapper>
             <ProfileImage />
@@ -38,7 +38,7 @@ const App: React.FC = () => (
                 <Link to="/resume" color="black" hoverColor="gray">Resume</Link>
             </Links>
         </Wrapper>
-    </Layout>
+    </>
 );
 
 export default App;

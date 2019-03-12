@@ -42,5 +42,11 @@ module.exports = {
     },
     `gatsby-plugin-emotion`,
     `@contentful/gatsby-transformer-contentful-richtext`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`${__dirname}/src/layouts/index.tsx`)
+      }
+    }
   ],
 }

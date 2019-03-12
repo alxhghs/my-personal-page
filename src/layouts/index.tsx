@@ -1,3 +1,4 @@
+
 /**
  * Layout component that queries for data
  * with Gatsby's StaticQuery component
@@ -28,25 +29,27 @@ const Footer = styled("footer")`
     padding: 15px;
 `;
 
-export const Layout: React.FC = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Wrapper>
-        <Header />
-        <main>{children}</main>
-        <Footer>
-          © {new Date().getFullYear()}
+const Layout: React.FC = ({ children }) => (
+    <StaticQuery
+        query={graphql`
+            query SiteTitleQuery {
+                site {
+                    siteMetadata {
+                        title
+                    }
+                }
+            }
+        `}
+        render={data => (
+            <Wrapper>
+                <Header />
+                <main>{children}</main>
+                <Footer>
+                    © {new Date().getFullYear()} | Alex Fenwood Hughes
         </Footer>
-      </Wrapper>
-    )}
-  />
+            </Wrapper>
+        )}
+    />
 )
+
+export default Layout;
