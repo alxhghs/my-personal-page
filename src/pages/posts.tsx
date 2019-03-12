@@ -23,22 +23,22 @@ export const postPageQuery = graphql`
                         }
                     }
                     hero {
-                #        fluid(maxWidth: 300) {
-                #            sizes
-                #            src
-                #            srcSet
-                #        }
+                        fluid(maxWidth: 300) {
+                            sizes
+                            src
+                            srcSet
+                        }
                 #        fixed(width: 300) {
                 #            width
                 #            height
                 #            src
                 #            srcSet
                 #        }
-                        resize(width: 400) {
-                            src
-                            width
-                            height
-                        }
+                #        resize(width: 400) {
+                #            src
+                #            width
+                #            height
+                #        }
                     }
                 }
             }
@@ -95,7 +95,10 @@ const PostsWrapper = styled("div")`
     gap: 30px;
     padding: 30px 0;
     @media screen and (min-width: 756px) {
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, auto);
+    }
+    @media screen and (min-width: 1080px) {
+        grid-template-columns: repeat(3, auto);
     }
 `;
 
@@ -115,13 +118,13 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
             <PostsWrapper>
                 {
                     blogPosts.map((post, index) => (
-                        <Card key={index}>
-                            <Image src={post.hero && post.hero.resize.src} />
+                        <Card key={index} to="/">
+                            <Image src={post.hero && post.hero.fluid.src} />
                             <h2>{ post.title }</h2>
                             <h3>{ post.dateCreated }</h3>
-                            <div dangerouslySetInnerHTML={{
+                            {/* <div dangerouslySetInnerHTML={{
                                 __html: post.content.childContentfulRichText.html
-                            }}></div>
+                            }}></div> */}
                         </Card>
                     ))
                 }
