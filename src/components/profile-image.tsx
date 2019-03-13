@@ -18,6 +18,7 @@ const Image = styled(Img)`
     justify-self: center;
     border-radius: 50%;
     width: 200px;
+    overflow: hidden;
     transition: .2s ease;
     &:hover {
         transform: scale(1.03);
