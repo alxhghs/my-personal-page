@@ -26,7 +26,7 @@ const Footer = styled("footer")`
     width: 100%;
     bottom: 0;
     text-align: center;
-    padding: 15px;
+    padding: 15px 0;
 `;
 
 const Layout: React.FC = ({ children }) => (
