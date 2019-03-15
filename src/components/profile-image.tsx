@@ -1,6 +1,5 @@
 import React from "react"
 import profilePic from "../images/me.png";
-import profilePicLowResolution from "../images/me-low-resolution.png";
 import { Image } from "../components";
 
 /*
@@ -25,7 +24,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
         width={width ? width : "200px"}
         transform="1.03"
         src={profilePic}
-        placeholder={profilePicLowResolution}
         borderRadius="50%"
+        justifySelf="center"
     />
 );

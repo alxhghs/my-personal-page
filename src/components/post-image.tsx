@@ -7,9 +7,8 @@ type PostImageProps = {
 export const PostImage: React.FC<PostImageProps> = ({ src }) => (
     <Image
         height={src ? "100px" : "0px"}
-        width="100%"
+        width={src ? "300px" : "200px"}
         src={src}
-        placeholder={src}
         borderRadius="4px"
     />
 );

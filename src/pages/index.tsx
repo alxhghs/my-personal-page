@@ -35,7 +35,7 @@ const App: React.FC = () => (
             <Links>
                 <ExternalLink href="https://github.com/alxhghs">Github</ExternalLink>
                 <ExternalLink href="https://www.linkedin.com/in/alxhughes/">LinkedIn</ExternalLink>
-                <Link to="/resume" color="black" hoverColor="gray">Resume</Link>
+                <Link to="/resume" color="black" hovercolor="gray">Resume</Link>
             </Links>
         </Wrapper>
     </>

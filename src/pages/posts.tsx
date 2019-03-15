@@ -94,7 +94,6 @@ type PostPageProps = {
 const PostsWrapper = styled("div")`
     display: grid;
     grid-template-columns: auto;
-    grid-auto-rows: min-content;
     gap: 30px;
     margin: 0px 15px;
     @media screen and (min-width: 756px) {

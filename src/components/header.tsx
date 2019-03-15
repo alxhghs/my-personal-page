@@ -29,12 +29,12 @@ const StyledHeader = styled("header")`
 export const Header: React.FC = () => (
     <StyledHeader>
         <h2>
-            <Link to="/" hoverColor="#d3d3d3">
+            <Link to="/" hovercolor="#d3d3d3">
                 Home
             </Link>
         </h2>
         <h2>
-            <Link to="/posts" hoverColor="lightgray">
+            <Link to="/posts" hovercolor="lightgray">
                 Posts
             </Link>
         </h2>

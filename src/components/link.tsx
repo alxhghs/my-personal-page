@@ -4,24 +4,24 @@ import styled from "@emotion/styled";
 
 type StyledLinkProps = {
     color?: string;
-    hoverColor?: string;
+    hovercolor?: string;
 }
 const StyledLink = styled(GatsbyLink)<StyledLinkProps>`
     color: ${props => props.color ? props.color : "white"};
     text-decoration: none;
     &:hover {
-        color: ${props => props.hoverColor ? props.hoverColor : "intial"}
+        color: ${props => props.hovercolor ? props.hovercolor : "intial"}
     }
 `;
 
 type Props = {
     to: string;
     color?: string;
-    hoverColor?: string;
+    hovercolor?: string;
 };
 
-export const Link: React.FC<Props> = ({ to, children, color, hoverColor }) => (
-    <StyledLink to={to} color={color} hoverColor={hoverColor}>
+export const Link: React.FC<Props> = ({ to, children, color, hovercolor }) => (
+    <StyledLink to={to} color={color} hovercolor={hovercolor}>
         { children }
     </StyledLink>
 );
