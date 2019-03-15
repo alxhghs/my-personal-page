@@ -28,7 +28,8 @@ const Image = styled("img")<ImageProps>`
     height: 200px;
     overflow: hidden;
     transition: .2s ease;
-    opacity: ${props => props.loading ? 0.5 : 1};
+    image-rendering: smooth;
+    filter: ${props => props.loading ? "blur(10px)" : "none"};
     &:hover {
         transform: scale(1.03);
     }
