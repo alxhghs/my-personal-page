@@ -1,7 +1,7 @@
 import React from "react"
 import ProgressiveImage from "react-progressive-image";
 import styled from "@emotion/styled";
-import profilePic from "../images/me.jpg";
+import profilePic from "../images/me.png";
 import profilePicLowResolution from "../images/me-low-resolution.jpg";
 
 /*
@@ -43,7 +43,7 @@ export const ProfileImage: React.FC = () => (
         placeholder={profilePicLowResolution}
     >
         { 
-            (src: any, loading: any) => {
+            (src: string) => {
                 return (
                     // loading
                     //     ? placeholder
