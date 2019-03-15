@@ -16,6 +16,7 @@ import { Header } from "../components"
 const Wrapper = styled("div")`
     display: grid;
     grid-template-rows: auto 1fr auto;
+    gap: 30px;
     font-family: sans-serif;
     height: 100%;
 `;
@@ -36,6 +37,7 @@ const Layout: React.FC = ({ children }) => (
                 site {
                     siteMetadata {
                         title
+                        author
                     }
                 }
             }
@@ -45,7 +47,7 @@ const Layout: React.FC = ({ children }) => (
                 <Header />
                 <main>{children}</main>
                 <Footer>
-                    © {new Date().getFullYear()} | Alex Fenwood Hughes
+                    © {new Date().getFullYear()} | {data.author ? data.author : "Alex Fenwood Hughes"} 
                 </Footer>
             </Wrapper>
         )}

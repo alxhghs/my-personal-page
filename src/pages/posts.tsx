@@ -94,22 +94,28 @@ type PostPageProps = {
 const PostsWrapper = styled("div")`
     display: grid;
     grid-template-columns: auto;
+    grid-auto-rows: min-content;
     gap: 30px;
+    margin: 0px 15px;
     @media screen and (min-width: 756px) {
         grid-template-columns: repeat(2, auto);
+        margin: 0;
     }
     @media screen and (min-width: 1080px) {
         grid-template-columns: repeat(3, auto);
+    }
+    @media screen and (min-width: 1400px) {
+        grid-template-columns: repeat(4, auto);
     }
 `;
 
 const PageWrapper = styled("div")`
     display: grid;
     gap: 15px;
-    padding: 30px;
     grid-template-columns: auto;
-    grid-template-rows: 75px 100px 50px auto;
+    grid-template-rows: 50px 100px 50px auto;
     justify-content: center;
+    align-content: center;
     text-align: center;
     height: 100%;
 `;
@@ -118,13 +124,17 @@ const P = styled("p")`
     color: grey;
 `;
 
+const H1 = styled("h1")`
+    margin: 0;
+`;
+
 const PostPage: React.FC<PostPageProps> = ({ data }) => {
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
     return (
         <PageWrapper>
             <SEO title="Posts" />
-            <h1>Blog Posts</h1>
+            <H1>Blog Posts</H1>
             <ProfileImage height="100px" width="100px" />
             <P>by {author}</P>
             <PostsWrapper>
