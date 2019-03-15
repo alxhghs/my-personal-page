@@ -17,6 +17,7 @@ import profilePicLowResolution from "../images/me-low-resolution.png";
 
 type ImageProps = {
     backgroundColor?: string;
+    loading?: boolean;
 };
 
 const Image = styled("img")<ImageProps>`
@@ -27,6 +28,7 @@ const Image = styled("img")<ImageProps>`
     height: 200px;
     overflow: hidden;
     transition: .2s ease;
+    opacity: ${props => props.loading ? 0.5 : 1};
     &:hover {
         transform: scale(1.03);
     }
@@ -43,11 +45,9 @@ export const ProfileImage: React.FC = () => (
         placeholder={profilePicLowResolution}
     >
         { 
-            (src: string) => {
+            (src: string, loading: boolean) => {
                 return (
-                    // loading
-                    //     ? placeholder
-                        <Image src={src} alt="profile image" />
+                    <Image loading={loading} src={src} alt="profile image" />
                 )
             } 
         }
