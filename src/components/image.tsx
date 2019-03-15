@@ -7,9 +7,8 @@ const StyledImage = styled("img")<ImageProps>`
     justify-self: center;
     overflow: hidden;
     transition: .2s ease;
-    image-rendering: smooth;
     filter: ${props => props.loading ? "blur(10px)" : "none"};
-    border-radius: ${props => props.borderRadius ? props.borderRadius : "none"};
+    border-radius: ${props => props.borderRadius ? props.borderRadius : "4px"};
     width: ${props => props.width ? props.width : "auto"};
     height: ${props => props.height ? props.height : "auto"};
     &:hover {

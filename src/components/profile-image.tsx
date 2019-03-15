@@ -14,10 +14,15 @@ import { Image } from "../components";
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-export const ProfileImage: React.FC = () => (
+type ProfileImageProps = {
+    height?: string;
+    width?: string;
+};
+
+export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => (
     <Image 
-        height="200px"
-        width="200px"
+        height={height ? height : "200px"}
+        width={width ? width : "200px"}
         transform="1.03"
         src={profilePic}
         placeholder={profilePicLowResolution}

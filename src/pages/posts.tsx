@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import { Card, PostImage, SEO } from "../components";
+import { Card, ProfileImage, PostImage, SEO } from "../components";
 
 export const postPageQuery = graphql`
     query IndexPageQuery {
@@ -94,8 +94,7 @@ type PostPageProps = {
 const PostsWrapper = styled("div")`
     display: grid;
     grid-template-columns: auto;
-    gap: 15px;
-    padding: 30px 0;
+    gap: 30px;
     @media screen and (min-width: 756px) {
         grid-template-columns: repeat(2, auto);
     }
@@ -104,14 +103,12 @@ const PostsWrapper = styled("div")`
     }
 `;
 
-const Image = styled("img")`
-    border-radius: 4px;
-    width: 100%;
-`;
-
 const PageWrapper = styled("div")`
     display: grid;
-    align-content: center;
+    gap: 15px;
+    padding: 30px;
+    grid-template-columns: auto;
+    grid-template-rows: 75px 100px 50px auto;
     justify-content: center;
     text-align: center;
     height: 100%;
@@ -125,39 +122,26 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
     return (
-        <>
+        <PageWrapper>
             <SEO title="Posts" />
-            <PageWrapper>
-                <h1>Blog Posts</h1>
-                <P>by {author}</P>
-                <PostsWrapper>
-                    {
-                        blogPosts.map((post, index) => (
-                            <Card key={index} to={post.slug}>
-                                {/* <ProgressiveImage
-                                    src={post.hero && post.hero.fluid.src}
-                                    placeholder=""
-                                >
-                                    { 
-                                        (src: string, loading: boolean) => {
-                                            return (
-                                                <Image src={src} alt="post image" />
-                                            )
-                                        } 
-                                    }
-                                </ProgressiveImage> */}
-                                <PostImage src={post.hero && post.hero.fluid.src} />
-                                <h2>{post.title}</h2>
-                                <h3>{post.dateCreated}</h3>
-                                {/* <div dangerouslySetInnerHTML={{
-                                __html: post.content.childContentfulRichText.html
-                            }}></div> */}
-                            </Card>
-                        ))
-                    }
-                </PostsWrapper>
-            </PageWrapper>
-        </>
+            <h1>Blog Posts</h1>
+            <ProfileImage height="100px" width="100px" />
+            <P>by {author}</P>
+            <PostsWrapper>
+                {
+                    blogPosts.map((post, index) => (
+                        <Card key={index} to={post.slug}>
+                            <PostImage src={post.hero && post.hero.fluid.src} />
+                            <h2>{post.title}</h2>
+                            <h3>{post.dateCreated}</h3>
+                            {/* <div dangerouslySetInnerHTML={{
+                            __html: post.content.childContentfulRichText.html
+                        }}></div> */}
+                        </Card>
+                    ))
+                }
+            </PostsWrapper>
+        </PageWrapper>
     )
 };
 
