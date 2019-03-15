@@ -57,7 +57,7 @@ export const Image: React.FC<ProgressiveImageProps> = ({
             placeholder=""
             overflow={overflow}
             borderRadius={borderRadius}
-            // delay={1000}
+            delay={300}
         >
             { 
                 (src: string, loading: boolean) => {
