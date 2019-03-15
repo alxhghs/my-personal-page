@@ -2,7 +2,7 @@ import React from "react"
 import ProgressiveImage from "react-progressive-image";
 import styled from "@emotion/styled";
 import profilePic from "../images/me.png";
-import profilePicLowResolution from "../images/me-low-resolution.jpg";
+import profilePicLowResolution from "../images/me-low-resolution.png";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
