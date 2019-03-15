@@ -1,7 +1,8 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import ProgressiveImage from "react-progressive-image";
 import styled from "@emotion/styled";
+import profilePic from "../images/me.jpg";
+import profilePicLowResolution from "../images/me-low-resolution.jpg";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -14,10 +15,16 @@ import styled from "@emotion/styled";
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-const Image = styled(Img)`
+type ImageProps = {
+    backgroundColor?: string;
+};
+
+const Image = styled("img")<ImageProps>`
+    background-color: ${props => props.backgroundColor ? props.backgroundColor : ""};
     justify-self: center;
     border-radius: 50%;
     width: 200px;
+    height: 200px;
     overflow: hidden;
     transition: .2s ease;
     &:hover {
@@ -26,18 +33,15 @@ const Image = styled(Img)`
 `;
 
 export const ProfileImage: React.FC = () => (
-    <StaticQuery
-        query={graphql`
-        query {
-            placeholderImage: file(relativePath: { eq: "me.JPG" }) {
-                childImageSharp {
-                    fluid(maxWidth: 300) {
-                        ...GatsbyImageSharpFluid
-                    }
-                }
-            }
+    <ProgressiveImage src={profilePic} placeholder={profilePicLowResolution}>
+        { 
+            (src: any, loading: any) => {
+                return (
+                    // loading
+                    //     ? placeholder
+                        <Image src={src} alt="profile image" />
+                )
+            } 
         }
-    `}
-        render={data => <Image fluid={data.placeholderImage.childImageSharp.fluid} />}
-    />
-)
+    </ProgressiveImage>
+);
