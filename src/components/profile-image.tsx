@@ -32,8 +32,16 @@ const Image = styled("img")<ImageProps>`
     }
 `;
 
+const StyledProgressiveImage = styled(ProgressiveImage)`
+    border-radius: 50%;
+    overflow: hidden;
+`;
+
 export const ProfileImage: React.FC = () => (
-    <ProgressiveImage src={profilePic} placeholder={profilePicLowResolution}>
+    <StyledProgressiveImage 
+        src={profilePic}
+        placeholder={profilePicLowResolution}
+    >
         { 
             (src: any, loading: any) => {
                 return (
@@ -43,5 +51,5 @@ export const ProfileImage: React.FC = () => (
                 )
             } 
         }
-    </ProgressiveImage>
+    </StyledProgressiveImage>
 );
