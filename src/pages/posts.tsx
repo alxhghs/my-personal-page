@@ -1,8 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import ProgressiveImage from "react-progressive-image";
-import { Card, SEO } from "../components";
+import { Card, PostImage, SEO } from "../components";
 
 export const postPageQuery = graphql`
     query IndexPageQuery {
@@ -135,7 +134,7 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
                     {
                         blogPosts.map((post, index) => (
                             <Card key={index} to={post.slug}>
-                                <ProgressiveImage
+                                {/* <ProgressiveImage
                                     src={post.hero && post.hero.fluid.src}
                                     placeholder=""
                                 >
@@ -146,7 +145,8 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
                                             )
                                         } 
                                     }
-                                </ProgressiveImage>
+                                </ProgressiveImage> */}
+                                <PostImage src={post.hero && post.hero.fluid.src} />
                                 <h2>{post.title}</h2>
                                 <h3>{post.dateCreated}</h3>
                                 {/* <div dangerouslySetInnerHTML={{

@@ -1,8 +1,9 @@
 import { Card } from "./card";
 import { Header } from "./header";
 import { Image } from "./image";
-import { ProfileImage } from "./profile-image";
 import { Link } from "./link";
+import { PostImage } from "./post-image";
+import { ProfileImage } from "./profile-image";
 import { SEO } from "./seo";
 
 export {
@@ -10,6 +11,7 @@ export {
     Header,
     Image,
     Link,
+    PostImage,
     ProfileImage,
     SEO
 }
