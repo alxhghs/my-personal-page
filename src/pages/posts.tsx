@@ -12,14 +12,6 @@ type PostPageProps = {
                 author: string;
             }
         }
-        contentfulProfilePicture: {
-            picture: {
-                fluid: {
-                    src: string;
-                    base64: string;
-                }
-            }
-        }
         allContentfulBlogPost: {
             edges: {
                 node: {
@@ -31,17 +23,6 @@ type PostPageProps = {
                             src: string;
                             srcSet: string;
                             base64: string;
-                        }
-                        fixed: {
-                            width: string;
-                            height: string;
-                            src: string;
-                            srcSet: string;
-                        }
-                        resize: {
-                            src: string;
-                            width: string;
-                            height: string;
                         }
                     }
                     content: {
@@ -95,15 +76,11 @@ const H1 = styled("h1")`
 const PostPage: React.FC<PostPageProps> = ({ data }) => {
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
-    const src = data && data.contentfulProfilePicture.picture.fluid.src;
-    const base64 = data && data.contentfulProfilePicture.picture.fluid.base64;
     return (
         <PageWrapper>
             <SEO title="Posts" />
             <H1>Blog Posts</H1>
             <ProfileImage 
-                profilePicture={src} 
-                profilePictureLowResolution={base64}
                 height="100px" 
                 width="100px" />
             <P>by {author}</P>
@@ -137,14 +114,6 @@ export const postPageQuery = graphql`
                 author
             }
         }
-        contentfulProfilePicture {
-            picture {
-                fluid {
-                    src
-                    base64
-                }
-            }
-        }
         allContentfulBlogPost {
             edges {
                 node {
@@ -162,35 +131,6 @@ export const postPageQuery = graphql`
                             srcSet
                             base64
                         }
-                #        fixed(width: 300) {
-                #            width
-                #            height
-                #            src
-                #            srcSet
-                #        }
-                #        resize(width: 400) {
-                #            src
-                #            width
-                #            height
-                #        }
-         # j          }
-         #           heroLowResolution {
-         #               fluid(maxWidth: 300) {
-         #                   sizes
-         #                   src
-         #                   srcSet
-         #               }
-         #       #        fixed(width: 300) {
-         #       #            width
-         #       #            height
-         #       #            src
-         #       #            srcSet
-         #       #        }
-         #       #        resize(width: 400) {
-         #       #            src
-         #       #            width
-         #       #            height
-         #       #        }
                     }
                     slug
                 }

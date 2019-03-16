@@ -1,4 +1,5 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby";
 import { Image } from "../components";
 
 /*
@@ -12,14 +13,41 @@ import { Image } from "../components";
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
+type ContentfulProfilePicture = {
+    contentfulProfilePicture: {
+        picture: {
+            fluid: {
+                src: string;
+                base64: string;
+            }
+        }
+    }
+};
+
 type ProfileImageProps = {
     height?: string;
     width?: string;
-    profilePicture: string;
-    profilePictureLowResolution: string;
 };
 
-export const ProfileImage: React.FC<ProfileImageProps> = ({ profilePicture, profilePictureLowResolution, height, width }) => {
+export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => {
+    const { contentfulProfilePicture }: ContentfulProfilePicture = useStaticQuery(
+        graphql`
+            query { 
+                contentfulProfilePicture {
+                    picture {
+                        fluid {
+                            src
+                            base64
+                        }
+                    }
+                }
+            }
+        `
+    );
+
+    const profilePicture = contentfulProfilePicture && contentfulProfilePicture.picture.fluid.src;
+    const lowResolutionPicture = contentfulProfilePicture && contentfulProfilePicture.picture.fluid.base64;
+
     return (
         <Image
             height={height ? height : "200px"}
@@ -28,7 +56,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ profilePicture, prof
             borderRadius="50%"
             justifySelf="center"
             src={profilePicture ? profilePicture : ""}
-            placeholder={profilePictureLowResolution ? profilePictureLowResolution : ""}
+            placeholder={lowResolutionPicture ? lowResolutionPicture : ""}
         />
     );
 };
