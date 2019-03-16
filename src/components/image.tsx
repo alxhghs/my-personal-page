@@ -6,6 +6,7 @@ const StyledImage = styled("img")<ImageProps>`
     background-color: ${props => props.backgroundColor ? props.backgroundColor : ""};
     overflow: hidden;
     transition: .2s ease;
+    opacity: ${props => props.loading ? 0.5 : 1};
     filter: ${props => props.loading ? "blur(10px)" : "none"};
     border-radius: ${props => props.borderRadius ? props.borderRadius : "4px"};
     width: ${props => props.width ? props.width : "auto"};
@@ -30,6 +31,7 @@ type ImageProps = {
 type ProgressiveImageProps = {
     src: string;
     overflow?: boolean;
+    placeholder: string;
 } & ImageProps;
 
 const StyledProgressiveImage = styled(ProgressiveImage)<ProgressiveImageProps>`
@@ -47,36 +49,30 @@ export const Image: React.FC<ProgressiveImageProps> = ({
     justifySelf,
     src,
     overflow,
+    placeholder
 }) => {
-    const arr = ["#bc8f8f", "#cd5c5c", "#8b4513", "#a0522d", "#cd853f", "#deb887", "#f5f5dc", "#f5deb3", "#f4a460", "#d2b48c", "#d2691e", "#b22222", "#a52a2a"];
-    const color = arr[Math.floor(Math.random() * arr.length)];
-    const placeholder = <div style={{ borderRadius, backgroundColor: color, height, width, justifySelf: "center" }} />
     return (
         <StyledProgressiveImage
             src={src}
-            placeholder=""
+            placeholder={placeholder ? placeholder : ""}
             overflow={overflow}
             borderRadius={borderRadius}
-            delay={300}
+            // delay={300}
         >
             { 
                 (src: string, loading: boolean) => {
                     return (
-                        loading
-                            ? placeholder
-                            : (
-                                <StyledImage 
-                                    backgroundColor={backgroundColor}
-                                    loading={loading}
-                                    borderRadius={borderRadius}
-                                    width={width}
-                                    height={height}
-                                    transform={transform}
-                                    justifySelf={justifySelf}
-                                    alt={alt}
-                                    src={src}
-                                />
-                            )
+                        <StyledImage 
+                            backgroundColor={backgroundColor}
+                            loading={loading}
+                            borderRadius={borderRadius}
+                            width={width}
+                            height={height}
+                            transform={transform}
+                            justifySelf={justifySelf}
+                            alt={alt}
+                            src={src}
+                        />
                     )
                 } 
             }

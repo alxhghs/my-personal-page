@@ -1,51 +1,7 @@
 import React from "react"
-import { graphql } from "gatsby";
 import styled from "@emotion/styled";
+import { graphql } from "gatsby";
 import { Card, ProfileImage, PostImage, SEO } from "../components";
-
-export const postPageQuery = graphql`
-    query IndexPageQuery {
-        site {
-            siteMetadata {
-                title
-                description
-                author
-            }
-        }
-        allContentfulBlogPost {
-            edges {
-                node {
-                    title
-                    dateCreated(formatString: "MMMM DD, YYYY")
-                    content {
-                        childContentfulRichText {
-                            html
-                        }
-                    }
-                    hero {
-                        fluid(maxWidth: 300) {
-                            sizes
-                            src
-                            srcSet
-                        }
-                #        fixed(width: 300) {
-                #            width
-                #            height
-                #            src
-                #            srcSet
-                #        }
-                #        resize(width: 400) {
-                #            src
-                #            width
-                #            height
-                #        }
-                    }
-                    slug
-                }
-            }
-        }
-    }
-`;
 
 type PostPageProps = {
     data: {
@@ -54,6 +10,14 @@ type PostPageProps = {
                 title: string;
                 description: string;
                 author: string;
+            }
+        }
+        contentfulProfilePicture: {
+            picture: {
+                fluid: {
+                    src: string;
+                    base64: string;
+                }
             }
         }
         allContentfulBlogPost: {
@@ -66,6 +30,7 @@ type PostPageProps = {
                             sizes: string;
                             src: string;
                             srcSet: string;
+                            base64: string;
                         }
                         fixed: {
                             width: string;
@@ -130,17 +95,26 @@ const H1 = styled("h1")`
 const PostPage: React.FC<PostPageProps> = ({ data }) => {
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
+    const src = data && data.contentfulProfilePicture.picture.fluid.src;
+    const base64 = data && data.contentfulProfilePicture.picture.fluid.base64;
     return (
         <PageWrapper>
             <SEO title="Posts" />
             <H1>Blog Posts</H1>
-            <ProfileImage height="100px" width="100px" />
+            <ProfileImage 
+                profilePicture={src} 
+                profilePictureLowResolution={base64}
+                height="100px" 
+                width="100px" />
             <P>by {author}</P>
             <PostsWrapper>
                 {
                     blogPosts.map((post, index) => (
                         <Card key={index} to={post.slug}>
-                            <PostImage src={post.hero && post.hero.fluid.src} />
+                            <PostImage 
+                                src={post.hero && post.hero.fluid.src}
+                                placeholder={post.hero && post.hero.fluid.base64}    
+                            />
                             <h2>{post.title}</h2>
                             <h3>{post.dateCreated}</h3>
                             {/* <div dangerouslySetInnerHTML={{
@@ -153,5 +127,76 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
         </PageWrapper>
     )
 };
+
+export const postPageQuery = graphql`
+    query IndexPageQuery {
+        site {
+            siteMetadata {
+                title
+                description
+                author
+            }
+        }
+        contentfulProfilePicture {
+            picture {
+                fluid {
+                    src
+                    base64
+                }
+            }
+        }
+        allContentfulBlogPost {
+            edges {
+                node {
+                    title
+                    dateCreated(formatString: "MMMM DD, YYYY")
+                    content {
+                        childContentfulRichText {
+                            html
+                        }
+                    }
+                    hero {
+                        fluid(maxWidth: 300) {
+                            sizes
+                            src
+                            srcSet
+                            base64
+                        }
+                #        fixed(width: 300) {
+                #            width
+                #            height
+                #            src
+                #            srcSet
+                #        }
+                #        resize(width: 400) {
+                #            src
+                #            width
+                #            height
+                #        }
+         # j          }
+         #           heroLowResolution {
+         #               fluid(maxWidth: 300) {
+         #                   sizes
+         #                   src
+         #                   srcSet
+         #               }
+         #       #        fixed(width: 300) {
+         #       #            width
+         #       #            height
+         #       #            src
+         #       #            srcSet
+         #       #        }
+         #       #        resize(width: 400) {
+         #       #            src
+         #       #            width
+         #       #            height
+         #       #        }
+                    }
+                    slug
+                }
+            }
+        }
+    }
+`;
 
 export default PostPage;

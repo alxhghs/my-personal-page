@@ -1,5 +1,4 @@
 import React from "react"
-import profilePic from "../images/me.png";
 import { Image } from "../components";
 
 /*
@@ -16,15 +15,20 @@ import { Image } from "../components";
 type ProfileImageProps = {
     height?: string;
     width?: string;
+    profilePicture: string;
+    profilePictureLowResolution: string;
 };
 
-export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => (
-    <Image 
-        height={height ? height : "200px"}
-        width={width ? width : "200px"}
-        transform="1.03"
-        src={profilePic}
-        borderRadius="50%"
-        justifySelf="center"
-    />
-);
+export const ProfileImage: React.FC<ProfileImageProps> = ({ profilePicture, profilePictureLowResolution, height, width }) => {
+    return (
+        <Image
+            height={height ? height : "200px"}
+            width={width ? width : "200px"}
+            transform="1.03"
+            borderRadius="50%"
+            justifySelf="center"
+            src={profilePicture ? profilePicture : ""}
+            placeholder={profilePictureLowResolution ? profilePictureLowResolution : ""}
+        />
+    );
+};
