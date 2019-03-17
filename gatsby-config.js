@@ -1,4 +1,5 @@
 require(`dotenv`).config({path: `.env`})
+const { MARKS } = require("@contentful/rich-text-types");
 
 module.exports = {
   siteMetadata: {
@@ -20,13 +21,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Alex Fenwood Hughes personal site`,
+        short_name: `Alex Fenwood Hughes`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
         display: `minimal-ui`,
-        // icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -41,7 +39,14 @@ module.exports = {
       }
     },
     `gatsby-plugin-emotion`,
-    `@contentful/gatsby-transformer-contentful-richtext`,
+    {
+      resolve: `@contentful/gatsby-transformer-contentful-richtext`,
+      options: {
+        renderMark: {
+          [MARKS.CODE]: text => `<pre><code class="language-javascript>${text}</code></pre>`
+        }
+      }
+    },
     {
       resolve: `gatsby-plugin-layout`,
       options: {
