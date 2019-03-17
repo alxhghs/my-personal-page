@@ -94,9 +94,6 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
                             />
                             <h2>{post.title}</h2>
                             <h3>{post.dateCreated}</h3>
-                            {/* <div dangerouslySetInnerHTML={{
-                            __html: post.content.childContentfulRichText.html
-                        }}></div> */}
                         </Card>
                     ))
                 }
