@@ -47,6 +47,7 @@ module.exports = {
       options: {
         component: require.resolve(`${__dirname}/src/layouts/index.tsx`)
       }
-    }
+    },
+    `gatsby-plugin-offline`
   ],
 }
