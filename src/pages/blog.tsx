@@ -38,10 +38,10 @@ const PostsWrapper = styled("div")`
         grid-template-columns: repeat(2, auto);
         margin: 0;
     }
-    @media screen and (min-width: ${breakPoints[3]}) {
+    @media screen and (min-width: ${breakPoints[4]}) {
         grid-template-columns: repeat(3, auto);
     }
-    @media screen and (min-width: ${breakPoints[4]}) {
+    @media screen and (min-width: ${breakPoints[5]}) {
         grid-template-columns: repeat(4, auto);
     }
 `;
@@ -57,14 +57,6 @@ const PageWrapper = styled("div")`
     height: 100%;
 `;
 
-const P = styled("p")`
-    color: grey;
-`;
-
-const H1 = styled("h1")`
-    margin: 0;
-`;
-
 const BlogPage: React.FC<PostPageProps> = ({ data }) => {
     console.log("printing data from blog page", data);
     const { author } = data.site.siteMetadata;
@@ -72,11 +64,11 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
     return (
         <PageWrapper>
             <SEO title="Posts" />
-            <H1>Blog Posts</H1>
+            <h1 css={{ margin: "0" }}>Blog Posts</h1>
             <ProfileImage 
                 height="100px" 
                 width="100px" />
-            <P>by {author}</P>
+            <p css={{ color: "grey" }}>by {author}</p>
             <h3 css={{
                 color: "gray",
                 fontSize: "14px",

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import { breakPoints } from "../constants";
+import { Image } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
@@ -9,14 +10,14 @@ const Wrapper = styled("div")`
     justify-content: center;
     align-content: center;
     height: 100%;
-    margin: 0 15px;
-    @media screen and (min-width: ${breakPoints[1]}) {
+    /* margin: 0 15px; */
+    @media screen and (min-width: ${breakPoints[2]}) {
         grid-template-columns: 375px;
     } 
-    @media screen and (min-width: ${breakPoints[2]}) {
+    @media screen and (min-width: ${breakPoints[3]}) {
         grid-template-columns: 700px;
     } 
-    @media screen and (min-width: ${breakPoints[3]}) {
+    @media screen and (min-width: ${breakPoints[4]}) {
         grid-template-columns: 950px;
     } 
 `;
@@ -31,10 +32,12 @@ type Props = {
             }
             html: string;
         }
-        contentfulImage: {
-            fluid: {
-                src: string;
-                base64: string;
+        contentfulBlogImage: {
+            image: {
+                fluid: {
+                    src: string;
+                    base64: string;
+                }
             }
         }
     }
@@ -42,11 +45,16 @@ type Props = {
 
 const BlogPost: React.FC<Props> = ({ data }) => {
     console.log("printing data", data);
-    const { markdownRemark } = data;
+    const { markdownRemark, contentfulBlogImage } = data;
     if (data && markdownRemark) {
         return (
             <Wrapper>
-                {/* <img src={contentfulImage && contentfulImage.fluid.src} /> */}
+                <Image 
+                    src={contentfulBlogImage && contentfulBlogImage.image.fluid.src}
+                    placeholder={contentfulBlogImage && contentfulBlogImage.image.fluid.base64}
+                    width="100%"
+                    height="auto"
+                />
                 <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
                 <h3>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h3>
                 <p dangerouslySetInnerHTML={{
@@ -68,6 +76,14 @@ export const pageQuery = graphql`
                 date
             }
             html
+        }
+        contentfulBlogImage (path: { eq: $slug}) {
+            image {
+                fluid {
+                    src
+                    base64
+                }
+            }
         }
     }
 `;
