@@ -1,5 +1,5 @@
 ---
-path: "blog/css-grid"
+path: "blog/css-grid/"
 date: "2019-03-18"
 title: "Using CSS Grid"
 ---

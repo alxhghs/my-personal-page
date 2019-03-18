@@ -13,7 +13,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         createNodeField({
             node,
             name: "slug",
-            value: slug,
+            value: `blog${slug}`,
         });
     }
 }
@@ -42,11 +42,14 @@ exports.createPages = ({ graphql, actions }) => {
         }
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
             const path = node && node.fields.slug;
-            console.log("printing path in node config", path);
+            console.log("printing path", path);
             createPage({
-                path: `blog${path}`,
+                path,
                 component: blogPostTemplate,
-                content: {},
+                context: {
+                    // slug: `blog/css-grid`
+                    slug: path
+                }
             });
         });
     });

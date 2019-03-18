@@ -66,6 +66,7 @@ const H1 = styled("h1")`
 `;
 
 const BlogPage: React.FC<PostPageProps> = ({ data }) => {
+    console.log("printing data from blog page", data);
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allMarkdownRemark.edges.map((edge) => edge.node)
     return (
@@ -117,6 +118,9 @@ export const blogPageQuery = graphql`
                         title
                         date(formatString: "DD MMMM, YYYY")
                         path
+                    }
+                    fields {
+                        slug
                     }
                 }
             }

@@ -24,12 +24,12 @@ const Wrapper = styled("div")`
 type Props = {
     data: {
         markdownRemark: {
-            html: string;
             frontmatter: {
                 date: string;
                 path: string;
                 title: string;
             }
+            html: string;
         }
         contentfulImage: {
             fluid: {
@@ -43,7 +43,7 @@ type Props = {
 const BlogPost: React.FC<Props> = ({ data }) => {
     console.log("printing data", data);
     const { markdownRemark } = data;
-    if (markdownRemark) {
+    if (data && markdownRemark) {
         return (
             <Wrapper>
                 {/* <img src={contentfulImage && contentfulImage.fluid.src} /> */}
@@ -55,20 +55,19 @@ const BlogPost: React.FC<Props> = ({ data }) => {
             </Wrapper>
         );
     }
-    return <h2>!Blog post not found</h2>;
+    return <h2>Blog post not found</h2>;
 };
 
 export const pageQuery = graphql`
-    # query BlogPostByPath($slug: String!) {
-    query BlogPostByPath {
-        markdownRemark(frontmatter: { path: { eq: "blog/css-grid" } }) {
-        # markdownRemark(frontmatter: { path: { eq: $slug } }) {
-            html
+    query BlogPostByPath($slug: String!) {
+    # query BlogPostByPath {
+        markdownRemark(frontmatter: { path: { eq: $slug }}) {
             frontmatter {
-                date(formatString: "MMMM DD, YYYY")
-                path
                 title
+                path
+                date
             }
+            html
         }
     }
 `;
