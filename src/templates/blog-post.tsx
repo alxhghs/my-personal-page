@@ -1,67 +1,73 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
+import { breakPoints } from "../constants";
 
 const Wrapper = styled("div")`
     display: grid;
+    grid-template-columns: 275px;
     justify-content: center;
     align-content: center;
     height: 100%;
     margin: 0 15px;
+    @media screen and (min-width: ${breakPoints[1]}) {
+        grid-template-columns: 375px;
+    } 
+    @media screen and (min-width: ${breakPoints[2]}) {
+        grid-template-columns: 700px;
+    } 
+    @media screen and (min-width: ${breakPoints[3]}) {
+        grid-template-columns: 950px;
+    } 
 `;
 
 type Props = {
     data: {
-        contentfulBlogPost: {
-            title: string;
-            dateCreated: string;
-            content: {
-                childContentfulRichText: {
-                    html: string;
-                }
+        markdownRemark: {
+            html: string;
+            frontmatter: {
+                date: string;
+                path: string;
+                title: string;
             }
-            hero: {
-                fluid: {
-                    src: string;
-                    base64: string;
-                }
+        }
+        contentfulImage: {
+            fluid: {
+                src: string;
+                base64: string;
             }
         }
     }
 };
 
 const BlogPost: React.FC<Props> = ({ data }) => {
-    const post = data.contentfulBlogPost;
-    if (post) {
+    console.log("printing data", data);
+    const { markdownRemark } = data;
+    if (markdownRemark) {
         return (
             <Wrapper>
-                <img src={post.hero && post.hero.fluid.src}/>
-                <h2>{post.title}</h2>
-                <h3>{post.dateCreated}</h3>
+                {/* <img src={contentfulImage && contentfulImage.fluid.src} /> */}
+                <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
+                <h3>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h3>
                 <p dangerouslySetInnerHTML={{
-                    __html: post.content.childContentfulRichText.html
+                    __html: markdownRemark.html
                 }}></p>
             </Wrapper>
         );
     }
-    return <h2>Blog post not found</h2>;
+    return <h2>!Blog post not found</h2>;
 };
 
-export const query = graphql`
-    query($slug: String!) {
-        contentfulBlogPost(slug: { eq: $slug }) {
-            title
-            dateCreated(formatString: "MMMM DD, YYYY")
-            content {
-                childContentfulRichText {
-                    html
-                }
-            }
-            hero {
-                fluid(maxWidth: 300) {
-                    src
-                    base64
-                }
+export const pageQuery = graphql`
+    # query BlogPostByPath($slug: String!) {
+    query BlogPostByPath {
+        markdownRemark(frontmatter: { path: { eq: "blog/css-grid" } }) {
+        # markdownRemark(frontmatter: { path: { eq: $slug } }) {
+            html
+            frontmatter {
+                date(formatString: "MMMM DD, YYYY")
+                path
+                title
             }
         }
     }

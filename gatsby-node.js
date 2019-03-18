@@ -6,40 +6,47 @@ const { createFilePath } = require("gatsby-source-filesystem");
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+exports.onCreateNode = ({ node, getNode, actions }) => {
+    const { createNodeField } = actions;
+    if (node.internal.type === "MarkdownRemark") {
+        const slug = createFilePath({ node, getNode, basePath: "pages" });
+        createNodeField({
+            node,
+            name: "slug",
+            value: slug,
+        });
+    }
+}
+
 exports.createPages = ({ graphql, actions }) => {
     const { createPage } = actions;
+    const blogPostTemplate = path.resolve("src/templates/blog-post.tsx");
     return graphql(`
         {
-            allContentfulBlogPost {
+            allMarkdownRemark(
+                sort: { order: DESC, fields: [frontmatter___date] }
+                limit: 1000
+            ) {
                 edges {
                     node {
-                        title
-                        dateCreated(formatString: "MMMM DD, YYYY")
-                        content {
-                            childContentfulRichText {
-                                html
-                            }
+                        fields {
+                            slug
                         }
-                        hero {
-                            fluid(maxWidth: 300) {
-                                src
-                                base64
-                            }
-                        }
-                        slug
                     }
                 }
             }
         }
-    `
-    ).then(result => {
-        result.data.allContentfulBlogPost.edges.forEach(({ node }) => {
+    `).then(result => {
+        if (result.errors) {
+            return Promise.reject(result.errors);
+        }
+        result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+            const path = node && node.fields.slug;
+            console.log("printing path in node config", path);
             createPage({
-                path: node.slug,
-                component: path.resolve("./src/templates/blog-post.tsx"),
-                context: {
-                    slug: node.slug,
-                },
+                path: `blog${path}`,
+                component: blogPostTemplate,
+                content: {},
             });
         });
     });

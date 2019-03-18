@@ -34,8 +34,8 @@ export const Header: React.FC = () => (
             </Link>
         </h2>
         <h2>
-            <Link to="/posts" hovercolor="lightgray">
-                Posts
+            <Link to="/blog" hovercolor="lightgray">
+                Blog
             </Link>
         </h2>
     </StyledHeader>

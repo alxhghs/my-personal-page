@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "@emotion/styled";
 import ProgressiveImage from "react-progressive-image";
+// import LazyLoad from "react-lazyload";
 
-const StyledImage = styled("img")<ImageProps>`
+const StyledImage = styled("img") <ImageProps>`
     background-color: ${props => props.backgroundColor ? props.backgroundColor : ""};
     overflow: hidden;
     transition: .2s ease;
@@ -34,12 +35,12 @@ type ProgressiveImageProps = {
     placeholder: string;
 } & ImageProps;
 
-const StyledProgressiveImage = styled(ProgressiveImage)<ProgressiveImageProps>`
+const StyledProgressiveImage = styled(ProgressiveImage) <ProgressiveImageProps>`
     overflow: ${props => props.overflow ? props.overflow : ""};
     border-radius: ${props => props.borderRadius ? props.borderRadius : ""};
 `;
 
-export const Image: React.FC<ProgressiveImageProps> = ({ 
+export const Image: React.FC<ProgressiveImageProps> = ({
     backgroundColor,
     borderRadius,
     width,
@@ -52,30 +53,31 @@ export const Image: React.FC<ProgressiveImageProps> = ({
     placeholder
 }) => {
     return (
-        <StyledProgressiveImage
-            src={src}
-            placeholder={placeholder ? placeholder : ""}
-            overflow={overflow}
-            borderRadius={borderRadius}
-            // delay={300}
-        >
-            { 
-                (src: string, loading: boolean) => {
-                    return (
-                        <StyledImage 
-                            backgroundColor={backgroundColor}
-                            loading={loading}
-                            borderRadius={borderRadius}
-                            width={width}
-                            height={height}
-                            transform={transform}
-                            justifySelf={justifySelf}
-                            alt={alt}
-                            src={src}
-                        />
-                    )
-                } 
-            }
-        </StyledProgressiveImage>
+        // <LazyLoad>
+            <StyledProgressiveImage
+                src={src}
+                placeholder={placeholder ? placeholder : ""}
+                overflow={overflow}
+                borderRadius={borderRadius}
+            >
+                {
+                    (src: string, loading: boolean) => {
+                        return (
+                            <StyledImage
+                                backgroundColor={backgroundColor}
+                                loading={loading}
+                                borderRadius={borderRadius}
+                                width={width}
+                                height={height}
+                                transform={transform}
+                                justifySelf={justifySelf}
+                                alt={alt}
+                                src={src}
+                            />
+                        )
+                    }
+                }
+            </StyledProgressiveImage>
+        // </LazyLoad>
     );
 };

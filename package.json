@@ -17,18 +17,22 @@
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.9",
     "gatsby-plugin-sharp": "^2.0.27",
+    "gatsby-remark-prismjs": "^3.2.5",
     "gatsby-source-contentful": "^2.0.37",
     "gatsby-source-filesystem": "^2.0.24",
+    "gatsby-transformer-remark": "^2.3.5",
     "gatsby-transformer-sharp": "^2.1.16",
     "prismjs": "^1.15.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-lazyload": "^2.5.0",
     "react-progressive-image": "^0.6.0"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.8",
+    "@types/react-lazyload": "^2.3.2",
     "gatsby-plugin-typescript": "^2.0.11",
     "prettier": "^1.16.4",
     "typescript": "^3.3.3333"

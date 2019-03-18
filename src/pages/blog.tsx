@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import { Card, ProfileImage, PostImage, SEO } from "../components";
+import { breakPoints } from "../constants";
 
 type PostPageProps = {
     data: {
@@ -12,27 +13,18 @@ type PostPageProps = {
                 author: string;
             }
         }
-        allContentfulBlogPost: {
+        allMarkdownRemark : {
+            totalCount: number;
             edges: {
                 node: {
-                    title: string;
-                    dateCreated: string;
-                    hero: {
-                        fluid: {
-                            sizes: string;
-                            src: string;
-                            srcSet: string;
-                            base64: string;
-                        }
+                    id: string;
+                    frontmatter: {
+                        title: string;
+                        date: string;
+                        path: string;
                     }
-                    content: {
-                        childContentfulRichText: {
-                            html: string;
-                        }
-                    }
-                    slug: string;
                 }
-            }[]
+            }[];
         }
     }
 };
@@ -42,14 +34,14 @@ const PostsWrapper = styled("div")`
     grid-template-columns: auto;
     gap: 30px;
     margin: 0px 15px;
-    @media screen and (min-width: 756px) {
+    @media screen and (min-width: ${breakPoints[2]}) {
         grid-template-columns: repeat(2, auto);
         margin: 0;
     }
-    @media screen and (min-width: 1080px) {
+    @media screen and (min-width: ${breakPoints[3]}) {
         grid-template-columns: repeat(3, auto);
     }
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: ${breakPoints[4]}) {
         grid-template-columns: repeat(4, auto);
     }
 `;
@@ -73,9 +65,9 @@ const H1 = styled("h1")`
     margin: 0;
 `;
 
-const PostPage: React.FC<PostPageProps> = ({ data }) => {
+const BlogPage: React.FC<PostPageProps> = ({ data }) => {
     const { author } = data.site.siteMetadata;
-    const blogPosts = data.allContentfulBlogPost.edges.map((edge) => edge.node)
+    const blogPosts = data.allMarkdownRemark.edges.map((edge) => edge.node)
     return (
         <PageWrapper>
             <SEO title="Posts" />
@@ -84,16 +76,21 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
                 height="100px" 
                 width="100px" />
             <P>by {author}</P>
+            <h3 css={{
+                color: "gray",
+                fontSize: "14px",
+                fontStyle: "italic",
+            }}>{data.allMarkdownRemark.totalCount} posts</h3>
             <PostsWrapper>
                 {
-                    blogPosts.map((post, index) => (
-                        <Card key={index} to={post.slug}>
-                            <PostImage 
+                    blogPosts.map((post) => (
+                        <Card key={post.id} to={post.frontmatter.path}>
+                            {/* <PostImage 
                                 src={post.hero && post.hero.fluid.src}
                                 placeholder={post.hero && post.hero.fluid.base64}    
-                            />
-                            <h2>{post.title}</h2>
-                            <h3>{post.dateCreated}</h3>
+                            /> */}
+                            <h2>{post.frontmatter.title}</h2>
+                            <h3>{post.frontmatter.date}</h3>
                         </Card>
                     ))
                 }
@@ -102,7 +99,7 @@ const PostPage: React.FC<PostPageProps> = ({ data }) => {
     )
 };
 
-export const postPageQuery = graphql`
+export const blogPageQuery = graphql`
     query IndexPageQuery {
         site {
             siteMetadata {
@@ -111,29 +108,20 @@ export const postPageQuery = graphql`
                 author
             }
         }
-        allContentfulBlogPost {
+        allMarkdownRemark {
+            totalCount
             edges {
                 node {
-                    title
-                    dateCreated(formatString: "MMMM DD, YYYY")
-                    content {
-                        childContentfulRichText {
-                            html
-                        }
+                    id
+                    frontmatter {
+                        title
+                        date(formatString: "DD MMMM, YYYY")
+                        path
                     }
-                    hero {
-                        fluid(maxWidth: 300) {
-                            sizes
-                            src
-                            srcSet
-                            base64
-                        }
-                    }
-                    slug
                 }
             }
         }
     }
 `;
 
-export default PostPage;
+export default BlogPage;

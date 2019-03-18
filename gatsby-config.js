@@ -1,5 +1,4 @@
 require(`dotenv`).config({path: `.env`})
-const { MARKS } = require("@contentful/rich-text-types");
 
 module.exports = {
   siteMetadata: {
@@ -16,6 +15,30 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/blog-posts`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -27,9 +50,6 @@ module.exports = {
         display: `minimal-ui`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-contentful`,
@@ -40,19 +60,11 @@ module.exports = {
     },
     `gatsby-plugin-emotion`,
     {
-      resolve: `@contentful/gatsby-transformer-contentful-richtext`,
-      options: {
-        renderMark: {
-          [MARKS.CODE]: text => `<pre><code class="language-javascript>${text}</code></pre>`
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`${__dirname}/src/layouts/index.tsx`)
       }
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
   ],
 }
