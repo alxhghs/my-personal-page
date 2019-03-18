@@ -8,7 +8,6 @@ export const Card = styled(Link)`
     border-radius: 4px;
     padding: 15px;
     box-shadow: 0 17.125px 70px -12.125px rgba(0,0,0,0.1);
-    border: 1px solid rgb(220,220,220,0.1);
     transition: transform .2s;
     &:hover {
         transform: scale(1.03);

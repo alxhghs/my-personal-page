@@ -6,11 +6,14 @@ import { Image } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
-    grid-template-columns: 275px;
+    grid-template-columns: 325px;
     justify-content: center;
     align-content: center;
     height: 100%;
-    /* margin: 0 15px; */
+    margin: 0 15px;
+    /* @media screen and (min-width: ${breakPoints[1]}) {
+        grid-template-columns: 375px;
+    }  */
     @media screen and (min-width: ${breakPoints[2]}) {
         grid-template-columns: 375px;
     } 
@@ -55,11 +58,15 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                     width="100%"
                     height="auto"
                 />
-                <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
-                <h3>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h3>
-                <p dangerouslySetInnerHTML={{
-                    __html: markdownRemark.html
-                }}></p>
+                <div className="side"/>
+                <div className="content">
+                    <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
+                    <h3>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h3>
+                    <p dangerouslySetInnerHTML={{
+                        __html: markdownRemark.html
+                    }}></p>
+                </div>
+                <div className="side"/>
             </Wrapper>
         );
     }
