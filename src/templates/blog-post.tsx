@@ -6,25 +6,24 @@ import { Image } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
-    grid-template-columns: 325px;
     justify-content: center;
     align-content: center;
     height: 100%;
     margin: 0 15px;
-    h3 {
-        font-weight: 400;
-    }
     h4 {
         color: ${colors.gray};
         font-style: italic;
         font-size: 14px;
     }
     blockquote {
-        border-left: 2px solid ${colors.blue};
-        padding-left: 15px;
-        margin: 15px;
+        border-left: 5px solid ${colors.blue};
+        margin: 10px;
+        padding: 15px;
         color: ${colors.gray};
         line-height: 1.5;
+        p {
+            margin: 0;
+        }
     }
     a {
         color: ${colors.blue};
@@ -33,11 +32,12 @@ const Wrapper = styled("div")`
             text-decoration: underline;
         }
     }
-    /* @media screen and (min-width: ${breakPoints[1]}) {
+    grid-template-columns: 325px;
+    @media screen and (min-width: ${breakPoints[1]}) {
         grid-template-columns: 375px;
-    }  */
+    } 
     @media screen and (min-width: ${breakPoints[2]}) {
-        grid-template-columns: 375px;
+        grid-template-columns: 500px;
     } 
     @media screen and (min-width: ${breakPoints[3]}) {
         grid-template-columns: 700px;
@@ -56,6 +56,9 @@ type Props = {
                 title: string;
             }
             html: string;
+            fields: {
+                slug: string;
+            }
         }
         contentfulBlogImage: {
             image: {
@@ -65,12 +68,17 @@ type Props = {
                 }
             }
         }
+        site: {
+            siteMetadata: {
+                author: string;
+            }
+        }
     }
 };
 
 const BlogPost: React.FC<Props> = ({ data }) => {
     console.log("printing data", data);
-    const { markdownRemark, contentfulBlogImage } = data;
+    const { markdownRemark, contentfulBlogImage, site } = data;
     if (data && markdownRemark) {
         return (
             <Wrapper>
@@ -81,6 +89,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                     height="auto"
                 />
                 <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
+                <h3>by {site && site.siteMetadata.author}</h3>
                 <h4>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h4>
                 <p dangerouslySetInnerHTML={{
                     __html: markdownRemark.html
@@ -93,14 +102,15 @@ const BlogPost: React.FC<Props> = ({ data }) => {
 
 export const pageQuery = graphql`
     query BlogPostByPath($slug: String!) {
-    # query BlogPostByPath {
-        markdownRemark(frontmatter: { path: { eq: $slug }}) {
+        markdownRemark(fields: { slug: { eq: $slug }}) {
             frontmatter {
                 title
-                path
                 date(formatString: "MMMM DD, YYYY")
             }
             html
+            fields {
+                slug
+            }
         }
         contentfulBlogImage (path: { eq: $slug}) {
             image {
@@ -108,6 +118,11 @@ export const pageQuery = graphql`
                     src
                     base64
                 }
+            }
+        }
+        site {
+            siteMetadata {
+                author
             }
         }
     }

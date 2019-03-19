@@ -1,7 +1,6 @@
 ---
-path: "blog/css-grid/"
-date: "2019-03-18"
-title: "Using CSS Grid"
+date: "2019-03-20"
+title: "CSS Grid with Emotion and TypeScript"
 ---
 ```css
 display: grid;

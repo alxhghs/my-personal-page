@@ -21,7 +21,9 @@ type PostPageProps = {
                     frontmatter: {
                         title: string;
                         date: string;
-                        path: string;
+                    }
+                    fields: {
+                        slug: string;
                     }
                 }
             }[];
@@ -77,7 +79,7 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
             <PostsWrapper>
                 {
                     blogPosts.map((post) => (
-                        <Card key={post.id} to={post.frontmatter.path}>
+                        <Card key={post.id} to={post.fields.slug}>
                             {/* <PostImage 
                                 src={post.hero && post.hero.fluid.src}
                                 placeholder={post.hero && post.hero.fluid.base64}    
@@ -101,7 +103,7 @@ export const blogPageQuery = graphql`
                 author
             }
         }
-        allMarkdownRemark {
+        allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date]}) {
             totalCount
             edges {
                 node {
@@ -109,7 +111,6 @@ export const blogPageQuery = graphql`
                     frontmatter {
                         title
                         date(formatString: "DD MMMM YYYY")
-                        path
                     }
                     fields {
                         slug

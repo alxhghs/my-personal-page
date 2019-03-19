@@ -15,6 +15,7 @@ html, body {
     width: 100%;
 }
 
-.gatsby-highlight pre {
+.gatsby-highlight pre, code {
     border-radius: 4px;
+    font-size: 12px;
 }

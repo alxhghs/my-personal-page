@@ -1,6 +1,6 @@
 ---
 date: "2019-03-19" 
-title: "Google Tag Manager and Gatsby (Part 1)"
+title: "Google Tag Manager and Gatsby (Part 2)"
 ---
 
 Google Tag Manager (GTM) is a powerful tool for managing 3rd party scripts as well as generating data for making data-informed decisions. It can be confusing getting started with GTM. In this post, I will walk through some important terms and show you how to add GTM to your website.
