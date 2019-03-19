@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
-import { breakPoints } from "../constants";
+import { breakPoints, colors } from "../constants";
 import { Image } from "../components";
 
 const Wrapper = styled("div")`
@@ -11,6 +11,28 @@ const Wrapper = styled("div")`
     align-content: center;
     height: 100%;
     margin: 0 15px;
+    h3 {
+        font-weight: 400;
+    }
+    h4 {
+        color: ${colors.gray};
+        font-style: italic;
+        font-size: 14px;
+    }
+    blockquote {
+        border-left: 2px solid ${colors.blue};
+        padding-left: 15px;
+        margin: 15px;
+        color: ${colors.gray};
+        line-height: 1.5;
+    }
+    a {
+        color: ${colors.blue};
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
     /* @media screen and (min-width: ${breakPoints[1]}) {
         grid-template-columns: 375px;
     }  */
@@ -58,15 +80,11 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                     width="100%"
                     height="auto"
                 />
-                <div className="side"/>
-                <div className="content">
-                    <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
-                    <h3>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h3>
-                    <p dangerouslySetInnerHTML={{
-                        __html: markdownRemark.html
-                    }}></p>
-                </div>
-                <div className="side"/>
+                <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
+                <h4>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h4>
+                <p dangerouslySetInnerHTML={{
+                    __html: markdownRemark.html
+                }}></p>
             </Wrapper>
         );
     }
@@ -80,7 +98,7 @@ export const pageQuery = graphql`
             frontmatter {
                 title
                 path
-                date
+                date(formatString: "MMMM DD, YYYY")
             }
             html
         }

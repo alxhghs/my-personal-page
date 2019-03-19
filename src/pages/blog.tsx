@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
-import { Card, ProfileImage, PostImage, SEO } from "../components";
+import { Card, ProfileImage, SEO } from "../components";
 import { breakPoints } from "../constants";
 
 type PostPageProps = {
@@ -108,7 +108,7 @@ export const blogPageQuery = graphql`
                     id
                     frontmatter {
                         title
-                        date(formatString: "DD MMMM, YYYY")
+                        date(formatString: "DD MMMM YYYY")
                         path
                     }
                     fields {

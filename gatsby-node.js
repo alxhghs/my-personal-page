@@ -42,12 +42,10 @@ exports.createPages = ({ graphql, actions }) => {
         }
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
             const path = node && node.fields.slug;
-            console.log("printing path", path);
             createPage({
                 path,
                 component: blogPostTemplate,
                 context: {
-                    // slug: `blog/css-grid`
                     slug: path
                 }
             });
