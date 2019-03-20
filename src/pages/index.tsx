@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link, SEO, ProfileImage } from "../components";
+import { colors } from "../constants";
 
 const Wrapper = styled("div")`
     display: grid;
@@ -21,7 +22,7 @@ const ExternalLink = styled("a")`
     text-decoration: none;
     margin-right: 15px;
     &:hover { 
-        color: gray;
+        color: ${colors.gray};
     }
 `;
 
@@ -35,7 +36,7 @@ const App: React.FC = () => {
             <Links>
                 <ExternalLink href="https://github.com/alxhghs">Github</ExternalLink>
                 <ExternalLink href="https://www.linkedin.com/in/alxhughes/">LinkedIn</ExternalLink>
-                <Link to="/resume" color="black" hovercolor="gray">Resume</Link>
+                <Link to="/resume" color="black" hovercolor={colors.gray}>Resume</Link>
             </Links>
         </Wrapper>
     )

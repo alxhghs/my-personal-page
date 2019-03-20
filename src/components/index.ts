@@ -6,6 +6,7 @@ import { Header } from "./header";
 import { Link } from "./link";
 import { PostImage } from "./post-image";
 import { ProfileImage } from "./profile-image";
+import { ResumeHeader }  from "./resume-header";
 import { SEO } from "./seo";
 
 export {
@@ -17,5 +18,6 @@ export {
     Link,
     PostImage,
     ProfileImage,
+    ResumeHeader,
     SEO
 }

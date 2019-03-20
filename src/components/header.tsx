@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { Link } from "../components";
+import { colors } from "../constants";
 
 const Animation = keyframes`
     0% {
@@ -23,18 +24,18 @@ const StyledHeader = styled("header")`
     background-size: 1800% 1800%;
     justify-content: center;
     animation: ${Animation} 90s ease infinite;
-    text-shadow: 0 0 3px #000;
+    text-shadow: 0 0 3px ${colors.black};
 `;
 
 export const Header: React.FC = () => (
     <StyledHeader>
         <h2>
-            <Link to="/" hovercolor="#d3d3d3">
+            <Link to="/" hovercolor={colors.lightgray}>
                 Home
             </Link>
         </h2>
         <h2>
-            <Link to="/blog" hovercolor="lightgray">
+            <Link to="/blog" hovercolor={colors.lightgray}>
                 Blog
             </Link>
         </h2>

@@ -9,7 +9,7 @@ const PostsWrapper = styled("div")`
     display: grid;
     grid-template-columns: auto;
     gap: 30px;
-    padding: 0 15px;
+    padding: 0 30px;
     @media screen and (min-width: ${breakPoints[2]}) {
         grid-template-columns: repeat(2, auto);
     }
@@ -61,7 +61,6 @@ type PostPageProps = {
 
 
 const BlogPage: React.FC<PostPageProps> = ({ data }) => {
-    console.log("printing data from blog page", data);
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allMarkdownRemark.edges.map((edge) => edge.node)
     const keywords = [ "Google Tag Manager", "Gatsby", "GatsbyJS", "CSS Grid", "React", "CSS-in-JS" ];
