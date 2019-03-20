@@ -1,4 +1,5 @@
 const path = require("path");
+const moment = require("moment");
 const { createFilePath } = require("gatsby-source-filesystem");
 /**
  * Implement Gatsby's Node APIs in this file.
@@ -32,6 +33,9 @@ exports.createPages = ({ graphql, actions }) => {
                         fields {
                             slug
                         }
+                        frontmatter {
+                            date
+                        }
                     }
                 }
             }
@@ -42,13 +46,18 @@ exports.createPages = ({ graphql, actions }) => {
         }
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
             const path = node && node.fields.slug;
-            createPage({
-                path,
-                component: blogPostTemplate,
-                context: {
-                    slug: path
-                }
-            });
+            const now = new Date;
+            const date = node.frontmatter.date;
+            if (moment(date).isBefore(now))
+            {
+                createPage({
+                    path,
+                    component: blogPostTemplate,
+                    context: {
+                        slug: path
+                    }
+                });
+            }
         });
     });
 };

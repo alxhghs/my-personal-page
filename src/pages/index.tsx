@@ -25,18 +25,20 @@ const ExternalLink = styled("a")`
     }
 `;
 
-const App: React.FC = () => (
-    <Wrapper>
-        <SEO />
-        <ProfileImage />
-        <h3>hello, world!</h3>
-        <p>My name is Alex and I am a sofware engineer.</p>
-        <Links>
-            <ExternalLink href="https://github.com/alxhghs">Github</ExternalLink>
-            <ExternalLink href="https://www.linkedin.com/in/alxhughes/">LinkedIn</ExternalLink>
-            <Link to="/resume" color="black" hovercolor="gray">Resume</Link>
-        </Links>
-    </Wrapper>
-);
+const App: React.FC = () => {
+    return (
+        <Wrapper>
+            <SEO />
+            <ProfileImage />
+            <h3>hello, world!</h3>
+            <p>My name is Alex and I am a sofware engineer.</p>
+            <Links>
+                <ExternalLink href="https://github.com/alxhghs">Github</ExternalLink>
+                <ExternalLink href="https://www.linkedin.com/in/alxhughes/">LinkedIn</ExternalLink>
+                <Link to="/resume" color="black" hovercolor="gray">Resume</Link>
+            </Links>
+        </Wrapper>
+    )
+};
 
 export default App;

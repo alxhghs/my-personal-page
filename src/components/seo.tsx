@@ -38,10 +38,10 @@ type Props = {
 
 const DefaultProps: Props = {
     lang: "en",
-    description: "",
-    title: "AFH",
+    description: "Alex Fenwood Hughes's personal website",
+    title: "Alex Fenwood Hughes",
     meta: [],
-    keywords: []
+    keywords: ["React", "TypeScript", "CSS Grid", "NodeJS", "Python", "Django", "Flexbox"],
 };
 
 export const SEO = ({ description, lang, meta, keywords, title }: Props) => {

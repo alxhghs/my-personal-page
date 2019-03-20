@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import { breakPoints, colors } from "../constants";
-import { Image } from "../components";
+import { BlogContent, BlogHeader, BlogImage, SEO } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
@@ -32,7 +32,7 @@ const Wrapper = styled("div")`
             text-decoration: underline;
         }
     }
-    grid-template-columns: 325px;
+    grid-template-columns: 275px;
     @media screen and (min-width: ${breakPoints[1]}) {
         grid-template-columns: 375px;
     } 
@@ -52,8 +52,9 @@ type Props = {
         markdownRemark: {
             frontmatter: {
                 date: string;
-                path: string;
                 title: string;
+                description: string;
+                keywords: string[];
             }
             html: string;
             fields: {
@@ -77,23 +78,32 @@ type Props = {
 };
 
 const BlogPost: React.FC<Props> = ({ data }) => {
-    console.log("printing data", data);
     const { markdownRemark, contentfulBlogImage, site } = data;
+    const { frontmatter } = markdownRemark;
     if (data && markdownRemark) {
         return (
             <Wrapper>
-                <Image 
-                    src={contentfulBlogImage && contentfulBlogImage.image.fluid.src}
-                    placeholder={contentfulBlogImage && contentfulBlogImage.image.fluid.base64}
-                    width="100%"
-                    height="auto"
+                <SEO
+                    title={frontmatter.title}
+                    description={frontmatter.description} 
+                    keywords={frontmatter.keywords}
                 />
-                <h2>{markdownRemark.frontmatter && markdownRemark.frontmatter.title}</h2>
-                <h3>by {site && site.siteMetadata.author}</h3>
-                <h4>{markdownRemark.frontmatter && markdownRemark.frontmatter.date}</h4>
-                <p dangerouslySetInnerHTML={{
-                    __html: markdownRemark.html
-                }}></p>
+                {
+                    contentfulBlogImage && contentfulBlogImage.image.fluid 
+                        ? (
+                            <BlogImage
+                                src={contentfulBlogImage.image.fluid.src}
+                                placeholder={contentfulBlogImage.image.fluid.base64}
+                            />
+                        )
+                        : null
+                }
+                <BlogHeader
+                    title={frontmatter.title}
+                    author={site.siteMetadata.author}
+                    date={frontmatter.date}
+                />
+                <BlogContent html={markdownRemark.html} />
             </Wrapper>
         );
     }
@@ -106,6 +116,8 @@ export const pageQuery = graphql`
             frontmatter {
                 title
                 date(formatString: "MMMM DD, YYYY")
+                description
+                keywords
             }
             html
             fields {

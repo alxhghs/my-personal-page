@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import ProgressiveImage from "react-progressive-image";
-// import LazyLoad from "react-lazyload";
+import LazyLoad from "react-lazyload";
 
 const StyledImage = styled("img") <ImageProps>`
     background-color: ${props => props.backgroundColor ? props.backgroundColor : ""};
@@ -13,6 +13,7 @@ const StyledImage = styled("img") <ImageProps>`
     width: ${props => props.width ? props.width : "auto"};
     height: ${props => props.height ? props.height : "auto"};
     justify-self: ${props => props.justifySelf ? props.justifySelf : ""};
+    object-fit: ${props => props.objectFit ? props.objectFit : ""};
     &:hover {
         transform: scale(${props => props.transform ? props.transform : "auto"});
     }
@@ -27,6 +28,7 @@ type ImageProps = {
     transform?: string;
     alt?: string;
     justifySelf?: string;
+    objectFit?: string;
 };
 
 type ProgressiveImageProps = {
@@ -48,12 +50,13 @@ export const Image: React.FC<ProgressiveImageProps> = ({
     transform,
     alt,
     justifySelf,
+    objectFit,
     src,
     overflow,
     placeholder
 }) => {
     return (
-        // <LazyLoad>
+        <LazyLoad>
             <StyledProgressiveImage
                 src={src}
                 placeholder={placeholder ? placeholder : ""}
@@ -71,6 +74,7 @@ export const Image: React.FC<ProgressiveImageProps> = ({
                                 height={height}
                                 transform={transform}
                                 justifySelf={justifySelf}
+                                objectFit={objectFit}
                                 alt={alt}
                                 src={src}
                             />
@@ -78,6 +82,6 @@ export const Image: React.FC<ProgressiveImageProps> = ({
                     }
                 }
             </StyledProgressiveImage>
-        // </LazyLoad>
+        </LazyLoad>
     );
 };

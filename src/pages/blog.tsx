@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled";
+import moment from "moment";
 import { graphql } from "gatsby";
 import { Card, ProfileImage, SEO } from "../components";
 import { breakPoints } from "../constants";
@@ -14,7 +15,6 @@ type PostPageProps = {
             }
         }
         allMarkdownRemark : {
-            totalCount: number;
             edges: {
                 node: {
                     id: string;
@@ -35,10 +35,9 @@ const PostsWrapper = styled("div")`
     display: grid;
     grid-template-columns: auto;
     gap: 30px;
-    margin: 0px 15px;
+    padding: 0 15px;
     @media screen and (min-width: ${breakPoints[2]}) {
         grid-template-columns: repeat(2, auto);
-        margin: 0;
     }
     @media screen and (min-width: ${breakPoints[4]}) {
         grid-template-columns: repeat(3, auto);
@@ -63,31 +62,28 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
     console.log("printing data from blog page", data);
     const { author } = data.site.siteMetadata;
     const blogPosts = data.allMarkdownRemark.edges.map((edge) => edge.node)
+    const keywords = [ "Google Tag Manager", "Gatsby", "GatsbyJS", "CSS Grid", "React", "CSS-in-JS" ];
     return (
         <PageWrapper>
-            <SEO title="Posts" />
+            <SEO title="Posts" keywords={keywords} />
             <h1 css={{ margin: "0" }}>Blog Posts</h1>
-            <ProfileImage 
-                height="100px" 
-                width="100px" />
+            <ProfileImage height="100px" width="100px" />
             <p css={{ color: "grey" }}>by {author}</p>
-            <h3 css={{
-                color: "gray",
-                fontSize: "14px",
-                fontStyle: "italic",
-            }}>{data.allMarkdownRemark.totalCount} posts</h3>
             <PostsWrapper>
                 {
-                    blogPosts.map((post) => (
-                        <Card key={post.id} to={post.fields.slug}>
-                            {/* <PostImage 
-                                src={post.hero && post.hero.fluid.src}
-                                placeholder={post.hero && post.hero.fluid.base64}    
-                            /> */}
-                            <h2>{post.frontmatter.title}</h2>
-                            <h3>{post.frontmatter.date}</h3>
-                        </Card>
-                    ))
+                    blogPosts.map((post) => {
+                        const now = new Date;
+                        const date = post && post.frontmatter.date;
+                        return (
+                            now && date && moment(date).isBefore(now)
+                                ? (
+                                    <Card key={post.id} to={post.fields.slug}>
+                                        <h2>{post.frontmatter.title}</h2>
+                                        <h3>{post.frontmatter.date}</h3>
+                                    </Card>
+                                ) : null
+                            )
+                    })
                 }
             </PostsWrapper>
         </PageWrapper>
@@ -104,7 +100,6 @@ export const blogPageQuery = graphql`
             }
         }
         allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date]}) {
-            totalCount
             edges {
                 node {
                     id

@@ -1,11 +1,13 @@
 ---
 date: "2019-03-19" 
 title: "Google Tag Manager and Gatsby (Part 1)"
+description: "Part 1 in a series of blog posts on how to integrate Google Tag Manager with GatsbyJS"
+keywords: ["Google Tag Manager", "Gatsby", "GatsbyJS", "React", "GTM", "Google Analytics", "GA"]
 ---
 
-Google Tag Manager (GTM) is a powerful tool for managing 3rd party scripts as well as generating data for making data-informed decisions. It can be confusing getting started with GTM. In this post, I will walk through some important terms and show you how to add GTM to your website.
+Google Tag Manager (GTM) is a tool for managing 3rd party scripts and for making data-informed decisions about your website. 
 
-Once you get the hang of it, it's actually not that complicated.
+I will walk through some important terms and show you how to add GTM to your website.
 
 ##Important terms to get started
 
@@ -53,24 +55,25 @@ To add GTM to any site, you must add GTM scripts to your HTML. In Gatsby, you ca
 
 [Gatsby's documentation on editing `html.js`](https://www.gatsbyjs.org/docs/custom-html/)
 
-Run this command in your terminal:
+Run this command in your terminal from the root directory of your Gatsby project in order to copy `html.js`:
 ```bash
 cp .cache/default-html.js src/html.js
 ```
 
-add GTM script to `<head>` tag of website.
+Add then GTM script to the top of `<head>` in `src/html.js`. See [Google's Quick Start Guide](https://developers.google.com/tag-manager/quickstart) for where to find the GTM script. Since we are using React, you will need to add the script using `dangerouslySetHTML` as shown below. Don't worry about it being dangerous, we know what we are doing, right? [See the React documentation for `dangerouslySetHTML`](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
+
 ```javascript
 {/* Google Tag Manager */}
 <script dangerouslySetInnerHTML={{
         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var
         f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-<GTM ID HERE>');</script> <!-- End Google Tag Manager -->`,
+        })(window,document,'script','dataLayer','GTM-<GTM ID HERE>');</script>`,
     }}
 />
 {/* End Google Tag Manager */}
 ```
-add `<noscript>` tag
+Also, add the `<noscript>` tag to the top of `<body>` in `src/html.js`.
 ```javascript
 {/* <!-- Google Tag Manager (noscript) --> */}
 <noscript dangerouslySetInnerHTML={{
@@ -82,10 +85,9 @@ add `<noscript>` tag
 {/* <!-- End Google Tag Manager (noscript) --> */}
 ```
 
+Congrats! You've successfully connected GTM to your Gatsby site. Go ahead and reload your site and check the `<head>` and `<body>` to confirm that the scripts were successfully loaded.
 
-### Add tags, triggers and variables to GTM 
-
-### Connect to Google analytics
+Continue to [Google Tag Manager and Gatsby (Part 2)](/blog/google-tag-manager-2) to see examples of how to use GTM with your site.
 
 ## Resources
 [Google Tag Manager Help](https://support.google.com/tagmanager#topic=3441530)
