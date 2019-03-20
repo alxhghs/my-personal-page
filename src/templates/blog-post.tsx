@@ -53,6 +53,7 @@ type Props = {
             frontmatter: {
                 date: string;
                 title: string;
+                subtitle?: string;
                 description: string;
                 keywords: string[];
             }
@@ -84,7 +85,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
         return (
             <Wrapper>
                 <SEO
-                    title={frontmatter.title}
+                    title={frontmatter.title + (frontmatter.subtitle ? (": " + frontmatter.subtitle) : "")}
                     description={frontmatter.description} 
                     keywords={frontmatter.keywords}
                 />
@@ -100,6 +101,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                 }
                 <BlogHeader
                     title={frontmatter.title}
+                    subtitle={frontmatter.subtitle}
                     author={site.siteMetadata.author}
                     date={frontmatter.date}
                 />
@@ -115,6 +117,7 @@ export const pageQuery = graphql`
         markdownRemark(fields: { slug: { eq: $slug }}) {
             frontmatter {
                 title
+                subtitle
                 date(formatString: "MMMM DD, YYYY")
                 description
                 keywords

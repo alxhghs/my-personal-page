@@ -14,7 +14,7 @@ export const Card = styled(Link)`
     &:hover {
         transform: scale(1.03);
     }
-    h3 {
+    h4 {
         color: gray;
         font-size: 12px;
         font-style: italic;

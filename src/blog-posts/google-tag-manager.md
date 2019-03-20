@@ -1,6 +1,7 @@
 ---
 date: "2019-03-19" 
-title: "Google Tag Manager and Gatsby (Part 1)"
+title: "Google Tag Manager and Gatsby"
+subtitle: "Part 1"
 description: "Part 1 in a series of blog posts on how to integrate Google Tag Manager with GatsbyJS"
 keywords: ["Google Tag Manager", "Gatsby", "GatsbyJS", "React", "GTM", "Google Analytics", "GA"]
 ---

@@ -5,32 +5,6 @@ import { graphql } from "gatsby";
 import { Card, ProfileImage, SEO } from "../components";
 import { breakPoints } from "../constants";
 
-type PostPageProps = {
-    data: {
-        site: {
-            siteMetadata: {
-                title: string;
-                description: string;
-                author: string;
-            }
-        }
-        allMarkdownRemark : {
-            edges: {
-                node: {
-                    id: string;
-                    frontmatter: {
-                        title: string;
-                        date: string;
-                    }
-                    fields: {
-                        slug: string;
-                    }
-                }
-            }[];
-        }
-    }
-};
-
 const PostsWrapper = styled("div")`
     display: grid;
     grid-template-columns: auto;
@@ -58,6 +32,34 @@ const PageWrapper = styled("div")`
     height: 100%;
 `;
 
+type PostPageProps = {
+    data: {
+        site: {
+            siteMetadata: {
+                title: string;
+                description: string;
+                author: string;
+            }
+        }
+        allMarkdownRemark : {
+            edges: {
+                node: {
+                    id: string;
+                    frontmatter: {
+                        title: string;
+                        subtitle: string;
+                        date: string;
+                    }
+                    fields: {
+                        slug: string;
+                    }
+                }
+            }[];
+        }
+    }
+};
+
+
 const BlogPage: React.FC<PostPageProps> = ({ data }) => {
     console.log("printing data from blog page", data);
     const { author } = data.site.siteMetadata;
@@ -79,7 +81,8 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
                                 ? (
                                     <Card key={post.id} to={post.fields.slug}>
                                         <h2>{post.frontmatter.title}</h2>
-                                        <h3>{post.frontmatter.date}</h3>
+                                        <h3>{post.frontmatter.subtitle}</h3>
+                                        <h4>{post.frontmatter.date}</h4>
                                     </Card>
                                 ) : null
                             )
@@ -105,6 +108,7 @@ export const blogPageQuery = graphql`
                     id
                     frontmatter {
                         title
+                        subtitle
                         date(formatString: "DD MMMM YYYY")
                     }
                     fields {
