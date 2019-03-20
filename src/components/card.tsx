@@ -10,7 +10,7 @@ export const Card = styled(Link)`
     padding: 15px;
     box-shadow: 0 17.125px 70px -12.125px rgba(0,0,0,0.5);
     transition: transform .2s;
-    background-color: ${colors.whiteSmoke};
+    background-color: ${colors.snow};
     &:hover {
         transform: scale(1.03);
     }

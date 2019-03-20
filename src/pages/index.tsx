@@ -29,7 +29,7 @@ const App: React.FC = () => {
     return (
         <Wrapper>
             <SEO />
-            <ProfileImage />
+            <ProfileImage height="200px" width="200px" />
             <h3>hello, world!</h3>
             <p>My name is Alex and I am a sofware engineer.</p>
             <Links>

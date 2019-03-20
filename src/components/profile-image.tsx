@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby";
-import { Image } from "../components";
+import Img, { FluidObject } from "gatsby-image";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,13 +13,10 @@ import { Image } from "../components";
  * - `StaticQuery`: https://gatsby.dev/staticquery
  */
 
-type ContentfulProfilePicture = {
-    contentfulProfilePicture: {
-        picture: {
-            fluid: {
-                src: string;
-                base64: string;
-            }
+type ProfilePictureQuery = {
+    file: {
+        childImageSharp: {
+            fluid: FluidObject
         }
     }
 };
@@ -30,11 +27,11 @@ type ProfileImageProps = {
 };
 
 export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => {
-    const { contentfulProfilePicture }: ContentfulProfilePicture = useStaticQuery(
+    const { file }: ProfilePictureQuery = useStaticQuery(
         graphql`
             query { 
-                contentfulProfilePicture {
-                    picture {
+                file(relativePath: { eq: "me.png" }) {
+                    childImageSharp {
                         fluid {
                             src
                             base64
@@ -45,18 +42,16 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
         `
     );
 
-    const profilePicture = contentfulProfilePicture && contentfulProfilePicture.picture.fluid.src;
-    const lowResolutionPicture = contentfulProfilePicture && contentfulProfilePicture.picture.fluid.base64;
-
     return (
-        <Image
-            height={height ? height : "200px"}
-            width={width ? width : "200px"}
-            transform="1.03"
-            borderRadius="50%"
-            justifySelf="center"
-            src={profilePicture ? profilePicture : ""}
-            placeholder={lowResolutionPicture ? lowResolutionPicture : ""}
+        <Img
+            fluid={file.childImageSharp.fluid}
+            css={{
+                borderRadius: "50%",
+                height,
+                width,
+                justifySelf: "center",
+                margin: "0 auto",
+            }}
         />
     );
 };

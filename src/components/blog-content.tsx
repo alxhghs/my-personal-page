@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { colors } from "../constants";
 
 const StyledBlogContent = styled("p")`
+    max-width: 85vw;
     h4 {
         color: ${colors.gray};
         font-style: italic;

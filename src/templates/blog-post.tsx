@@ -2,14 +2,14 @@ import React from "react";
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
 import { breakPoints, colors } from "../constants";
-import { BlogContent, BlogHeader, BlogImage, SEO } from "../components";
+import { BlogContent, BlogHeader, SEO } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
     justify-content: center;
     align-content: center;
     height: 100%;
-    margin: 0 15px;
+    padding: 0 15px;
     h4 {
         color: ${colors.gray};
         font-style: italic;
@@ -32,18 +32,13 @@ const Wrapper = styled("div")`
             text-decoration: underline;
         }
     }
-    grid-template-columns: 275px;
-    @media screen and (min-width: ${breakPoints[1]}) {
-        grid-template-columns: 375px;
-    } 
-    @media screen and (min-width: ${breakPoints[2]}) {
-        grid-template-columns: 500px;
-    } 
-    @media screen and (min-width: ${breakPoints[3]}) {
-        grid-template-columns: 700px;
-    } 
-    @media screen and (min-width: ${breakPoints[4]}) {
-        grid-template-columns: 950px;
+    .gatsby-highlight, pre, code {
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    grid-template-columns: auto;
+    @media screen and (min-width: ${breakPoints[5]}) {
+        grid-template-columns: 1300px;
     } 
 `;
 
@@ -62,14 +57,6 @@ type Props = {
                 slug: string;
             }
         }
-        contentfulBlogImage: {
-            image: {
-                fluid: {
-                    src: string;
-                    base64: string;
-                }
-            }
-        }
         site: {
             siteMetadata: {
                 author: string;
@@ -79,7 +66,7 @@ type Props = {
 };
 
 const BlogPost: React.FC<Props> = ({ data }) => {
-    const { markdownRemark, contentfulBlogImage, site } = data;
+    const { markdownRemark, site } = data;
     const { frontmatter } = markdownRemark;
     if (data && markdownRemark) {
         return (
@@ -89,16 +76,6 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                     description={frontmatter.description} 
                     keywords={frontmatter.keywords}
                 />
-                {
-                    contentfulBlogImage && contentfulBlogImage.image.fluid 
-                        ? (
-                            <BlogImage
-                                src={contentfulBlogImage.image.fluid.src}
-                                placeholder={contentfulBlogImage.image.fluid.base64}
-                            />
-                        )
-                        : null
-                }
                 <BlogHeader
                     title={frontmatter.title}
                     subtitle={frontmatter.subtitle}
@@ -125,14 +102,6 @@ export const pageQuery = graphql`
             html
             fields {
                 slug
-            }
-        }
-        contentfulBlogImage (path: { eq: $slug}) {
-            image {
-                fluid {
-                    src
-                    base64
-                }
             }
         }
         site {

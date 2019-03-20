@@ -61,7 +61,7 @@ Run this command in your terminal from the root directory of your Gatsby project
 cp .cache/default-html.js src/html.js
 ```
 
-Add then GTM script to the top of `<head>` in `src/html.js`. See [Google's Quick Start Guide](https://developers.google.com/tag-manager/quickstart) for where to find the GTM script. Since we are using React, you will need to add the script using `dangerouslySetHTML` as shown below. Don't worry about it being dangerous, we know what we are doing, right? [See the React documentation for `dangerouslySetHTML`](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
+Add then GTM script to the top of `html±<head>` in `src/html.js`. See [Google's Quick Start Guide](https://developers.google.com/tag-manager/quickstart) for where to find the GTM script. Since we are using React, you will need to add the script using `dangerouslySetHTML` as shown below. Don't worry about it being dangerous, we know what we are doing, right? [See the React documentation for `javascript±dangerouslySetHTML`](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
 
 ```javascript
 {/* Google Tag Manager */}
@@ -74,7 +74,7 @@ Add then GTM script to the top of `<head>` in `src/html.js`. See [Google's Quick
 />
 {/* End Google Tag Manager */}
 ```
-Also, add the `<noscript>` tag to the top of `<body>` in `src/html.js`.
+Also, add the `html±<noscript>` tag to the top of `html±<body>` in `src/html.js`.
 ```javascript
 {/* <!-- Google Tag Manager (noscript) --> */}
 <noscript dangerouslySetInnerHTML={{
@@ -86,7 +86,7 @@ Also, add the `<noscript>` tag to the top of `<body>` in `src/html.js`.
 {/* <!-- End Google Tag Manager (noscript) --> */}
 ```
 
-Congrats! You've successfully connected GTM to your Gatsby site. Go ahead and reload your site and check the `<head>` and `<body>` to confirm that the scripts were successfully loaded.
+Congrats! You've successfully connected GTM to your Gatsby site. Go ahead and reload your site and check the `html±<head>` and `html±<body>` to confirm that the scripts were successfully loaded.
 
 Continue to [Google Tag Manager and Gatsby (Part 2)](/blog/google-tag-manager-2) to see examples of how to use GTM with your site.
 

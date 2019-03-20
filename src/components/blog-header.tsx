@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { ProfileImage } from "../components";
-import { colors } from "../constants";
 
 const StyledBlogHeader = styled("div")`
     text-align: center;

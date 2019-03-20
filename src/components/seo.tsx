@@ -41,7 +41,7 @@ const DefaultProps: Props = {
     description: "Alex Fenwood Hughes's personal website",
     title: "Alex Fenwood Hughes",
     meta: [],
-    keywords: ["React", "TypeScript", "CSS Grid", "NodeJS", "Python", "Django", "Flexbox"],
+    keywords: ["React", "TypeScript", "CSS Grid", "NodeJS", "Python", "Django", "FlexBox"],
 };
 
 export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
