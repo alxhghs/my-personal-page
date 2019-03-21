@@ -2,12 +2,17 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
 import { ResumeContent, SEO } from "../components";
+import { breakPoints } from "../constants";
 
 const Wrapper = styled("div")`
     display: grid;
     padding: 0 45px;
+    justify-content: center;
     h3 {
         font-style: italic;
+    }
+    @media screen and (min-width: ${breakPoints[3]}) {
+        grid-template-columns: 700px;
     }
 `;
 

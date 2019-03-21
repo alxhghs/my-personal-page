@@ -2,10 +2,9 @@ import React from "react";
 
 type Props = {
     html: string;
-    css?: any 
 };
 
-export const ResumeContent: React.FC<Props> = ({ html, css }) => (
+export const ResumeContent: React.FC<Props> = ({ html }) => (
     <>
         {
             html
