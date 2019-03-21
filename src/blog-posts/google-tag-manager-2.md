@@ -24,3 +24,5 @@ Let's start collecting data.
 [Setup and install Tag Manager](https://support.google.com/tagmanager/answer/6103696?hl=en)
 
 [The Ultimate Google Tag Manager Glossary (160+ terms)](https://www.analyticsmania.com/post/google-tag-manager-glossary/)
+
+[Google Tag Manager Fundamentals](https://analytics.google.com/analytics/academy/course/5)
