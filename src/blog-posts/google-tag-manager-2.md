@@ -86,7 +86,7 @@ Google Tag Manager has a versioning system, so in order for your changes to go l
 
 ## Summary 
 
-You've successfully connected GTM and GA to your site, and now you're tracking page views with GA. In the next tutorial, I will show you how to manage tags with GTM.
+You've successfully connected GTM and GA to your site, and now you're tracking page views with GA. In the next tutorial, I will show you how to manage tags with GTM (add explain why it's great for managing lots of 3rd party tags).
 
 ## Resources
 [Google Tag Manager Fundamentals Course](https://analytics.google.com/analytics/academy/course/5)
