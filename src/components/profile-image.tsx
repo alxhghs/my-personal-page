@@ -16,6 +16,8 @@ type ProfileImageProps = {
     width: string;
 };
 
+// this is necessary to fix a bug on mobile where
+// the border radius doesn't show for a half-second
 const ImgWrapper = styled("div")`
     div, img, picture {
         border-radius: 50%;
