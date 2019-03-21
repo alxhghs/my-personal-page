@@ -32,6 +32,9 @@ const Wrapper = styled("div")`
             text-decoration: underline;
         }
     }
+    .token.tag, code.language-text, code.language-javascript {
+        padding: 3px;
+    }
     .gatsby-highlight, pre, code {
         border-radius: 4px;
         font-size: 12px;

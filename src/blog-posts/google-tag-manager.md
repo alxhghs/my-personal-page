@@ -63,7 +63,7 @@ Run this command in your terminal from the root directory of your Gatsby project
 cp .cache/default-html.js src/html.js
 ```
 
-Add then GTM script to the top of `html±<head>` in `src/html.js`. See [Google's Quick Start Guide](https://developers.google.com/tag-manager/quickstart) for where to find the GTM script. Since we are using React, you will need to add the script using `dangerouslySetHTML` as shown below. Don't worry about it being dangerous, we know what we are doing, right? [See the React documentation for `javascript±dangerouslySetHTML`](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
+Add the GTM script to the top of `html±<head>` in `src/html.js`. See [Google's Quick Start Guide](https://developers.google.com/tag-manager/quickstart) for where to find the GTM script. Since we are using React, you will need to add the script using `dangerouslySetHTML` as shown below. Don't worry about it being dangerous, we know what we are doing, right? [See the React documentation for `javascript±dangerouslySetHTML`](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
 
 ```javascript
 {/* Google Tag Manager */}
