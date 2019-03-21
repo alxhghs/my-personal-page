@@ -5,7 +5,10 @@ import { ResumeContent, SEO } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
-    padding: 15px;
+    padding: 30px;
+    h3 {
+        font-style: italic;
+    }
 `;
 
 type Props = {
@@ -27,6 +30,7 @@ type Props = {
 
 const Resume: React.FC<Props> = ({ data }) => {
     const { header, education, jobs, skills } = data;
+
     return (
         <Wrapper>
             <SEO title="Resume" />
@@ -40,7 +44,7 @@ const Resume: React.FC<Props> = ({ data }) => {
 
 export const pageQuery = graphql`
     {
-        header: markdownRemark  (frontmatter: { title: { eq: "Header" }}) {
+        header: markdownRemark (frontmatter: { title: { eq: "Header" }}) {
             html
         }
         education: markdownRemark (frontmatter: { title: { eq: "Education" }}) {
