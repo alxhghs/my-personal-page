@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { colors } from "../constants";
 
-const StyledBlogContent = styled("p")`
+const StyledBlogContent = styled("div")`
     max-width: 85vw;
     h4 {
         color: ${colors.gray};
