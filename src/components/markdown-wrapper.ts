@@ -28,7 +28,7 @@ export const MarkdownWrapper = styled("div")`
         border-radius: 4px;
         font-size: 12px;
     }
-    img {
+    img.gif {
         border-radius: 4px;
     }
     img.gif {
