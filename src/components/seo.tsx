@@ -115,7 +115,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
             link={[
                 {
                     rel: "shortcut icon",
-                    type: "image/pgn",
+                    type: "image/png",
                     href: `${icon}`
                 }
             ]}
