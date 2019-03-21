@@ -16,7 +16,7 @@ Now that we've added GTM to your site, let's unleash the power of GTM.
 
 ### Connect to Google analytics
 
-Let's start collecting data.
+Let's start collecting data!
 
 ## Resources
 [Google Tag Manager Help](https://support.google.com/tagmanager#topic=3441530)
