@@ -71,7 +71,7 @@ Let's create a <i>Page View</i> tag so that we can track page views for our site
 * Click on <i>Triggering</i>
 * Select <i>Page View</i>
 * Click <i>Save</i> 
-* Name your tag (e.g. Google Analytics - Page View) and save
+* Name your tag (e.g. <i>Google Analytics - Page View</i>) and save
 
 <img alt="GIF showing how to create a tag with a trigger in Google Tag Manager" style="-webkit-user-select: none;" src="https://media.giphy.com/media/n41BBb7UvPSDCyXjQg/giphy.gif" class="gif">
 
