@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { colors } from "../constants";
+import { breakPoints, colors } from "../constants";
 
 export const MarkdownWrapper = styled("div")`
     h4 {
@@ -27,5 +27,14 @@ export const MarkdownWrapper = styled("div")`
     .gatsby-highlight, pre, code {
         border-radius: 4px;
         font-size: 12px;
+    }
+    img {
+        border-radius: 4px;
+    }
+    img.gif {
+        width: 100%;
+        @media screen and (min-width: ${breakPoints[2]}) {
+            width: 600px;
+        }
     }
 `;
