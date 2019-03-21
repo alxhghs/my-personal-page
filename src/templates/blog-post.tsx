@@ -1,44 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { graphql } from "gatsby";
-import { breakPoints, colors } from "../constants";
-import { BlogContent, BlogHeader, SEO } from "../components";
+import { breakPoints } from "../constants";
+import { BlogContent, BlogHeader, MarkdownWrapper, SEO } from "../components";
 
-const Wrapper = styled("div")`
+const Wrapper = styled(MarkdownWrapper)`
     display: grid;
     justify-content: center;
     align-content: center;
     height: 100%;
     padding: 0 15px;
-    h4 {
-        color: ${colors.gray};
-        font-style: italic;
-        font-size: 14px;
-    }
-    blockquote {
-        border-left: 5px solid ${colors.blue};
-        margin: 10px;
-        padding: 15px;
-        color: ${colors.gray};
-        line-height: 1.5;
-        p {
-            margin: 0;
-        }
-    }
-    a {
-        color: ${colors.blue};
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-    .token.tag, code.language-text, code.language-javascript {
-        padding: 3px;
-    }
-    .gatsby-highlight, pre, code {
-        border-radius: 4px;
-        font-size: 12px;
-    }
     grid-template-columns: auto;
     @media screen and (min-width: ${breakPoints[5]}) {
         grid-template-columns: 1300px;

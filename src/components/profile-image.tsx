@@ -18,7 +18,7 @@ type ProfileImageProps = {
 
 // this is necessary to fix a bug on mobile where
 // the border radius doesn't show for a half-second
-const ImgWrapper = styled("div")`
+const StyledImg = styled(Img)`
     div, img, picture {
         border-radius: 50%;
     }
@@ -41,17 +41,15 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
     );
 
     return (
-        <ImgWrapper>
-            <Img
-                fluid={file.childImageSharp.fluid}
-                css={{
-                    borderRadius: "50%",
-                    height,
-                    width,
-                    justifySelf: "center",
-                    margin: "0 auto",
-                }}
-            />
-        </ImgWrapper>
+        <StyledImg
+            fluid={file.childImageSharp.fluid}
+            css={{
+                borderRadius: "50%",
+                height,
+                width,
+                justifySelf: "center",
+                margin: "0 auto",
+            }}
+        />
     );
 };
