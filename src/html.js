@@ -5,6 +5,31 @@ export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+              <!-- Anti-flicker snippet (recommended)  -->
+              <style>.async-hide { opacity: 0 !important} </style>
+              <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+              h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+              (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+              })(window,document.documentElement,'async-hide','dataLayer',4000,
+              {'OPT_CONTAINER_ID': 'GTM-TJHWMNV'}); 
+            `,
+          }}
+        />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+              <!-- Global site tag (gtag.js) - Google Analytics -->
+              <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136725512-1"></script>
+              <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-136725512-1', { 'optimize_id': 'GTM-TJHWMNV'});
+            `,
+          }}
+        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
