@@ -6,7 +6,7 @@ description: "Part 1 in a series of blog posts on how to integrate Google Tag Ma
 keywords: ["Google Tag Manager", "Gatsby", "GatsbyJS", "React", "GTM", "Google Analytics", "GA"]
 ---
 
-Google Tag Manager (GTM) is a tool for managing 3rd party scripts and (when paired with Google Analytics) for making data-informed decisions about your website. 
+<b>Google Tag Manager</b> (GTM) is a tool for managing 3rd party scripts and (when paired with <b>Google Analytics</b>) for making data-informed decisions about your website. 
 
 If you want to dive into a great course for getting started with GTM, Google's own [Google Tag Manager Fundamentals](https://analytics.google.com/analytics/academy/course/5) course is excellent. If you want a general overview, read on!
 
@@ -63,7 +63,7 @@ Run this command in your terminal from the root directory of your Gatsby project
 cp .cache/default-html.js src/html.js
 ```
 
-Add the GTM script to the top of `html±<head>` in `src/html.js`. See [Google's Quick Start Guide](https://developers.google.com/tag-manager/quickstart) for where to find the GTM script. Since we are using React, you will need to add the script using `dangerouslySetHTML` as shown below. Don't worry about it being dangerous, [we know what we are doing, right?](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
+Add the GTM script to the top of `html±<head>` in `src/html.js`. See [Google's Quick Start Guide](https://developers.google.com/tag-manager/quickstart) for where to find the GTM script. Since we are using React, you will need to add the script using `dangerouslySetHTML` as shown below. Don't worry about it being dangerous, [we know what we are doing, <i>right?</i>](https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml)
 
 ```javascript
 {/* Google Tag Manager */}
@@ -88,9 +88,9 @@ Also, add the `html±<noscript>` tag to the top of `html±<body>` in `src/html.j
 {/* <!-- End Google Tag Manager (noscript) --> */}
 ```
 
-Congrats! You've successfully connected GTM to your Gatsby site. Go ahead and reload your site and check the `html±<head>` and `html±<body>` to confirm that the scripts were successfully loaded.
+<i>Congrats!</i> You've successfully connected GTM to your Gatsby site. Go ahead and reload your site and check the `html±<head>` and `html±<body>` to confirm that the scripts were successfully loaded.
 
-Continue to [Google Tag Manager and Gatsby (Part 2)](/blog/google-tag-manager-2) to see examples of how to use GTM with your site.
+<b>Continue to [Google Tag Manager and Gatsby (Part 2)](/blog/google-tag-manager-2)</b> to see examples of how to use GTM with your site.
 
 ## Resources
 [Google Tag Manager Fundamentals Course](https://analytics.google.com/analytics/academy/course/5)
