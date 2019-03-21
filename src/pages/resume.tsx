@@ -5,7 +5,7 @@ import { ResumeContent, SEO } from "../components";
 
 const Wrapper = styled("div")`
     display: grid;
-    padding: 30px;
+    padding: 0 45px;
     h3 {
         font-style: italic;
     }

@@ -9,6 +9,8 @@ title: "Skills"
 
 ### Programming Libraries/Frameworks
 * React
+* GatsbyJS
+* NextJS
 * Django
 
 ### Foreign Languages

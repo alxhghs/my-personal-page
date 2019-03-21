@@ -8,11 +8,11 @@ keywords: ["Google Tag Manager", "Gatsby", "GatsbyJS", "React", "GTM", "Google A
 
 Google Tag Manager (GTM) is a tool for managing 3rd party scripts and (when paired with Google Analytics) for making data-informed decisions about your website. 
 
-If you want to dive into a great course for getting started with GTM, Google's own [Google Tag Manager Fundamentals](https://analytics.google.com/analytics/academy/course/5) course is an excellent resource. If you want a general overview, please read on!
+If you want to dive into a great course for getting started with GTM, Google's own [Google Tag Manager Fundamentals](https://analytics.google.com/analytics/academy/course/5) course is excellent. If you want a general overview, read on!
 
-I've attempted to simplify GTM into core concepts in order to make it really easy to get started. I will walk through some important terms and show you how to add GTM to your website.
+I've simplified GTM into core concepts to make it easy to get started. I will walk through important terms and show how to add GTM to your website.
 
-##Important terms to get started
+## Important terms to get started
 
 [Source: Google Tag Manager Help](https://support.google.com/tagmanager#topic=3441530)
 
@@ -93,10 +93,10 @@ Congrats! You've successfully connected GTM to your Gatsby site. Go ahead and re
 Continue to [Google Tag Manager and Gatsby (Part 2)](/blog/google-tag-manager-2) to see examples of how to use GTM with your site.
 
 ## Resources
+[Google Tag Manager Fundamentals Course](https://analytics.google.com/analytics/academy/course/5)
+
 [Google Tag Manager Help](https://support.google.com/tagmanager#topic=3441530)
 
 [Setup and install Tag Manager](https://support.google.com/tagmanager/answer/6103696?hl=en)
 
 [The Ultimate Google Tag Manager Glossary (160+ terms)](https://www.analyticsmania.com/post/google-tag-manager-glossary/)
-
-[Google Tag Manager Fundamentals](https://analytics.google.com/analytics/academy/course/5)

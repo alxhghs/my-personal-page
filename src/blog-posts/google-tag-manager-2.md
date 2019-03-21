@@ -19,10 +19,10 @@ Now that we've added GTM to your site, let's unleash the power of GTM.
 Let's start collecting data.
 
 ## Resources
+[Google Tag Manager Fundamentals Course](https://analytics.google.com/analytics/academy/course/5)
+
 [Google Tag Manager Help](https://support.google.com/tagmanager#topic=3441530)
 
 [Setup and install Tag Manager](https://support.google.com/tagmanager/answer/6103696?hl=en)
 
 [The Ultimate Google Tag Manager Glossary (160+ terms)](https://www.analyticsmania.com/post/google-tag-manager-glossary/)
-
-[Google Tag Manager Fundamentals](https://analytics.google.com/analytics/academy/course/5)
