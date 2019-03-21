@@ -6,7 +6,7 @@ description: "Part 1 in a series of blog posts on how to integrate Google Tag Ma
 keywords: ["Google Tag Manager", "Gatsby", "GatsbyJS", "React", "GTM", "Google Analytics", "GA"]
 ---
 
-Google Tag Manager (GTM) is a tool for managing 3rd party scripts and for making data-informed decisions about your website. 
+Google Tag Manager (GTM) is a tool for managing 3rd party scripts and (when paired with Google Analytics) for making data-informed decisions about your website. 
 
 If you want to dive into a great course for getting started with GTM, Google's own [Google Tag Manager Fundamentals](https://analytics.google.com/analytics/academy/course/5) course is an excellent resource. If you want a general overview, please read on!
 
