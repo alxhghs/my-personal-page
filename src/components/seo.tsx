@@ -5,9 +5,10 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
+import icon from "../images/favicon.png";
 
 type Props = {
     description: string;
@@ -17,21 +18,21 @@ type Props = {
         content: any;
         property?: undefined;
     }
-    | {
-        property: string;
-        content: any;
+        | {
         name?: undefined;
+        content: any;
+        property: string;
     }
-    | ConcatArray<{
+        | ConcatArray<{
         name: string;
         content: any;
         property?: undefined;
     }
         | {
-            property: string;
-            content: any;
-            name?: undefined;
-        }>;
+        name?: undefined;
+        content: any;
+        property: string;
+    }>;
     keywords: string[];
     title: string;
 };
@@ -111,6 +112,13 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                         : []
                 )
                 .concat(meta)}
+            link={[
+                {
+                    rel: "shortcut icon",
+                    type: "image/pgn",
+                    href: `${icon}`
+                }
+            ]}
         />
     )
 }
