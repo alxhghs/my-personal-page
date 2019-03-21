@@ -16,6 +16,17 @@ const Wrapper = styled("div")`
     }
 `;
 
+const ResumeHeaderWrapper = styled("div")`
+    justify-content: center;
+    text-align: center;
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+`;
+
 type Props = {
     data: {
         header: {
@@ -39,7 +50,9 @@ const Resume: React.FC<Props> = ({ data }) => {
     return (
         <Wrapper>
             <SEO title="Resume" />
-            <ResumeContent html={header && header.html} />
+            <ResumeHeaderWrapper>
+                <ResumeContent html={header && header.html} />
+            </ResumeHeaderWrapper>
             <ResumeContent html={jobs && jobs.html} />
             <ResumeContent html={education && education.html} />
             <ResumeContent html={skills && skills.html} />
