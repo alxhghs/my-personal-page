@@ -1,22 +1,22 @@
 ---
 date: "2019-03-20" 
-title: "Google Tag Manager and Gatsby"
+title: "Google Tag Manager, Google Analytics and Gatsby"
 subtitle: "Part 2"
-description: "Part 2 in a series of blog posts on how to integrate Google Tag Manager with GatsbyJS"
+description: "Part 2 in a series of blog posts on how to integrate Google Tag Manager and Google Analytics with GatsbyJS"
 keywords: ["Google Tag Manager", "Gatsby", "GatsbyJS", "React", "GTM", "Google Analytics", "GA"]
 ---
 
-This is part 2 in a series on using Google Tag Manager (GTM) with Gatsby.
+This is part 2 in a series on using <b>Google Tag Manager</b> (GTM) and <b>Google Analytics</b> (GA) with <b>Gatsby</b>.
 
-If you want to see a general overview of GTM and instructions on how to get started, see [Google Tag Manager and Gatsby (Part 1)](/blog/google-tag-manager).
+If you need a general overview of GTM and instructions on how to get started, see [Google Tag Manager and Gatsby (Part 1)](/blog/google-tag-manager).
 
-Now that we've added GTM to your site, let's unleash the power of GTM and Google Analytics (GA).
+Now that we've added GTM to your site, let's unleash the power of GTM and GA!
 
-### Sign up for Google Analytics
+### Sign up for GA 
 
-If you haven't signed up for GA yet, go to [https://analytics.google.com/analytics/web/](https://analytics.google.com/analytics/web/) and sign up to get started.
+If you haven't signed up for GA yet, go to [analytics.google.com](https://analytics.google.com/analytics/web/) to get started.
 
-### Connect to Google analytics
+### Connect GTM to GA 
 
 Next, to connect GTM to GA, we will need your GA tracking ID. 
 
@@ -24,13 +24,14 @@ From the GA dashboard, click <i>Admin</i>, and then click <i>Properties</i>. Cop
 
 <img style="-webkit-user-select: none;" src="https://media.giphy.com/media/452X5Ai7pnqtdlcxQT/giphy.gif" class="gif">
 
-We are going to connect GA to your site in order to keep track of page views. Let's add a GA variable so that we can reference the GA tracking ID. 
+We are going to connect GA to your site in order to keep track of page views. Let's add a GA variable so that we can reference the GA tracking ID without having to look it up every time we want to use it. 
 
 * From the workspaces page, click <i>Variables</i> on the left. 
 * Under <i>User defined variables</i>, click <i>New</i>.
 * Click in the box to configure the variable
 * Select <i>Google Analytics Settings</i>
 * Paste your <i>Tracking ID</i>
+* Name your variable (<i>Google Analytics Settings</i> works)
 * Save
 
 <img alt="GIF showing how to create a Google Analytics variable in Google Tag Manager" style="-webkit-user-select: none;" src="https://media.giphy.com/media/nxOlfLBfK4oHPbjRJr/giphy.gif" class="gif">
