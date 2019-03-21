@@ -54,8 +54,8 @@ const Resume: React.FC<Props> = ({ data }) => {
                 <ResumeContent html={header && header.html} />
             </ResumeHeaderWrapper>
             <ResumeContent html={jobs && jobs.html} />
-            <ResumeContent html={education && education.html} />
             <ResumeContent html={skills && skills.html} />
+            <ResumeContent html={education && education.html} />
         </Wrapper>
     );
 };
