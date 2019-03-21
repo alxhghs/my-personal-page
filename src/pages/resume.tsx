@@ -1,44 +1,56 @@
 import React from "react";
-import { ResumeHeader, SEO } from "../components";
 import { graphql } from "gatsby";
+import styled from "@emotion/styled";
+import { ResumeContent, SEO } from "../components";
+
+const Wrapper = styled("div")`
+    display: grid;
+    padding: 15px;
+`;
 
 type Props = {
     data: {
-        allMarkdownRemark: {
-            edges: {
-                node: {
-                    frontmatter: {
-                        title: string;
-                    }
-                    html: string;
-                }
-            }
+        header: {
+            html: string;
+        }
+        education: {
+            html: string;
+        }
+        jobs: {
+            html: string;
+        }
+        skills: {
+            html: string;
         }
     }
 }
+
 const Resume: React.FC<Props> = ({ data }) => {
+    const { header, education, jobs, skills } = data;
     return (
-        <>
+        <Wrapper>
             <SEO title="Resume" />
-            <ResumeHeader />
-        </>
+            <ResumeContent html={header && header.html} />
+            <ResumeContent html={jobs && jobs.html} />
+            <ResumeContent html={education && education.html} />
+            <ResumeContent html={skills && skills.html} />
+        </Wrapper>
     );
 };
 
 export const pageQuery = graphql`
     {
-        allMarkdownRemark(
-            filter: {
-                frontmatter: { title: { in : ["Skills", "Education", "Jobs"]}
-            }}) {
-            edges {
-                node {
-                    html
-                    frontmatter {
-                        title
-                    }
-                }
-            }
+        header: markdownRemark  (frontmatter: { title: { eq: "Header" }}) {
+            html
+        }
+        education: markdownRemark (frontmatter: { title: { eq: "Education" }}) {
+            html
+        }
+        jobs: markdownRemark (frontmatter: { title: { eq: "Jobs" }}) {
+            html
+        }
+        skills: markdownRemark (frontmatter: { title: { eq: "Skills" }}) {
+            html
         }
     }
 `;

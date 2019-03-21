@@ -7,7 +7,7 @@ import { Link } from "./link";
 import { MarkdownWrapper } from "./markdown-wrapper";
 import { PostImage } from "./post-image";
 import { ProfileImage } from "./profile-image";
-import { ResumeHeader }  from "./resume-header";
+import { ResumeContent } from "./resume-content";
 import { SEO } from "./seo";
 
 export {
@@ -20,6 +20,6 @@ export {
     MarkdownWrapper,
     PostImage,
     ProfileImage,
-    ResumeHeader,
+    ResumeContent,
     SEO
 }
