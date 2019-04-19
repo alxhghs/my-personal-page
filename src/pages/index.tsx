@@ -32,7 +32,7 @@ const App: React.FC = () => {
             <SEO />
             <ProfileImage height="200px" width="200px" />
             <h3>hello, world!</h3>
-            <p>My name is Alex and I am a sofware engineer.</p>
+            <p>My name is Alex and I am a software engineer.</p>
             <Links>
                 <ExternalLink href="https://github.com/alxhghs">Github</ExternalLink>
                 <ExternalLink href="https://www.linkedin.com/in/alxhughes/">LinkedIn</ExternalLink>
