@@ -9,7 +9,7 @@ const Grid = styled("div")`
     font-size: 24px;
     border: 1px solid black;
     grid-template-rows: 100px 300px repeat(3, 100px);
-    grid-template-columns: 400px;
+    grid-template-columns: 300px;
     grid-template-areas: "Header"
                         "Main"
                         "SideBar1"
