@@ -52,6 +52,6 @@ const Layout: React.FC = ({ children }) => (
             </Wrapper>
         )}
     />
-)
+);
 
 export default Layout;

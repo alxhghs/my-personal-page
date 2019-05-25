@@ -1,5 +1,5 @@
 ---
-date: "2020-03-21"
+date: "2019-05-24"
 title: "CSS Grid with Emotion and TypeScript"
 keywords: [ "" ]
 ---
@@ -8,3 +8,5 @@ display: grid;
 grid-template-columns: repeat(3, 300px);
 ```
 yay!
+
+[Continue](/blog/css-grid/1)

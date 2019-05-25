@@ -5,6 +5,7 @@ import { Card } from "./card";
 import { Header } from "./header";
 import { Link } from "./link";
 import { MarkdownWrapper } from "./markdown-wrapper";
+import { NextPreviousLinks } from "./next-previous-links";
 import { PostImage } from "./post-image";
 import { ProfileImage } from "./profile-image";
 import { ResumeContent } from "./resume-content";
@@ -18,6 +19,7 @@ export {
     Header,
     Link,
     MarkdownWrapper,
+    NextPreviousLinks,
     PostImage,
     ProfileImage,
     ResumeContent,
