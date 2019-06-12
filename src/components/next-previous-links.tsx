@@ -3,21 +3,21 @@ import { Link } from "gatsby";
 import { css } from "@emotion/core";
 
 type Props = {
-    previous: string;
-    next: string;
+    previous?: string;
+    next?: string;
 };
 
 export const NextPreviousLinks: React.FC<Props> = ({ previous, next}) => (
     <div css={css`
         display: flex;
-        justify-content: space-between; 
+        justify-content: ${previous && next ? "space-between" : "center"}; 
         text-align: center;
         width: 150px;
         height: 100px;
         line-height: 100px;
         margin: 0 auto;
     `}>
-        <Link to={previous}>Previous</Link>
-        <Link to={next}>Next</Link>
+        { previous && <Link to={previous}>Previous</Link> }
+        { next && <Link to={next}>Next</Link> }
     </div>
 );

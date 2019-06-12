@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { css } from "@emotion/core";
 import { NextPreviousLinks } from "../../../components";
 
 const Grid = styled("div")`
@@ -50,12 +51,6 @@ const Grid = styled("div")`
     overflow: hidden;
 `;
 
-const Header = styled("div")`
-    background-color: green;
-    grid-area: Header;
-    line-height: 100px;
-`;
-
 const SideBar1 = styled("div")`
     background-color: purple;
     color: white;
@@ -67,12 +62,6 @@ const SideBar1 = styled("div")`
     @media screen and (min-width: 992px) {
         line-height: 100px;
     }
-`;
-
-const Main = styled("div")`
-    background-color: white;
-    grid-area: Main;
-    line-height: 300px;
 `;
 
 const SideBar2 = styled("div")`
@@ -88,24 +77,34 @@ const SideBar2 = styled("div")`
     }
 `;
 
-const Footer = styled("div")`
-    background-color: blue;
-    color: white;
-    grid-area: Footer;
-    line-height: 100px;
+type GridChildProps = {
+    gridArea: string;
+    color?: string;
+    backgroundColor?: string;
+};
+const GridChild = styled("div")<GridChildProps>`
+    grid-area: ${props => props.gridArea};
+    color: ${props => props.color ? props.color : "black"};
+    background-color: ${props => props.backgroundColor ? props.backgroundColor : "white"};
 `;
 
 export default () => (
     <div css={{ display: "grid", justifyContent: "center" }}>
         <Grid>
-            <Header>Header</Header>
+            <GridChild gridArea="Header" backgroundColor="green" css={css`line-height: 100px`}>
+                Header
+            </GridChild>
             <SideBar1>SideBar1</SideBar1>
-            <Main>Main</Main>
+            <GridChild gridArea="Main" css={css`line-height: 300px`}>
+                Main
+            </GridChild>
             <SideBar2>SideBar2</SideBar2>
-            <Footer>Footer</Footer>
+            <GridChild gridArea="Footer" backgroundColor="blue" color="white" css={css`line-height: 100px`}>
+                Footer
+            </GridChild>
         </Grid>
         <pre>{code}</pre>
-        <NextPreviousLinks previous="/blog/css-grid/6" next="/blog/css-grid/8" />
+        <NextPreviousLinks previous="/blog/css-grid/7" />
     </div>
 );
 
@@ -158,12 +157,6 @@ const Grid = styled("div")\`
     overflow: hidden;
 \`;
 
-const Header = styled("div")\`
-    background-color: green;
-    grid-area: Header;
-    line-height: 100px;
-\`;
-
 const SideBar1 = styled("div")\`
     background-color: purple;
     color: white;
@@ -177,12 +170,6 @@ const SideBar1 = styled("div")\`
     }
 \`;
 
-const Main = styled("div")\`
-    background-color: white;
-    grid-area: Main;
-    line-height: 300px;
-\`;
-
 const SideBar2 = styled("div")\`
     background-color: red;
     color: white;
@@ -194,12 +181,5 @@ const SideBar2 = styled("div")\`
     @media screen and (min-width: 992px) {
         line-height: 100px;
     }
-\`;
-
-const Footer = styled("div")\`
-    background-color: blue;
-    color: white;
-    grid-area: Footer;
-    line-height: 100px;
 \`;
 `;
