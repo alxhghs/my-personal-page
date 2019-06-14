@@ -9,6 +9,4 @@ This is the source code for my [personal website](https://www.alexhughes.dev), b
 
 I use Netlify to host. 
 
-Current build status:
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6a5dbf4f-53dc-4268-86c0-8d920325ddb5/deploy-status)](https://app.netlify.com/sites/alexhughes/deploys)
