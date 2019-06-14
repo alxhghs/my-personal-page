@@ -69,3 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 .DS_STORE
+
+# VS Code files
+.vscode/
+
