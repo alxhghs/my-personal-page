@@ -6,7 +6,7 @@ This is the source code for my [personal website](https://www.alexhughes.dev), b
 * [Emotion](https://emotion.sh/docs/introduction)
 * [GraphQL](https://graphql.org/)
 * [CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
-* [TypeScript] (https://www.typescriptlang.org/)
+* [TypeScript](https://www.typescriptlang.org/)
 
 I use Netlify to host. 
 
