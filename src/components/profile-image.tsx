@@ -31,8 +31,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
                 file(relativePath: { eq: "me.png" }) {
                     childImageSharp {
                         fluid {
-                            src
-                            base64
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }

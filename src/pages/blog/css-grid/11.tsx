@@ -2,11 +2,10 @@ import React from "react";
 import styled from "@emotion/styled";
 import { useStaticQuery, graphql } from "gatsby";
 import { PresentationGridLayout } from "../../../components";
-import Img, { FluidObject } from "gatsby-image";
+import Img, { FluidObject, }from "gatsby-image";
 
 const Grid = styled("div")`
     display: grid;
-    place-items: center;
     border-radius: 20px;
     overflow: hidden;
     grid: 300px / 300px;
@@ -30,8 +29,7 @@ export default () => {
                 file(relativePath: { eq: "keanu.png" }) {
                     childImageSharp {
                         fluid {
-                            src
-                            base64
+                            ...GatsbyImageSharpFluid  
                         }
                     }
                 }
