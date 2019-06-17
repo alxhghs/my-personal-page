@@ -23,5 +23,6 @@ export const Card = styled(Link)`
         font-size: 12px;
         font-style: italic;
     }
+    display: grid;
 `;
 

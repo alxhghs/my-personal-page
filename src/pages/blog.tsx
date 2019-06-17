@@ -24,8 +24,7 @@ const PostsWrapper = styled("div")`
 const PageWrapper = styled("div")`
     display: grid;
     gap: 15px;
-    grid-template-columns: auto;
-    grid-template-rows: 50px 100px 50px auto;
+    grid: 50px 100px 50px auto / auto;
     justify-content: center;
     align-content: center;
     text-align: center;

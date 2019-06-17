@@ -15,7 +15,7 @@ import { Header } from "../components"
 
 const Wrapper = styled("div")`
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid: auto 1fr auto / auto;
     gap: 30px;
     font-family: sans-serif;
     height: 100%;

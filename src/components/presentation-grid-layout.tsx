@@ -16,6 +16,7 @@ export const PresentationGridLayout: React.FC<Props> = ({ children, pageNumber, 
 
     return (
         <div css={css`display: grid; justify-content: center; text-align: center;`}>
+            <h1>CSS Grid Examples</h1>
             <h2>Page { pageNumber }</h2>
             <NextPreviousLinks next={next} previous={previous}> 
                 { children }

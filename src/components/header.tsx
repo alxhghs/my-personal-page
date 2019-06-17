@@ -18,7 +18,7 @@ const Animation = keyframes`
 
 const StyledHeader = styled("header")`
     display: grid;
-    grid-template-columns: auto auto;
+    grid: auto / repeat(2, auto);
     gap: 45px;
     background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
     background-size: 1800% 1800%;
