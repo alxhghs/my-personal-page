@@ -10,7 +10,6 @@ export const NextPreviousLinks: React.FC<Props> = ({ previous, next, children })
     <>
         <NextPreviousLink previous={previous} next={next}/>
         { children }
-        <NextPreviousLink previous={previous} next={next}/>
     </>
 );
 

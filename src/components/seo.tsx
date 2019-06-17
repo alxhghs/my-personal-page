@@ -42,11 +42,35 @@ const DefaultProps: Props = {
     description: "Alex Fenwood Hughes's personal website",
     title: "Alex Fenwood Hughes",
     meta: [],
-    keywords: ["React", "TypeScript", "CSS Grid", "NodeJS", "Python", "Django", "FlexBox"],
+    keywords: [
+        "ReactJS",
+        "React",
+        "TypeScript",
+        "JavaScript",
+        "CSS Grid",
+        "NodeJS",
+        "Python",
+        "Django",
+        "FlexBox",
+        "CSS-in-JS",
+        "Google Tag Manager",
+        "GatsbyJS",
+        "Gatsby",
+    ],
+};
+
+type SEOQuery = {
+    site: {
+        siteMetadata: {
+            title: string;
+            description: string;
+            author: string;
+        };
+    };
 };
 
 export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
-    const { site } = useStaticQuery(
+    const { site }: SEOQuery = useStaticQuery(
         graphql`
             query {
                 site {
@@ -116,7 +140,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                 {
                     rel: "shortcut icon",
                     type: "image/png",
-                    href: `${icon}`
+                    href: icon
                 }
             ]}
         />
