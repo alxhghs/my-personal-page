@@ -42,7 +42,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
 
     return (
         <StyledImg
-            fluid={file.childImageSharp.fluid}
+            fluid={file && file.childImageSharp && file.childImageSharp.fluid}
             css={{
                 borderRadius: "50%",
                 height,

@@ -7,10 +7,11 @@ export const Card = styled(Link)`
     color: black;
     text-decoration: none;
     border-radius: 4px;
+    border: 1px solid ${colors.lightgray};
     padding: 15px;
-    box-shadow: 0 17.125px 70px -12.125px rgba(0,0,0,0.5);
-    transition: transform .2s;
-    background-color: ${colors.whiteSmoke};
+    box-shadow: 0 17.125px 70px -12.125px rgba(0,0,0,0.1);
+    transition: transform 250ms;
+    background-color: ${colors.white};
     &:hover {
         transform: scale(1.03);
     }

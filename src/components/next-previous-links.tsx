@@ -6,8 +6,15 @@ type Props = {
     previous?: string;
     next?: string;
 };
+export const NextPreviousLinks: React.FC<Props> = ({ previous, next, children }) => (
+    <>
+        <NextPreviousLink previous={previous} next={next}/>
+        { children }
+        <NextPreviousLink previous={previous} next={next}/>
+    </>
+);
 
-export const NextPreviousLinks: React.FC<Props> = ({ previous, next}) => (
+const NextPreviousLink: React.FC<Props> = ({ previous, next }) => (
     <div css={css`
         display: flex;
         justify-content: ${previous && next ? "space-between" : "center"}; 

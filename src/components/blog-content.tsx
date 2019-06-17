@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { colors } from "../constants";
 
 const StyledBlogContent = styled("div")`
+    line-height: 1.5;
     max-width: 85vw;
     h4 {
         color: ${colors.gray};
