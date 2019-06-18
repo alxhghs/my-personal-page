@@ -38,7 +38,7 @@ export default () => {
     );
 
     return (
-        <PresentationGridLayout pageNumber={11} lastPage>
+        <PresentationGridLayout pageNumber={11}>
             <Grid>
                 <Img fluid={file && file.childImageSharp && file.childImageSharp.fluid} />
             </Grid>

@@ -22,7 +22,7 @@ export const PresentationGridLayout: React.FC<Props> = ({ children, pageNumber, 
 
     return (
         <Grid>
-            <h2>Page { pageNumber }</h2>
+            <h3>Page { pageNumber }</h3>
             <NextPreviousLinks next={next} previous={previous}> 
                 { children }
             </NextPreviousLinks> 

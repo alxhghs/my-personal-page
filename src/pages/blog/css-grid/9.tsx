@@ -1,3 +1,4 @@
+// grid gap and grid shorthand syntax
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
@@ -61,13 +62,17 @@ const GridChild = styled("div")<Props>`
 export default () => (
     <PresentationGridLayout pageNumber={9}>
         <Grid>
-            <GridChild gridArea="Header" backgroundColor="green" css={css`line-height: 100px`}>
+            <GridChild
+                gridArea="Header"
+                backgroundColor="green"
+                css={css`line-height: 100px`}
+            >
                 Header
             </GridChild>
             <GridChild
                 gridArea="SideBar1"
-                backgroundColor="purple"
                 color="white"
+                backgroundColor="purple"
                 css={css`
                     line-height: 100px;
                     @media screen and (min-width: 768px) {
@@ -75,12 +80,15 @@ export default () => (
                     }
                     @media screen and (min-width: 992px) {
                         line-height: 100px;
-                    }
-                `}
+                    }`
+                }
             >
                 SideBar1
             </GridChild>
-            <GridChild gridArea="Main" css={css`line-height: 300px`}>
+            <GridChild
+                gridArea="Main"
+                css={css`line-height: 300px`}
+            >
                 Main
             </GridChild>
             <GridChild
@@ -94,12 +102,17 @@ export default () => (
                     }
                     @media screen and (min-width: 992px) {
                         line-height: 100px;
-                    }
-                `}
+                    }`
+                }
             >
                 SideBar2
             </GridChild>
-            <GridChild gridArea="Footer" backgroundColor="blue" color="white" css={css`line-height: 100px`}>
+            <GridChild
+                gridArea="Footer"
+                backgroundColor="blue"
+                color="white"
+                css={css`line-height: 100px`}
+            >
                 Footer
             </GridChild>
         </Grid>

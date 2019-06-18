@@ -5,7 +5,15 @@ import { PresentationGridLayout } from "../../../components";
 const Grid = styled("div")`
     display: grid;
     grid: auto / repeat(14, auto);
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: 400px) {
+        grid: repeat(14, auto) / auto;
+        grid-auto-flow: column;
+    }
+    @media screen and (min-width: 525px) {
+        grid: auto / repeat(14, auto);
+        grid-auto-flow: row;
+    }
+    @media screen and (min-width: 650px) {
         grid: auto / repeat(16, auto);
     }
     @media screen and (min-width: 768px) {
@@ -15,7 +23,8 @@ const Grid = styled("div")`
         grid: auto / repeat(26, auto);
     }
     @media screen and (min-width: 1260px) {
-        grid: auto / repeat(35, auto);
+        grid: repeat(35, auto) / auto;
+        grid-auto-flow: column;
     }
     border-radius: 20px;
     overflow: hidden;

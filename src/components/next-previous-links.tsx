@@ -19,8 +19,7 @@ const NextPreviousLink: React.FC<Props> = ({ previous, next }) => (
         justify-content: ${previous && next ? "space-between" : "center"}; 
         text-align: center;
         width: 150px;
-        height: 100px;
-        line-height: 100px;
+        line-height: 50px;
         margin: 0 auto;
     `}>
         { previous && <Link to={previous}>Previous</Link> }
