@@ -1,4 +1,4 @@
-// add a media query
+// media query and some styling
 import React from "react";
 import styled from "@emotion/styled";
 import { PresentationGridLayout } from "../../../components";
@@ -22,34 +22,47 @@ const Grid = styled("div")`
                             "SideBar1 Main SideBar2"
                             "Footer Footer Footer";
     }
+    border-radius: 20px;
+    overflow: hidden;
 `;
 
 const Header = styled("div")`
     background-color: green;
     grid-area: Header;
+    line-height: 100px;
 `;
 
 const SideBar1 = styled("div")`
     background-color: purple;
     color: white;
     grid-area: SideBar1;
+    line-height: 100px;
+    @media screen and (min-width: 768px) {
+        line-height: 300px;
+    }
 `;
 
 const Main = styled("div")`
     background-color: white;
     grid-area: Main;
+    line-height: 300px;
 `;
 
 const SideBar2 = styled("div")`
     background-color: red;
     color: white;
     grid-area: SideBar2;
+    line-height: 100px;
+    @media screen and (min-width: 768px) {
+        line-height: 300px;
+    }
 `;
 
 const Footer = styled("div")`
     background-color: blue;
     color: white;
     grid-area: Footer;
+    line-height: 100px;
 `;
 
 export default () => (

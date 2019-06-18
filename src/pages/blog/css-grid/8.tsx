@@ -1,4 +1,4 @@
-// typescript example
+// grid gap and grid shorthand syntax
 import React from "react";
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
@@ -7,48 +7,45 @@ import { PresentationGridLayout } from "../../../components";
 const Grid = styled("div")`
     display: grid;    
     text-align: center;
+    background-color: yellow;
     font-size: 24px;
     border: 1px solid black;
-    grid-template-rows: 100px 300px repeat(3, 100px);
-    grid-template-columns: 300px;
-    grid-template-areas: "Header"
-                        "Main"
-                        "SideBar1"
-                        "SideBar2"
-                        "Footer";
-    @media screen and (min-width: 576px) {
-        grid-template-rows: repeat(2, 100px) 300px repeat(2, 100px);
-        grid-template-columns: 500px;
-        grid-template-areas: "Header"
-                            "SideBar1"
-                            "Main"
-                            "SideBar2"
-                            "Footer";
-    }
-    @media screen and (min-width: 768px) {
-        grid-template-rows: 100px 500px 100px;
-        grid-template-columns: 200px 300px 200px;
-        grid-template-areas: "Header Header Header"
-                            "SideBar1 Main SideBar2"
-                            "Footer Footer Footer";
-    }
-    @media screen and (min-width: 992px) {
-        grid-template-columns: 450px 450px;
-        grid-template-rows: 100px 100px 500px 100px;
-        grid-template-areas: "Header Header"
-                            "SideBar1 SideBar2"
-                            "Main Main"
-                            "Footer Footer";
-    }
-    @media screen and (min-width: 1260px) {
-        grid-template-columns: 300px 600px 300px; 
-        grid-template-rows: 100px 600px 100px;
-        grid-template-areas: "SideBar1 Header SideBar2"
-                            "Main Main Main"
-                            "Footer Footer Footer";
-    }
     border-radius: 20px;
     overflow: hidden;
+    gap: 9px;
+    grid:   "Header"   100px
+            "Main"     300px
+            "SideBar1" 100px
+            "SideBar2" 100px
+            "Footer"   100px
+            / 300px;
+    @media screen and (min-width: 576px) {
+        grid:   "Header"   100px
+                "SideBar1" 100px
+                "Main"     300px
+                "SideBar2" 100px
+                "Footer"   100px
+                / 500px;
+    }
+    @media screen and (min-width: 768px) {
+        grid:   "Header   Header Header"   100px
+                "SideBar1 Main   SideBar2" 500px
+                "Footer   Footer Footer"   100px
+                / 200px   300px  200px;
+    }
+    @media screen and (min-width: 992px) {
+        grid:   "Header   Header"   100px
+                "SideBar1 SideBar2" 100px
+                "Main     Main"     500px
+                "Footer   Footer"   100px
+                / 450px   450px;
+    }
+    @media screen and (min-width: 1260px) {
+        grid:   "SideBar1 Header SideBar2" 100px
+                "Main     Main   Main"     600px
+                "Footer   Footer Footer"   100px
+                / 300px   600px  300px;
+    }
 `;
 
 type Props = {

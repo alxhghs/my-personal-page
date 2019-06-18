@@ -1,120 +1,66 @@
-// grid gap and grid shorthand syntax
 import React from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import { PresentationGridLayout } from "../../../components";
 
 const Grid = styled("div")`
-    display: grid;    
-    text-align: center;
-    background-color: yellow;
-    font-size: 24px;
-    border: 1px solid black;
-    border-radius: 20px;
-    overflow: hidden;
-    gap: 9px;
-    grid:   "Header"   100px
-            "Main"     300px
-            "SideBar1" 100px
-            "SideBar2" 100px
-            "Footer"   100px
-            / 300px;
-    @media screen and (min-width: 576px) {
-        grid:   "Header"   100px
-                "SideBar1" 100px
-                "Main"     300px
-                "SideBar2" 100px
-                "Footer"   100px
-                / 500px;
+    display: grid;
+    grid: auto / repeat(14, auto);
+    @media screen and (min-width: 400px) {
+        grid: repeat(14, auto) / auto;
+        grid-auto-flow: column;
+    }
+    @media screen and (min-width: 525px) {
+        grid: auto / repeat(14, auto);
+        grid-auto-flow: row;
+    }
+    @media screen and (min-width: 650px) {
+        grid: auto / repeat(16, auto);
     }
     @media screen and (min-width: 768px) {
-        grid:   "Header   Header Header"   100px
-                "SideBar1 Main   SideBar2" 500px
-                "Footer   Footer Footer"   100px
-                / 200px   300px  200px;
+        grid: auto / repeat(18, auto);
     }
     @media screen and (min-width: 992px) {
-        grid:   "Header   Header"   100px
-                "SideBar1 SideBar2" 100px
-                "Main     Main"     500px
-                "Footer   Footer"   100px
-                / 450px   450px;
+        grid: auto / repeat(26, auto);
     }
     @media screen and (min-width: 1260px) {
-        grid:   "SideBar1 Header SideBar2" 100px
-                "Main     Main   Main"     600px
-                "Footer   Footer Footer"   100px
-                / 300px   600px  300px;
+        grid: repeat(35, auto) / auto;
+        grid-auto-flow: column;
     }
+    border-radius: 20px;
+    overflow: hidden;
 `;
 
 type Props = {
-    gridArea: string;
-    color?: string;
     backgroundColor?: string;
 };
 const GridChild = styled("div")<Props>`
-    grid-area: ${props => props.gridArea};
-    color: ${props => props.color ? props.color : "black"};
     background-color: ${props => props.backgroundColor ? props.backgroundColor : "white"};
+    height: 30px;
+    width: 30px;
 `;
+
+const colors = [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "blue",
+    "indigo",
+    "violet",
+];
+
+const cards: React.ReactNode[] = [];
+
+for (let i = 0; i < 700; i++) {
+    cards[i] = (<GridChild backgroundColor={colors[i%colors.length]} />);
+}
 
 export default () => (
     <PresentationGridLayout pageNumber={9}>
         <Grid>
-            <GridChild
-                gridArea="Header"
-                backgroundColor="green"
-                css={css`line-height: 100px`}
-            >
-                Header
-            </GridChild>
-            <GridChild
-                gridArea="SideBar1"
-                color="white"
-                backgroundColor="purple"
-                css={css`
-                    line-height: 100px;
-                    @media screen and (min-width: 768px) {
-                        line-height: 300px;
-                    }
-                    @media screen and (min-width: 992px) {
-                        line-height: 100px;
-                    }`
-                }
-            >
-                SideBar1
-            </GridChild>
-            <GridChild
-                gridArea="Main"
-                css={css`line-height: 300px`}
-            >
-                Main
-            </GridChild>
-            <GridChild
-                gridArea="SideBar2"
-                backgroundColor="red"
-                color="white"
-                css={css`
-                    line-height: 100px;
-                    @media screen and (min-width: 768px) {
-                        line-height: 300px;
-                    }
-                    @media screen and (min-width: 992px) {
-                        line-height: 100px;
-                    }`
-                }
-            >
-                SideBar2
-            </GridChild>
-            <GridChild
-                gridArea="Footer"
-                backgroundColor="blue"
-                color="white"
-                css={css`line-height: 100px`}
-            >
-                Footer
-            </GridChild>
+            {
+                cards.map((card) => card)
+            }
         </Grid>
     </PresentationGridLayout>
 );

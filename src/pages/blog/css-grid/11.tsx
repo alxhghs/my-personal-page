@@ -1,47 +1,21 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { useStaticQuery, graphql } from "gatsby";
 import { PresentationGridLayout } from "../../../components";
-import Img, { FluidObject, }from "gatsby-image";
 
 const Grid = styled("div")`
     display: grid;
-    border-radius: 20px;
-    overflow: hidden;
-    grid: 300px / 300px;
-    @media screen and (min-width: 576px) {
-        grid: 500px / 500px;
-    }
+    font-size: 24px;
 `;
 
-type KeanuPictureQuery = {
-    file: {
-        childImageSharp: {
-            fluid: FluidObject
-        }
-    }
-};
-
-export default () => {
-    const { file }: KeanuPictureQuery = useStaticQuery(
-        graphql`
-            query { 
-                file(relativePath: { eq: "keanu.png" }) {
-                    childImageSharp {
-                        fluid {
-                            ...GatsbyImageSharpFluid  
-                        }
-                    }
-                }
-            }
-        `
-    );
-
-    return (
-        <PresentationGridLayout pageNumber={11}>
-            <Grid>
-                <Img fluid={file && file.childImageSharp && file.childImageSharp.fluid} />
-            </Grid>
-        </PresentationGridLayout>
-    );
-};
+export default () => (
+    <PresentationGridLayout pageNumber={11} lastPage>
+        <Grid>
+            A Complete Guide to CSS Grid<br/><br/>
+            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/">
+                https://css-tricks.com/snippets/css/complete-guide-grid/
+            </a>
+            <br />
+            Thank you!
+        </Grid>
+    </PresentationGridLayout>
+);
