@@ -48,15 +48,17 @@ const VideoSlides: Array<Video> = [
 ];
 
 export const App: React.FC = () => (
-    <MediaSlider slides={PhotoSlides} />
-    <MediaSlider slides={VideoSlides} />
+    <>
+        <MediaSlider slides={PhotoSlides} />
+        <MediaSlider slides={VideoSlides} />
+    </>
 );
 ```
 
 We want the MediaSlider to handle `Photo` slides differently from `Video` slides. Type guards are exactly what we need. Let's create a function using the TypeScript `is` keyword to check the `slide` type.
 
 ```typescript
-const isPhotoArray = (slides: Photo[] | Video[]): slides is Photo[] => {
+const isPhotoArray = (slides: any): slides is Photo[] => {
     return slides && slides[0] && typeof slides[0].caption === "string";
 };
 ```
