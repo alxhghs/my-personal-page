@@ -44,7 +44,7 @@ Now we can reference <i>Google Analytics Settings</i> whenever we need to get th
 
 Let's create a <i>Page View</i> trigger so that we can track page views for our site. 
 
-> NOTE: Triggers are conditions that fire triggers when the conditions are met.
+> NOTE: Triggers are conditions that fire tags when the conditions are met.
 
 * From the GTM <i>Workspaces</i> page, click <i>Triggers</i> on the left
 * Click <i>New</i>
