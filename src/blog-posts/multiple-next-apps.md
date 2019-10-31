@@ -4,8 +4,6 @@ title: "Hosting multiple NextJS apps on one domain with TypeScript and Express"
 keywords: [ "typescript", "express", "nextjs", "ts-node" ]
 ---
 
-# Hosting multiple NextJS apps on one domain with TypeScript and Express
-
 This guide assumes basic familiarity with TypeScript, Node and Express. 
 
 If you’re here, you may be running into the same issue that I had when trying to run more than one Next app on the same domain. In my case, I had one app that ran the main site and another app that was used to build PDFs by sending HTML to Prince XML. The problem is that Next hosts static files in a `_next` folder and if you have more than one Next app these folders conflict. 
