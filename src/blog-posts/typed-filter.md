@@ -53,4 +53,4 @@ const Books: React.FC = () => (
 );
 ```
 
-Now the Typescript compiler correctly understands that `book` in our `map` function is defined. A smple but neat trick!
+Now the Typescript compiler correctly understands that `book` in our `map` function is defined. A simple but neat trick!
