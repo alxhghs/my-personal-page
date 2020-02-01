@@ -27,7 +27,7 @@ const books: Book[] = [
 const Books: React.FC = () => (
     <>
         {
-            books?.filter((b) => !!b).map((book) => <div>{book.title}</div>
+            books?.filter((b) => !!b).map((book) => <div>{book.title}</div>)
         }
     </>
 );
@@ -47,7 +47,7 @@ The `b is Book` lets the compiler know that the return value of the filter funct
 const Books: React.FC = () => (
     <>
         {
-            books?.filter((b): b is Book => !!b).map((book) => <div>{book.title}</div>
+            books?.filter((b): b is Book => !!b).map((book) => <div>{book.title}</div>)
         }
     </>
 );
