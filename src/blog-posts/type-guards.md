@@ -1,6 +1,7 @@
 ---
 date: "2019-09-07"
-title: "Type Guards in TypeScript with React: Making Types Real"
+title: "Type Guards in TypeScript with React"
+subtitle: "Using types for dynamic code"
 keywords: [ "typescript", "react", "type guards" ]
 ---
 
