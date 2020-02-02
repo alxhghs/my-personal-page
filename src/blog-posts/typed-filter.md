@@ -1,7 +1,7 @@
 ---
 date: "2020-01-31"
 title: "TypeScript inline function return types"
-subtitle: "Mapping and filtering an array in React"
+subtitle: "Filtering and mapping an array in React"
 keywords: [ "typescript", "react", "type guards" ]
 ---
 
