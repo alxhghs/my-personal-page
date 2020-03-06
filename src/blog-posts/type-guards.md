@@ -60,12 +60,12 @@ We want the MediaSlider to handle `Photo` slides differently from `Video` slides
 
 ```typescript
 const isPhotoArray = (slides: any): slides is Photo[] => {
-    return slides && slides[0] && typeof slides[0].caption === "string";
+    return typeof slides?.[0]?.caption === "string";
 };
 ```
 How is this function working? `isPhotoArray` takes in either an array of `Photo` or an array of `Video`. Our return type of `slides is Photo[]` tells TypeScript that the boolean value that we return from this function will determine whether the argument provided is an array of `Photo`. 
 
-So in our return, we use the `&&` operator to do 3 boolean checks. First we check that `slides` is not `null` or `undefined`. Then we check that there is an index 0 of `slides`. Lastly, we check that `slides[0].caption` is a `string`. We know that the `Photo` type has a `caption` while `Video` does not, so we can use this function to determine whether the type of array passed to `MediaSlider` is a `Photo` array or a `Video` array. This is a pretty cool trick! 
+We know that the `Photo` type has a `caption` while `Video` does not, so we can use this function to determine whether the type of array passed to `MediaSlider` is a `Photo` array or a `Video` array. This is a pretty cool trick! 
 
 What would this look like within the `MediaSlider` component?
 
