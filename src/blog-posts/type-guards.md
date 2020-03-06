@@ -63,7 +63,7 @@ const isPhotoArray = (slides: any): slides is Photo[] => {
     return typeof slides?.[0]?.caption === "string";
 };
 ```
-How is this function working? `isPhotoArray` takes in either an array of `Photo` or an array of `Video`. Our return type of `slides is Photo[]` tells TypeScript that the boolean value that we return from this function will determine whether the argument provided is an array of `Photo`. 
+How is this function working? `isPhotoArray` takes in either an array of `any` which we will use exclusively for arrays of `Photo` or `Video`. Our return type of `slides is Photo[]` tells TypeScript that the boolean value that we return from this function will determine whether the argument provided is an array of `Photo`. 
 
 We know that the `Photo` type has a `caption` while `Video` does not, so we can use this function to determine whether the type of array passed to `MediaSlider` is a `Photo` array or a `Video` array. This is a pretty cool trick! 
 
