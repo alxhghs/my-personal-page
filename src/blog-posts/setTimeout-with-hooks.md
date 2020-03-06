@@ -44,7 +44,7 @@ import { useState, useEffect } from "react";
 import copy from "copy-to-clipboard";
 
 export const useClipboard = () => {
-const innerText = “Copy to clipboard”;
+    const innerText = “Copy to clipboard”;
 
     const [labelText, setLabelText] = useState(innerText);
 
@@ -68,11 +68,11 @@ There’s at least one last optimization we can make to our code. Right now the 
 
 ```typescript
 useEffect(() => {
-        if (labelText === innerText) return;
+    if (labelText === innerText) return;
 
-        const timer = setTimeout(() => setLabelText(initialInnerText), 2000);
-        return () => clearTimeout(timer);
-    }, [labelText]);
+    const timer = setTimeout(() => setLabelText(initialInnerText), 2000);
+    return () => clearTimeout(timer);
+}, [labelText]);
 ```
 
 And that’s a quick example of using `setTimeout` with `clearTimeout` in React with hooks!
