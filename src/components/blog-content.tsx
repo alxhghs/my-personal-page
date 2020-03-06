@@ -4,7 +4,7 @@ import { colors } from "../constants";
 
 const StyledBlogContent = styled("div")`
     line-height: 1.5;
-    max-width: 85vw;
+    padding: 16px;
     h4 {
         color: ${colors.gray};
         font-style: italic;
