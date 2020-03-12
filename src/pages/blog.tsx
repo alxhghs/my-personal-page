@@ -12,8 +12,6 @@ const PostsWrapper = styled("div")`
     padding: 0 30px;
     @media screen and (min-width: ${breakPoints[2]}) {
         grid-template-columns: repeat(2, auto);
-    }
-    @media screen and (min-width: ${breakPoints[4]}) {
         max-width: ${breakPoints[3]};
     }
     @media screen and (min-width: ${breakPoints[5]}) {
