@@ -14,11 +14,11 @@ const PostsWrapper = styled("div")`
         grid-template-columns: repeat(2, auto);
     }
     @media screen and (min-width: ${breakPoints[4]}) {
-        grid-template-columns: repeat(3, auto);
         max-width: ${breakPoints[3]};
     }
     @media screen and (min-width: ${breakPoints[5]}) {
         max-width: ${breakPoints[4]};
+        grid-template-columns: repeat(3, auto);
     }
 `;
 
