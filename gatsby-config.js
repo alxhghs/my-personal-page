@@ -1,5 +1,15 @@
 require(`dotenv`).config({path: `.env`})
 
+const generateFavicons = (sizes) => {
+  return sizes.map(size => {
+    return {
+      src: `favicons/icon-${size}x${size}.png`,
+      sizes: `${size}x${size}`,
+      type: "image/png",
+    };
+  });
+};
+
 module.exports = {
   siteMetadata: {
     title: `Alex Fenwood Hughes`,
@@ -65,6 +75,13 @@ module.exports = {
         short_name: `Alex Fenwood Hughes`,
         start_url: `/`,
         display: `minimal-ui`,
+        // Icons Hybrid mode
+        // In automatic mode, icons will be exported to /icons
+        // This conflicts with the Apache /icons symlink to /usr/share/apache2/icons/
+        // (https://www.electrictoolbox.com/apache-icons-directory)
+        // The solution is to create a favicons folder instead of the default icons folder
+        icon: `src/images/favicon.png`,
+        icons: generateFavicons([48, 72, 96, 144, 192, 256, 384, 512]),
       },
     },
     `gatsby-plugin-typescript`,
