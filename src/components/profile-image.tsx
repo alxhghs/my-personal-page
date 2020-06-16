@@ -27,7 +27,7 @@ const StyledImg = styled(Img)`
 export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => {
     const { file }: ProfilePictureQuery = useStaticQuery(
         graphql`
-            query { 
+            query {
                 file(relativePath: { eq: "me.png" }) {
                     childImageSharp {
                         fluid {
@@ -41,7 +41,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
 
     return (
         <StyledImg
-            fluid={file && file.childImageSharp && file.childImageSharp.fluid}
+            fluid={file?.childImageSharp?.fluid}
             css={{
                 borderRadius: "50%",
                 height,

@@ -115,5 +115,5 @@ module.exports = {
   //       // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
   //     },
   //   },
-  // ],
+  ],
 }
