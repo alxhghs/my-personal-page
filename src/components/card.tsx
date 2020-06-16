@@ -19,7 +19,7 @@ export const Card = styled(Link)`
         color: ${colors.lightblack};
     }
     h4 {
-        color: ${colors.gray};
+        color: ${colors.black};
         font-size: 12px;
         font-style: italic;
     }
