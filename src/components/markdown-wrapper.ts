@@ -3,7 +3,7 @@ import { breakPoints, colors } from "../constants";
 
 export const MarkdownWrapper = styled("div")`
     h4 {
-        color: ${colors.gray};
+        color: ${colors.black};
         font-style: italic;
         font-size: 14px;
     }
