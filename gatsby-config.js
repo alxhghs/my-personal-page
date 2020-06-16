@@ -75,6 +75,8 @@ module.exports = {
         short_name: `Alex Fenwood Hughes`,
         start_url: `/`,
         display: `minimal-ui`,
+        background_color: `#FFFFFF`,
+        theme_color: `#000000`,
         // Icons Hybrid mode
         // In automatic mode, icons will be exported to /icons
         // This conflicts with the Apache /icons symlink to /usr/share/apache2/icons/
