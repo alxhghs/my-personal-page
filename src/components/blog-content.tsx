@@ -6,7 +6,7 @@ const StyledBlogContent = styled("div")`
     line-height: 1.5;
     max-width: calc(100vw - 30px);
     h4 {
-        color: ${colors.gray};
+        color: ${colors.black};
         font-style: italic;
         font-size: 14px;
     }
@@ -14,7 +14,7 @@ const StyledBlogContent = styled("div")`
         border-left: 5px solid ${colors.blue};
         margin: 10px;
         padding: 15px;
-        color: ${colors.gray};
+        color: ${colors.black};
         line-height: 1.5;
         p {
             margin: 0;
