@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { Link } from "../components";
 import { colors } from "../constants";
+import { Page } from "gatsby";
 
 const Animation = keyframes`
     0% {
@@ -27,17 +28,26 @@ const StyledHeader = styled("header")`
     text-shadow: 0 0 3px ${colors.black};
 `;
 
-export const Header: React.FC = () => (
+const StyledH2 = styled.h2<{ underline: boolean }>((props) => ({
+    textDecoration: props.underline ? "underline" : undefined,
+}));
+
+type Props = {
+    path: Page["path"];
+};
+
+export const Header: React.FC<Props> = ({ path }) => (
     <StyledHeader>
-        <h2>
+        <StyledH2 underline={path === "/" || path === ""}>
             <Link to="/" hovercolor={colors.lightgray}>
                 Home
             </Link>
-        </h2>
-        <h2>
+            {console.log(path)}
+        </StyledH2>
+        <StyledH2 underline={path.includes("blog")}>
             <Link to="/blog" hovercolor={colors.lightgray}>
                 Blog
             </Link>
-        </h2>
+        </StyledH2>
     </StyledHeader>
 );

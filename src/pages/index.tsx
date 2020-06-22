@@ -21,7 +21,7 @@ const ExternalLink = styled("a")`
     color: black;
     text-decoration: none;
     margin-right: 15px;
-    &:hover { 
+    &:hover {
         color: ${colors.gray};
     }
 `;
