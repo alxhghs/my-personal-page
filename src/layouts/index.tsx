@@ -47,11 +47,7 @@ const Layout: React.FC = ({ children }) => (
                 <Header />
                 <main>{children}</main>
                 <Footer>
-<<<<<<< Updated upstream
-                    © {new Date().getFullYear()} | {data.author ? data.author : "Alex Fenwood Hughes"} 
-=======
                     © {new Date().getFullYear()} | {data.author ? data.author : "Alexander Fenwood Hughes"}
->>>>>>> Stashed changes
                 </Footer>
             </Wrapper>
         )}
