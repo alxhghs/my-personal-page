@@ -1,6 +1,7 @@
 ---
 date: "2020-06-21"
 title: "Using the current path in Gatsby"
+subtitle: "Dynamic CSS using Styled Components and Typescript"
 keywords: [ "typescript", "react", "gatsby", "javascript" ]
 ---
 
