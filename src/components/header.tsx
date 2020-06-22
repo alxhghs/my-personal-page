@@ -38,7 +38,7 @@ type Props = {
 
 export const Header: React.FC<Props> = ({ path }) => (
     <StyledHeader>
-        <StyledH2 underline={path === "/"}>
+        <StyledH2 underline={path === "/" || path === ""}>
             <Link to="/" hovercolor={colors.lightgray}>
                 Home
             </Link>
