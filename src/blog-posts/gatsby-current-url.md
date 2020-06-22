@@ -38,4 +38,4 @@ export const Page: React.FC<Page> = ({ path }) => {
 }
 ```
 
-From a Gatsby Page you can pass the `path` prop to children in or you could create a context which would make `path` available anywhere. I think I prefer NextJS which exposes a `useRouter` hook that I think makes this process a little easier, but the Gatsby approach works!
+From a Gatsby Page you can pass the `path` prop to child components or you could create a context which would make `path` available anywhere. I think I prefer NextJS which exposes a `useRouter` hook that I think makes this process a little easier, but the Gatsby approach works!
