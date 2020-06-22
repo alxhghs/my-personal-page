@@ -18,10 +18,11 @@ type Props = {
     to: string;
     color?: string;
     hovercolor?: string;
+    className?: string;
 };
 
-export const Link: React.FC<Props> = ({ to, children, color, hovercolor }) => (
-    <StyledLink to={to} color={color} hovercolor={hovercolor}>
+export const Link: React.FC<Props> = ({ to, children, color, hovercolor, className }) => (
+    <StyledLink to={to} color={color} hovercolor={hovercolor} className={className}>
         { children }
     </StyledLink>
 );
