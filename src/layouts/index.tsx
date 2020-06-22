@@ -8,7 +8,7 @@
 
 import React from "react"
 import styled from "@emotion/styled";
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Page } from "gatsby"
 import "./layout.css";
 
 import { Header } from "../components"
@@ -30,7 +30,7 @@ const Footer = styled("footer")`
     padding: 16px 0 32px;
 `;
 
-const Layout: React.FC = ({ children }) => (
+const Layout: React.FC<Page> = ({ path, children }) => (
     <StaticQuery
         query={graphql`
             query SiteTitleQuery {
@@ -44,10 +44,10 @@ const Layout: React.FC = ({ children }) => (
         `}
         render={data => (
             <Wrapper>
-                <Header />
+                <Header path={path} />
                 <main>{children}</main>
                 <Footer>
-                    © {new Date().getFullYear()} | {data.author ? data.author : "Alex Fenwood Hughes"} 
+                    © {new Date().getFullYear()} | {data.author ? data.author : "Alex Fenwood Hughes"}
                 </Footer>
             </Wrapper>
         )}
