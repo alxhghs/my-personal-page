@@ -17,7 +17,7 @@ export const Page: React.FC<Page> = ({ path }) => {
 }
 ```
 
-With the path, you can do easy things dynamically style content based on the route. On this site, I underline `Home` or `Blog` based on the `path`. Here is an example using styled components.
+With the path, you can do things dynamically like style content based on the route. On this site, I underline `Home` or `Blog` based on the `path`. Here is an example using styled components.
 
 ```typescript
 const H2 = styled.h2<{ underline: boolean }>(({ underline }) => ({
