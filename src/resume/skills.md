@@ -11,6 +11,7 @@ title: "Skills"
 * React
 * GatsbyJS
 * NextJS
+* NestJS
 * Django
 
 ### Foreign Languages
