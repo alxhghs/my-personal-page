@@ -76,8 +76,14 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 const Page: NextPage = () => {
+    const [count, setCount] = useState<number>(0);
+
     return (
-        <div>hello, world</div>
+        <>
+            <div>{count}</div>
+            <button onClick={() => setCount((c) => c + 1)}>increase</button>
+            <button onClick={() => setCount((c) => c - 1)}>decrease</button>
+        </>
     );
 };
 
