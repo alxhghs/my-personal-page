@@ -5,7 +5,7 @@ subtitle: "Dynamic CSS using Styled Components and Typescript"
 keywords: [ "typescript", "react", "gatsby", "javascript" ]
 ---
 
-As someone who mostly uses NexJS these days, it was a little tricky to get the current URL path of a Gatsby page, but once you know how to do it's pretty straight forward.
+As someone who mostly uses NextJS these days, it was a little tricky to get the current URL path of a Gatsby page, but once you know how to do it's pretty straight forward.
 
 Gatsby pages expose a `path` prop which will always be the current URL path. It wasn't immediately obvious how to get this to work with TypeScript, but I found that Gatsby exports a `Page` type which can be passed to `React.FC` in order to get the correct types. Here is an example Gatsby page component that uses the current path.
 
