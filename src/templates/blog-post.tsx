@@ -11,9 +11,9 @@ const Wrapper = styled(MarkdownWrapper)`
     height: 100%;
     padding: 0 15px;
     grid-template-columns: auto;
-    @media screen and (min-width: ${breakPoints[5]}) {
-        grid-template-columns: 1300px;
-    } 
+    @media screen and (min-width: ${breakPoints[4]}) {
+        grid-template-columns: 900px;
+    }
 `;
 
 type Props = {
@@ -47,7 +47,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
             <Wrapper>
                 <SEO
                     title={frontmatter.title + (frontmatter.subtitle ? (": " + frontmatter.subtitle) : "")}
-                    description={frontmatter.description} 
+                    description={frontmatter.description}
                     keywords={frontmatter.keywords}
                 />
                 <BlogHeader
