@@ -55,9 +55,9 @@ npm install --save-dev typescript @types/react @types/node
 
 ```
 "scripts": {
-        "dev": "next",
-        "build: "next build",
-        "start": "next start"
+    "dev": "next",
+    "build: "next build",
+    "start": "next start"
 }
 ```
 Create a `tsconfig.json` file, useful for configuring TypeScript. NextJS will provide default values if you leave this file empty.
