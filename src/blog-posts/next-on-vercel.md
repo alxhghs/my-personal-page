@@ -89,7 +89,7 @@ const Page: NextPage = () => {
 
 export default Page;
 ```
-Start the NextJS app - this will populate the tsconfig.json file
+Start the NextJS app - this will populate the `tsconfig.json` file
 ```
 npm run dev
 ```
