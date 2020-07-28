@@ -8,6 +8,7 @@ const Wrapper = styled("div")`
     display: grid;
     padding: 0 15px;
     justify-content: center;
+    margin-bottom: 64px;
     h3 {
         font-style: italic;
     }

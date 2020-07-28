@@ -28,6 +28,7 @@ const PageWrapper = styled("div")`
     align-content: center;
     text-align: center;
     height: 100%;
+    margin-bottom: 64px;
 `;
 
 type PostPageProps = {

@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { breakPoints, colors } from "../constants";
 
 export const MarkdownWrapper = styled("div")`
+    margin-bottom: 64px;
     h4 {
         color: ${colors.black};
         font-style: italic;
