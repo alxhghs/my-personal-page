@@ -111,7 +111,7 @@ git push -u origin main
 * Refresh to confirm your code is on GitHub
 
 ## Getting your code online with Vercel
-* Go to www.vercel.com
+* Go to https://www.vercel.com
 * Login using GitHub or create an account
 * Click to Import Project
 * Import Git Repository
