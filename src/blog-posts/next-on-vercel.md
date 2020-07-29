@@ -123,4 +123,4 @@ git push -u origin main
 * Import Git Repository
 * Add the URL to your repo, something like `https://github.com/my-username/test`
 
-And that's it! Pretty simple to get a NextJS app with TypeScript up and running. You can also check out the Vercel command line tool if you're interested in other JamStack frameworks and would like a simple way to get started. https://github.com/vercel/vercel/tree/master/packages/now-cli
+And that's it! Pretty simple to get a NextJS app with TypeScript up and running. You can also check out the Vercel command line tool if you're interested in other JamStack frameworks and would like a simple way to get started. [Link](https://github.com/vercel/vercel/tree/master/packages/now-cli)
