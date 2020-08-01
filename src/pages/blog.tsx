@@ -31,6 +31,10 @@ const PageWrapper = styled("div")`
     margin-bottom: 64px;
 `;
 
+const BlogCard = styled(Card)({
+    gridTemplateRows: "auto 1fr auto",
+});
+
 type PostPageProps = {
     data: {
         site: {
@@ -77,11 +81,11 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
                         return (
                             now && date && dayjs(date).isBefore(now)
                                 ? (
-                                    <Card key={post.id} to={`/${post.fields.slug}`}>
+                                    <BlogCard key={post.id} to={`/${post.fields.slug}`}>
                                         <h2>{post.frontmatter.title}</h2>
                                         <h3>{post.frontmatter.subtitle}</h3>
                                         <h4>{post.frontmatter.date}</h4>
-                                    </Card>
+                                    </BlogCard>
                                 ) : null
                             )
                     })
