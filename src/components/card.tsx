@@ -17,6 +17,7 @@ export const Card = styled(Link)`
     }
     h3 {
         color: ${colors.lightblack};
+        margin: 0px;
     }
     h4 {
         color: ${colors.black};
