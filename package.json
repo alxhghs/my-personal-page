@@ -1,58 +1,31 @@
 {
   "name": "alxhghs",
-  "private": true,
-  "description": "Personal website for Alex Hughes",
-  "version": "0.1.0",
-  "author": "Alex Hughes <alxhghs@gmail.com>",
-  "dependencies": {
-    "@emotion/core": "^10.0.9",
-    "@emotion/styled": "^10.0.9",
-    "dayjs": "^1.8.29",
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.1.30",
-    "gatsby-image": "^2.0.32",
-    "gatsby-plugin-catch-links": "^2.0.13",
-    "gatsby-plugin-emotion": "^4.0.6",
-    "gatsby-plugin-layout": "^1.0.13",
-    "gatsby-plugin-manifest": "^2.0.23",
-    "gatsby-plugin-offline": "^3.2.9",
-    "gatsby-plugin-react-helmet": "^3.0.9",
-    "gatsby-plugin-sharp": "^2.0.27",
-    "gatsby-remark-images": "^3.0.10",
-    "gatsby-remark-prismjs": "^3.2.5",
-    "gatsby-source-filesystem": "^2.0.24",
-    "gatsby-transformer-remark": "^2.3.5",
-    "gatsby-transformer-sharp": "^2.1.16",
-    "prismjs": "^1.15.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-helmet": "^6.1.0",
-    "ts-node": "^8.10.2"
-  },
-  "devDependencies": {
-    "@types/react-helmet": "^6.0.0",
-    "gatsby-plugin-typescript": "^2.0.11",
-    "prettier": "^2.0.5",
-    "typescript": "^3.9.5"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "version": "3.0.0",
+  "description": "alex hughes personal website",
+  "main": "index.js",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "dev": "next",
+    "build": "next build"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "git+https://github.com/alxhghs/my-personal-page.git"
   },
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/alxhghs/my-personal-page/issues"
+  },
+  "homepage": "https://github.com/alxhghs/my-personal-page#readme",
+  "dependencies": {
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.10.1",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "typescript": "^4.0.2"
   }
 }
