@@ -4,15 +4,25 @@ title: "Skills"
 ## Skills
 
 ### Programming Languages
-* JavaScript (TypeScript, NodeJS, ES6)
-* Python
+* JavaScript (ES6)
+* TypeScript
+* NodeJS
 
-### Programming Libraries/Frameworks
+### Frontend
 * React
-* GatsbyJS
-* NextJS
-* NestJS
-* Django
+* Next
+* Graphql
+* CSS3
+* HTML5
+* Gatsby
+
+### Backend
+* Nest
+* Express
+* SQL
+* Prisma
+* Mongo
+* Apollo
 
 ### Foreign Languages
 * Spanish (fluent)
