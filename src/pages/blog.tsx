@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled";
-import moment from "moment";
+import dayjs from "dayjs";
 import { graphql } from "gatsby";
 import { Card, ProfileImage, SEO } from "../components";
 import { breakPoints } from "../constants";
@@ -28,7 +28,12 @@ const PageWrapper = styled("div")`
     align-content: center;
     text-align: center;
     height: 100%;
+    margin-bottom: 64px;
 `;
+
+const BlogCard = styled(Card)({
+    gridTemplateRows: "auto 1fr auto",
+});
 
 type PostPageProps = {
     data: {
@@ -74,13 +79,13 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
                         const now = new Date;
                         const date = post && post.frontmatter.date;
                         return (
-                            now && date && moment(date).isBefore(now)
+                            now && date && dayjs(date).isBefore(now)
                                 ? (
-                                    <Card key={post.id} to={`/${post.fields.slug}`}>
+                                    <BlogCard key={post.id} to={`/${post.fields.slug}`}>
                                         <h2>{post.frontmatter.title}</h2>
                                         <h3>{post.frontmatter.subtitle}</h3>
                                         <h4>{post.frontmatter.date}</h4>
-                                    </Card>
+                                    </BlogCard>
                                 ) : null
                             )
                     })
