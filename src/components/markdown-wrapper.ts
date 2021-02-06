@@ -1,5 +1,5 @@
-import styled from "@emotion/styled"
-import { breakPoints, colors } from "../theme"
+import styled from "@emotion/styled";
+import { breakPoints, colors } from "../theme";
 
 export const MarkdownWrapper = styled("div")`
     margin-bottom: 64px;
@@ -40,4 +40,4 @@ export const MarkdownWrapper = styled("div")`
             width: 600px;
         }
     }
-`
+`;

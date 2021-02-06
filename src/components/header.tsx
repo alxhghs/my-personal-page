@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { keyframes } from "@emotion/core"
-import { Link } from "../components"
-import { colors } from "../theme"
-import { Page } from "gatsby"
+import React from "react";
+import styled from "@emotion/styled";
+import { keyframes } from "@emotion/core";
+import { Link } from "../components";
+import { colors } from "../theme";
+import { Page } from "gatsby";
 
 const Animation = keyframes`
     0% {
@@ -15,7 +15,7 @@ const Animation = keyframes`
     100% {
         background-position: 0% 82%;
     }
-`
+`;
 
 const StyledHeader = styled("header")`
     display: grid;
@@ -37,15 +37,15 @@ const StyledHeader = styled("header")`
     justify-content: center;
     animation: ${Animation} 90s ease infinite;
     text-shadow: 0 0 3px ${colors.black};
-`
+`;
 
 const StyledH2 = styled.h2<{ underline: boolean }>((props) => ({
     textDecoration: props.underline ? "underline" : undefined,
-}))
+}));
 
 type Props = {
-    path: Page["path"]
-}
+    path: Page["path"];
+};
 
 export const Header: React.FC<Props> = ({ path }) => (
     <StyledHeader>
@@ -61,4 +61,4 @@ export const Header: React.FC<Props> = ({ path }) => (
             </Link>
         </StyledH2>
     </StyledHeader>
-)
+);

@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { graphql } from "gatsby"
-import { breakPoints } from "../theme"
-import { BlogContent, BlogHeader, MarkdownWrapper, SEO } from "../components"
+import React from "react";
+import styled from "@emotion/styled";
+import { graphql } from "gatsby";
+import { breakPoints } from "../theme";
+import { BlogContent, BlogHeader, MarkdownWrapper, SEO } from "../components";
 
 const Wrapper = styled(MarkdownWrapper)`
     display: grid;
@@ -14,34 +14,34 @@ const Wrapper = styled(MarkdownWrapper)`
     @media screen and (min-width: ${breakPoints[4]}) {
         grid-template-columns: 900px;
     }
-`
+`;
 
 type Props = {
     data: {
         markdownRemark: {
             frontmatter: {
-                date: string
-                title: string
-                subtitle?: string
-                description: string
-                keywords: string[]
-            }
-            html: string
+                date: string;
+                title: string;
+                subtitle?: string;
+                description: string;
+                keywords: string[];
+            };
+            html: string;
             fields: {
-                slug: string
-            }
-        }
+                slug: string;
+            };
+        };
         site: {
             siteMetadata: {
-                author: string
-            }
-        }
-    }
-}
+                author: string;
+            };
+        };
+    };
+};
 
 const BlogPost: React.FC<Props> = ({ data }) => {
-    const { markdownRemark, site } = data
-    const { frontmatter } = markdownRemark
+    const { markdownRemark, site } = data;
+    const { frontmatter } = markdownRemark;
     if (data && markdownRemark) {
         return (
             <Wrapper>
@@ -63,10 +63,10 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                 />
                 <BlogContent html={markdownRemark.html} />
             </Wrapper>
-        )
+        );
     }
-    return <h2>Blog post not found</h2>
-}
+    return <h2>Blog post not found</h2>;
+};
 
 export const pageQuery = graphql`
     query BlogPostByPath($slug: String!) {
@@ -89,6 +89,6 @@ export const pageQuery = graphql`
             }
         }
     }
-`
+`;
 
-export default BlogPost
+export default BlogPost;

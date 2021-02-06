@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { Link, SEO, ProfileImage } from "../components"
-import { colors } from "../theme"
+import React from "react";
+import styled from "@emotion/styled";
+import { Link, SEO, ProfileImage } from "../components";
+import { colors } from "../theme";
 
 const Wrapper = styled("div")`
     display: grid;
@@ -9,13 +9,13 @@ const Wrapper = styled("div")`
     justify-content: center;
     text-align: center;
     height: 100%;
-`
+`;
 
 const Links = styled("div")`
     display: flex;
     justify-content: center;
     margin-top: 45px;
-`
+`;
 
 const ExternalLink = styled("a")`
     color: black;
@@ -24,7 +24,7 @@ const ExternalLink = styled("a")`
     &:hover {
         color: ${colors.gray};
     }
-`
+`;
 
 const App: React.FC = () => {
     return (
@@ -45,7 +45,7 @@ const App: React.FC = () => {
                 </Link>
             </Links>
         </Wrapper>
-    )
-}
+    );
+};
 
-export default App
+export default App;

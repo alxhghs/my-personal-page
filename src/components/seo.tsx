@@ -5,41 +5,41 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import Helmet from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 // @ts-ignore
-import icon from "../images/favicon.png"
+import icon from "../images/favicon.png";
 
 type Props = {
-    description: string
-    lang: string
+    description: string;
+    lang: string;
     meta:
         | {
-              name: string
-              content: any
-              property?: undefined
+              name: string;
+              content: any;
+              property?: undefined;
           }
         | {
-              name?: undefined
-              content: any
-              property: string
+              name?: undefined;
+              content: any;
+              property: string;
           }
         | ConcatArray<
               | {
-                    name: string
-                    content: any
-                    property?: undefined
+                    name: string;
+                    content: any;
+                    property?: undefined;
                 }
               | {
-                    name?: undefined
-                    content: any
-                    property: string
+                    name?: undefined;
+                    content: any;
+                    property: string;
                 }
-          >
-    keywords: string[]
-    title: string
-}
+          >;
+    keywords: string[];
+    title: string;
+};
 
 const DefaultProps: Props = {
     lang: "en",
@@ -61,17 +61,17 @@ const DefaultProps: Props = {
         "GatsbyJS",
         "Gatsby",
     ],
-}
+};
 
 type SEOQuery = {
     site: {
         siteMetadata: {
-            title: string
-            description: string
-            author: string
-        }
-    }
-}
+            title: string;
+            description: string;
+            author: string;
+        };
+    };
+};
 
 export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
     const { site }: SEOQuery = useStaticQuery(
@@ -86,9 +86,9 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                 }
             }
         `,
-    )
+    );
 
-    const metaDescription = description || site.siteMetadata.description
+    const metaDescription = description || site.siteMetadata.description;
 
     return (
         <Helmet
@@ -148,7 +148,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                 },
             ]}
         />
-    )
-}
+    );
+};
 
-SEO.defaultProps = DefaultProps
+SEO.defaultProps = DefaultProps;

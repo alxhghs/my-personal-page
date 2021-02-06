@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "@emotion/styled"
+import React from "react";
+import styled from "@emotion/styled";
 
-import { SEO } from "../components/seo"
+import { SEO } from "../components/seo";
 
 const Wrapper = styled("div")`
     display: grid;
@@ -9,7 +9,7 @@ const Wrapper = styled("div")`
     align-content: center;
     text-align: center;
     height: 100%;
-`
+`;
 
 const NotFoundPage = () => (
     <Wrapper>
@@ -17,6 +17,6 @@ const NotFoundPage = () => (
         <h1>NOT FOUND</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Wrapper>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

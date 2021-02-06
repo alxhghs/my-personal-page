@@ -1,8 +1,8 @@
-import React from "react"
+import React from "react";
 
 type Props = {
-    html: string
-}
+    html: string;
+};
 
 export const ResumeContent: React.FC<Props> = ({ html }) =>
     html ? (
@@ -11,4 +11,4 @@ export const ResumeContent: React.FC<Props> = ({ html }) =>
                 __html: html,
             }}
         />
-    ) : null
+    ) : null;

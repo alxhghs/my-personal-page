@@ -1,10 +1,10 @@
-import React from "react"
-import Img, { FluidObject, FixedObject } from "gatsby-image"
+import React from "react";
+import Img, { FluidObject, FixedObject } from "gatsby-image";
 
 type PostImageProps = {
-    fluid: FluidObject
-    fixed: FixedObject
-}
+    fluid: FluidObject;
+    fixed: FixedObject;
+};
 
 export const PostImage: React.FC<PostImageProps> = ({ fluid, fixed }) => (
     <Img
@@ -14,4 +14,4 @@ export const PostImage: React.FC<PostImageProps> = ({ fluid, fixed }) => (
             borderRadius: "4px",
         }}
     />
-)
+);

@@ -1,11 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
-import { css } from "@emotion/core"
+import React from "react";
+import { Link } from "gatsby";
+import { css } from "@emotion/core";
 
 type Props = {
-    previous?: string
-    next?: string
-}
+    previous?: string;
+    next?: string;
+};
 export const NextPreviousLinks: React.FC<Props> = ({
     previous,
     next,
@@ -15,7 +15,7 @@ export const NextPreviousLinks: React.FC<Props> = ({
         <NextPreviousLink previous={previous} next={next} />
         {children}
     </>
-)
+);
 
 const NextPreviousLink: React.FC<Props> = ({ previous, next }) => (
     <div
@@ -31,4 +31,4 @@ const NextPreviousLink: React.FC<Props> = ({ previous, next }) => (
         {previous && <Link to={previous}>Previous</Link>}
         {next && <Link to={next}>Next</Link>}
     </div>
-)
+);

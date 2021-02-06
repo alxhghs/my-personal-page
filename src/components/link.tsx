@@ -1,25 +1,25 @@
-import React from "react"
-import { Link as GatsbyLink } from "gatsby"
-import styled from "@emotion/styled"
+import React from "react";
+import { Link as GatsbyLink } from "gatsby";
+import styled from "@emotion/styled";
 
 type StyledLinkProps = {
-    color?: string
-    hovercolor?: string
-}
+    color?: string;
+    hovercolor?: string;
+};
 const StyledLink = styled(GatsbyLink)<StyledLinkProps>`
     color: ${(props) => (props.color ? props.color : "white")};
     text-decoration: none;
     &:hover {
         color: ${(props) => (props.hovercolor ? props.hovercolor : "intial")};
     }
-`
+`;
 
 type Props = {
-    to: string
-    color?: string
-    hovercolor?: string
-    className?: string
-}
+    to: string;
+    color?: string;
+    hovercolor?: string;
+    className?: string;
+};
 
 export const Link: React.FC<Props> = ({
     to,
@@ -36,4 +36,4 @@ export const Link: React.FC<Props> = ({
     >
         {children}
     </StyledLink>
-)
+);

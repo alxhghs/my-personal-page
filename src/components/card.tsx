@@ -1,6 +1,6 @@
-import styled from "@emotion/styled"
-import { Link } from "gatsby"
-import { colors } from "../theme"
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
+import { colors } from "../theme";
 
 export const Card = styled(Link)`
     font-family: sans-serif;
@@ -25,4 +25,4 @@ export const Card = styled(Link)`
         font-style: italic;
     }
     display: grid;
-`
+`;

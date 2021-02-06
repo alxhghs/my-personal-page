@@ -1,17 +1,17 @@
-import React from "react"
-import styled from "@emotion/styled"
-import { ProfileImage } from "../components"
+import React from "react";
+import styled from "@emotion/styled";
+import { ProfileImage } from "../components";
 
 const StyledBlogHeader = styled("div")`
     text-align: center;
-`
+`;
 
 type Props = {
-    title: string
-    subtitle?: string
-    author: string
-    date: string
-}
+    title: string;
+    subtitle?: string;
+    author: string;
+    date: string;
+};
 
 export const BlogHeader: React.FC<Props> = ({
     title,
@@ -26,4 +26,4 @@ export const BlogHeader: React.FC<Props> = ({
         <h3>by {author}</h3>
         <h4>{date}</h4>
     </StyledBlogHeader>
-)
+);
