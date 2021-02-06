@@ -9,4 +9,4 @@ export const colors = {
     snow: "#fffafa",
     blue: "#2b1de8",
     linkBlue: "##0000EE",
-};
+}

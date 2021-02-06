@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { breakPoints, colors } from "../constants";
+import styled from "@emotion/styled"
+import { breakPoints, colors } from "../constants"
 
 export const MarkdownWrapper = styled("div")`
     margin-bottom: 64px;
@@ -25,7 +25,9 @@ export const MarkdownWrapper = styled("div")`
             text-decoration: underline;
         }
     }
-    .gatsby-highlight, pre, code {
+    .gatsby-highlight,
+    pre,
+    code {
         border-radius: 4px;
         font-size: 12px;
     }
@@ -38,4 +40,4 @@ export const MarkdownWrapper = styled("div")`
             width: 600px;
         }
     }
-`;
+`

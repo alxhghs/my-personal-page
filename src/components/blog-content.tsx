@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { colors } from "../constants";
+import React from "react"
+import styled from "@emotion/styled"
+import { colors } from "../constants"
 
 const StyledBlogContent = styled("div")`
     line-height: 1.5;
@@ -27,12 +27,14 @@ const StyledBlogContent = styled("div")`
             text-decoration: underline;
         }
     }
-`;
+`
 
 type Props = {
-    html: string;
-};
+    html: string
+}
 
 export const BlogContent: React.FC<Props> = ({ html }) => (
-    <StyledBlogContent dangerouslySetInnerHTML={{ __html: html }}></StyledBlogContent>
-);
+    <StyledBlogContent
+        dangerouslySetInnerHTML={{ __html: html }}
+    ></StyledBlogContent>
+)

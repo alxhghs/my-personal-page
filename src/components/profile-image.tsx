@@ -1,7 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby";
-import Img, { FluidObject } from "gatsby-image";
-import styled from "@emotion/styled";
+import { useStaticQuery, graphql } from "gatsby"
+import Img, { FluidObject } from "gatsby-image"
+import styled from "@emotion/styled"
 
 type ProfilePictureQuery = {
     file: {
@@ -9,22 +9,27 @@ type ProfilePictureQuery = {
             fluid: FluidObject
         }
     }
-};
+}
 
 type ProfileImageProps = {
-    height: string;
-    width: string;
-};
+    height: string
+    width: string
+}
 
 // this is necessary to fix a bug on mobile where
 // the border radius doesn't show for a half-second
 const StyledImg = styled(Img)`
-    div, img, picture {
+    div,
+    img,
+    picture {
         border-radius: 50%;
     }
-`;
+`
 
-export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => {
+export const ProfileImage: React.FC<ProfileImageProps> = ({
+    height,
+    width,
+}) => {
     const { file }: ProfilePictureQuery = useStaticQuery(
         graphql`
             query {
@@ -37,7 +42,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
                 }
             }
         `
-    );
+    )
 
     return (
         <StyledImg
@@ -50,5 +55,5 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
                 margin: "0 auto",
             }}
         />
-    );
-};
+    )
+}

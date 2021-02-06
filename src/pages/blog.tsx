@@ -1,9 +1,9 @@
 import React from "react"
-import styled from "@emotion/styled";
-import dayjs from "dayjs";
-import { graphql } from "gatsby";
-import { Card, ProfileImage, SEO } from "../components";
-import { breakPoints } from "../constants";
+import styled from "@emotion/styled"
+import dayjs from "dayjs"
+import { graphql } from "gatsby"
+import { Card, ProfileImage, SEO } from "../components"
+import { breakPoints } from "../constants"
 
 const PostsWrapper = styled("div")`
     display: grid;
@@ -18,7 +18,7 @@ const PostsWrapper = styled("div")`
         max-width: ${breakPoints[4]};
         grid-template-columns: repeat(3, auto);
     }
-`;
+`
 
 const PageWrapper = styled("div")`
     display: grid;
@@ -29,44 +29,50 @@ const PageWrapper = styled("div")`
     text-align: center;
     height: 100%;
     margin-bottom: 64px;
-`;
+`
 
 const BlogCard = styled(Card)({
     gridTemplateRows: "auto 1fr auto",
-});
+})
 
 type PostPageProps = {
     data: {
         site: {
             siteMetadata: {
-                title: string;
-                description: string;
-                author: string;
+                title: string
+                description: string
+                author: string
             }
         }
-        allMarkdownRemark : {
+        allMarkdownRemark: {
             edges: {
                 node: {
-                    id: string;
+                    id: string
                     frontmatter: {
-                        title: string;
-                        subtitle: string;
-                        date: string;
+                        title: string
+                        subtitle: string
+                        date: string
                     }
                     fields: {
-                        slug: string;
+                        slug: string
                     }
                 }
-            }[];
+            }[]
         }
     }
-};
-
+}
 
 const BlogPage: React.FC<PostPageProps> = ({ data }) => {
-    const { author } = data.site.siteMetadata;
+    const { author } = data.site.siteMetadata
     const blogPosts = data.allMarkdownRemark.edges.map((edge) => edge.node)
-    const keywords = [ "Google Tag Manager", "Gatsby", "GatsbyJS", "CSS Grid", "React", "CSS-in-JS" ];
+    const keywords = [
+        "Google Tag Manager",
+        "Gatsby",
+        "GatsbyJS",
+        "CSS Grid",
+        "React",
+        "CSS-in-JS",
+    ]
     return (
         <PageWrapper>
             <SEO title="Posts" keywords={keywords} />
@@ -74,26 +80,21 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
             <ProfileImage height="100px" width="100px" />
             <p css={{ color: "grey" }}>by {author}</p>
             <PostsWrapper>
-                {
-                    blogPosts.map((post) => {
-                        const now = new Date;
-                        const date = post && post.frontmatter.date;
-                        return (
-                            now && date && dayjs(date).isBefore(now)
-                                ? (
-                                    <BlogCard key={post.id} to={`/${post.fields.slug}`}>
-                                        <h2>{post.frontmatter.title}</h2>
-                                        <h3>{post.frontmatter.subtitle}</h3>
-                                        <h4>{post.frontmatter.date}</h4>
-                                    </BlogCard>
-                                ) : null
-                            )
-                    })
-                }
+                {blogPosts.map((post) => {
+                    const now = new Date()
+                    const date = post && post.frontmatter.date
+                    return now && date && dayjs(date).isBefore(now) ? (
+                        <BlogCard key={post.id} to={`/${post.fields.slug}`}>
+                            <h2>{post.frontmatter.title}</h2>
+                            <h3>{post.frontmatter.subtitle}</h3>
+                            <h4>{post.frontmatter.date}</h4>
+                        </BlogCard>
+                    ) : null
+                })}
             </PostsWrapper>
         </PageWrapper>
     )
-};
+}
 
 export const blogPageQuery = graphql`
     query IndexPageQuery {
@@ -104,7 +105,7 @@ export const blogPageQuery = graphql`
                 author
             }
         }
-        allMarkdownRemark (sort: { order: DESC, fields: [frontmatter___date]}) {
+        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
             edges {
                 node {
                     id
@@ -120,6 +121,6 @@ export const blogPageQuery = graphql`
             }
         }
     }
-`;
+`
 
-export default BlogPage;
+export default BlogPage

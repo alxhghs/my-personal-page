@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { Link } from "gatsby";
-import { colors } from "../constants";
+import styled from "@emotion/styled"
+import { Link } from "gatsby"
+import { colors } from "../constants"
 
 export const Card = styled(Link)`
     font-family: sans-serif;
@@ -9,7 +9,7 @@ export const Card = styled(Link)`
     border-radius: 4px;
     border: 1px solid ${colors.lightgray};
     padding: 15px;
-    box-shadow: 0 17.125px 70px -12.125px rgba(0,0,0,0.1);
+    box-shadow: 0 17.125px 70px -12.125px rgba(0, 0, 0, 0.1);
     transition: transform 250ms;
     background-color: ${colors.white};
     &:hover {
@@ -25,5 +25,4 @@ export const Card = styled(Link)`
         font-style: italic;
     }
     display: grid;
-`;
-
+`

@@ -1,4 +1,3 @@
-
 /**
  * Layout component that queries for data
  * with Gatsby's StaticQuery component
@@ -7,9 +6,9 @@
  */
 
 import React from "react"
-import styled from "@emotion/styled";
+import styled from "@emotion/styled"
 import { StaticQuery, graphql, Page } from "gatsby"
-import "./layout.css";
+import "./layout.css"
 
 import { Header } from "../components"
 
@@ -19,7 +18,7 @@ const Wrapper = styled("div")`
     gap: 30px;
     font-family: sans-serif;
     height: 100%;
-`;
+`
 
 const Footer = styled("footer")`
     background-color: #000;
@@ -28,7 +27,7 @@ const Footer = styled("footer")`
     bottom: 0;
     text-align: center;
     padding: 16px 0 32px;
-`;
+`
 
 const Layout: React.FC<Page> = ({ path, children }) => (
     <StaticQuery
@@ -42,16 +41,17 @@ const Layout: React.FC<Page> = ({ path, children }) => (
                 }
             }
         `}
-        render={data => (
+        render={(data) => (
             <Wrapper>
                 <Header path={path} />
                 <main>{children}</main>
                 <Footer>
-                    © {new Date().getFullYear()} | {data.author ? data.author : "Alex Fenwood Hughes"}
+                    © {new Date().getFullYear()} |{" "}
+                    {data.author ? data.author : "Alex Fenwood Hughes"}
                 </Footer>
             </Wrapper>
         )}
     />
-);
+)
 
-export default Layout;
+export default Layout

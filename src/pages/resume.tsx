@@ -1,8 +1,8 @@
-import React from "react";
-import { graphql } from "gatsby";
-import styled from "@emotion/styled";
-import { ResumeContent, SEO } from "../components";
-import { breakPoints } from "../constants";
+import React from "react"
+import { graphql } from "gatsby"
+import styled from "@emotion/styled"
+import { ResumeContent, SEO } from "../components"
+import { breakPoints } from "../constants"
 
 const Wrapper = styled("div")`
     display: grid;
@@ -15,7 +15,7 @@ const Wrapper = styled("div")`
     @media screen and (min-width: ${breakPoints[3]}) {
         grid: auto / 700px;
     }
-`;
+`
 
 const ResumeHeaderWrapper = styled("div")`
     justify-content: center;
@@ -26,27 +26,27 @@ const ResumeHeaderWrapper = styled("div")`
             text-decoration: underline;
         }
     }
-`;
+`
 
 type Props = {
     data: {
         header: {
-            html: string;
+            html: string
         }
         education: {
-            html: string;
+            html: string
         }
         jobs: {
-            html: string;
+            html: string
         }
         skills: {
-            html: string;
+            html: string
         }
     }
 }
 
 const Resume: React.FC<Props> = ({ data }) => {
-    const { header, education, jobs, skills } = data;
+    const { header, education, jobs, skills } = data
 
     return (
         <Wrapper>
@@ -58,24 +58,24 @@ const Resume: React.FC<Props> = ({ data }) => {
             <ResumeContent html={skills && skills.html} />
             <ResumeContent html={education && education.html} />
         </Wrapper>
-    );
-};
+    )
+}
 
 export const pageQuery = graphql`
     {
-        header: markdownRemark (frontmatter: { title: { eq: "Header" }}) {
+        header: markdownRemark(frontmatter: { title: { eq: "Header" } }) {
             html
         }
-        education: markdownRemark (frontmatter: { title: { eq: "Education" }}) {
+        education: markdownRemark(frontmatter: { title: { eq: "Education" } }) {
             html
         }
-        jobs: markdownRemark (frontmatter: { title: { eq: "Jobs" }}) {
+        jobs: markdownRemark(frontmatter: { title: { eq: "Jobs" } }) {
             html
         }
-        skills: markdownRemark (frontmatter: { title: { eq: "Skills" }}) {
+        skills: markdownRemark(frontmatter: { title: { eq: "Skills" } }) {
             html
         }
     }
-`;
+`
 
-export default Resume;
+export default Resume
