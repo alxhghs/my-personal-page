@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { graphql } from "gatsby"
-import { breakPoints } from "../constants"
+import { breakPoints } from "../theme"
 import { BlogContent, BlogHeader, MarkdownWrapper, SEO } from "../components"
 
 const Wrapper = styled(MarkdownWrapper)`

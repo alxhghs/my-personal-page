@@ -85,7 +85,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                     }
                 }
             }
-        `
+        `,
     )
 
     const metaDescription = description || site.siteMetadata.description
@@ -137,7 +137,7 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                               name: `keywords`,
                               content: keywords.join(`, `),
                           }
-                        : []
+                        : [],
                 )
                 .concat(meta)}
             link={[

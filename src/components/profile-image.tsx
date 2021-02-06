@@ -41,7 +41,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
                     }
                 }
             }
-        `
+        `,
     )
 
     return (
