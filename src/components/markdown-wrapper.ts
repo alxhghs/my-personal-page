@@ -1,25 +1,25 @@
 import styled from "@emotion/styled";
-import { breakPoints, colors } from "../theme";
+import { breakPoints, lightModeColors } from "../theme";
 
 export const MarkdownWrapper = styled("div")`
     margin-bottom: 64px;
     h4 {
-        color: ${colors.black};
+        color: ${lightModeColors.black};
         font-style: italic;
         font-size: 14px;
     }
     blockquote {
-        border-left: 5px solid ${colors.blue};
+        border-left: 5px solid ${lightModeColors.blue};
         margin: 10px;
         padding: 15px;
-        color: ${colors.gray};
+        color: ${lightModeColors.gray};
         line-height: 1.5;
         p {
             margin: 0;
         }
     }
     a {
-        color: ${colors.blue};
+        color: ${lightModeColors.blue};
         text-decoration: none;
         &:hover {
             text-decoration: underline;

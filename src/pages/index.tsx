@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Link, SEO, ProfileImage } from "../components";
-import { colors } from "../theme";
+import { lightModeColors } from "../theme";
 
 const Wrapper = styled("div")`
     display: grid;
@@ -22,7 +22,7 @@ const ExternalLink = styled("a")`
     text-decoration: none;
     margin-right: 15px;
     &:hover {
-        color: ${colors.gray};
+        color: ${lightModeColors.gray};
     }
 `;
 
@@ -40,7 +40,11 @@ const App: React.FC = () => {
                 <ExternalLink href="https://www.linkedin.com/in/alxhughes/">
                     LinkedIn
                 </ExternalLink>
-                <Link to="/resume" color="black" hovercolor={colors.gray}>
+                <Link
+                    to="/resume"
+                    color="black"
+                    hovercolor={lightModeColors.gray}
+                >
                     Resume
                 </Link>
             </Links>

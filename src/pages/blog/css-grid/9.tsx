@@ -35,12 +35,13 @@ type Props = {
     backgroundColor?: string;
 };
 const GridChild = styled("div")<Props>`
-    background-color: ${props => props.backgroundColor ? props.backgroundColor : "white"};
+    background-color: ${(props) =>
+        props.backgroundColor ? props.backgroundColor : "white"};
     height: 30px;
     width: 30px;
 `;
 
-const colors = [
+const lightModeColors = [
     "red",
     "orange",
     "yellow",
@@ -53,15 +54,15 @@ const colors = [
 const cards: React.ReactNode[] = [];
 
 for (let i = 0; i < 700; i++) {
-    cards[i] = (<GridChild backgroundColor={colors[i%colors.length]} />);
+    cards[i] = (
+        <GridChild
+            backgroundColor={lightModeColors[i % lightModeColors.length]}
+        />
+    );
 }
 
 export default () => (
     <PresentationGridLayout pageNumber={9}>
-        <Grid>
-            {
-                cards.map((card) => card)
-            }
-        </Grid>
+        <Grid>{cards.map((card) => card)}</Grid>
     </PresentationGridLayout>
 );

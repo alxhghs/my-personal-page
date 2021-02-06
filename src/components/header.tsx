@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { Link } from "../components";
-import { colors } from "../theme";
+import { lightModeColors } from "../theme";
 import { Page } from "gatsby";
 
 const Animation = keyframes`
@@ -36,7 +36,7 @@ const StyledHeader = styled("header")`
     background-size: 1800% 1800%;
     justify-content: center;
     animation: ${Animation} 90s ease infinite;
-    text-shadow: 0 0 3px ${colors.black};
+    text-shadow: 0 0 3px ${lightModeColors.black};
 `;
 
 const StyledH2 = styled.h2<{ underline: boolean }>((props) => ({
@@ -50,13 +50,13 @@ type Props = {
 export const Header: React.FC<Props> = ({ path }) => (
     <StyledHeader>
         <StyledH2 underline={path === "/" || path === ""}>
-            <Link to="/" hovercolor={colors.lightgray}>
+            <Link to="/" hovercolor={lightModeColors.lightgray}>
                 Home
             </Link>
             {console.log(path)}
         </StyledH2>
         <StyledH2 underline={path.includes("blog")}>
-            <Link to="/blog" hovercolor={colors.lightgray}>
+            <Link to="/blog" hovercolor={lightModeColors.lightgray}>
                 Blog
             </Link>
         </StyledH2>
