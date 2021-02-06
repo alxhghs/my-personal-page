@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { ResumeContent, SEO } from "../components"
-import { breakPoints } from "../constants"
+import { breakPoints } from "../theme"
 
 const Wrapper = styled("div")`
     display: grid;

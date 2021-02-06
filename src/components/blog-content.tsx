@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
-import { colors } from "../constants"
+import { colors } from "../theme"
 
 const StyledBlogContent = styled("div")`
     line-height: 1.5;

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import { colors } from "../constants"
+import { colors } from "../theme"
 
 export const Card = styled(Link)`
     font-family: sans-serif;

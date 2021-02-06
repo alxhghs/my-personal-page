@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { keyframes } from "@emotion/core"
 import { Link } from "../components"
-import { colors } from "../constants"
+import { colors } from "../theme"
 import { Page } from "gatsby"
 
 const Animation = keyframes`

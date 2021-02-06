@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { Link, SEO, ProfileImage } from "../components"
-import { colors } from "../constants"
+import { colors } from "../theme"
 
 const Wrapper = styled("div")`
     display: grid;

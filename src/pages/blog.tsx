@@ -3,7 +3,7 @@ import styled from "@emotion/styled"
 import dayjs from "dayjs"
 import { graphql } from "gatsby"
 import { Card, ProfileImage, SEO } from "../components"
-import { breakPoints } from "../constants"
+import { breakPoints } from "../theme"
 
 const PostsWrapper = styled("div")`
     display: grid;
