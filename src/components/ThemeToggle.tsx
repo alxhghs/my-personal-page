@@ -9,6 +9,7 @@ export const ThemeToggle: React.FC = () => {
             size={50}
             checked={theme === Theme.DARK}
             onChange={toggleTheme}
+            speed={2.5}
             css={{
                 position: "absolute",
                 top: "50%",
