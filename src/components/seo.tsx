@@ -8,31 +8,35 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
+// @ts-ignore
 import icon from "../images/favicon.png";
 
 type Props = {
     description: string;
     lang: string;
-    meta: {
-        name: string;
-        content: any;
-        property?: undefined;
-    }
+    meta:
         | {
-        name?: undefined;
-        content: any;
-        property: string;
-    }
-        | ConcatArray<{
-        name: string;
-        content: any;
-        property?: undefined;
-    }
+              name: string;
+              content: any;
+              property?: undefined;
+          }
         | {
-        name?: undefined;
-        content: any;
-        property: string;
-    }>;
+              name?: undefined;
+              content: any;
+              property: string;
+          }
+        | ConcatArray<
+              | {
+                    name: string;
+                    content: any;
+                    property?: undefined;
+                }
+              | {
+                    name?: undefined;
+                    content: any;
+                    property: string;
+                }
+          >;
     keywords: string[];
     title: string;
 };
@@ -81,10 +85,10 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                     }
                 }
             }
-        `
+        `,
     );
 
-    const metaDescription = description || site.siteMetadata.description
+    const metaDescription = description || site.siteMetadata.description;
 
     return (
         <Helmet
@@ -130,21 +134,21 @@ export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
                 .concat(
                     keywords.length > 0
                         ? {
-                            name: `keywords`,
-                            content: keywords.join(`, `),
-                        }
-                        : []
+                              name: `keywords`,
+                              content: keywords.join(`, `),
+                          }
+                        : [],
                 )
                 .concat(meta)}
             link={[
                 {
                     rel: "shortcut icon",
                     type: "image/png",
-                    href: icon
-                }
+                    href: icon,
+                },
             ]}
         />
-    )
-}
+    );
+};
 
 SEO.defaultProps = DefaultProps;

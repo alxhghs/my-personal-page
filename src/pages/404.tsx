@@ -1,15 +1,15 @@
-import React from "react"
+import React from "react";
 import styled from "@emotion/styled";
 
-import { SEO } from "../components/seo"
+import { SEO } from "../components/Seo";
 
-const Wrapper = styled("div")`
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    height: 100%;
-`;
+const Wrapper = styled.div({
+    display: "grid",
+    justifyContent: "center",
+    alignContent: "center",
+    textAlign: "center",
+    height: "100%",
+});
 
 const NotFoundPage = () => (
     <Wrapper>
