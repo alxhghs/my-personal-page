@@ -1,12 +1,20 @@
-import { useTheme } from "../theme";
-import Switch from "@material-ui/core/Switch";
-import { Theme } from "../theme/useUserBrowserTheme";
-import { MdWbSunny } from "react-icons/md";
-import { FiMoon } from "react-icons/fi";
 import React from "react";
+import styled from "@emotion/styled";
+import { useTheme } from "../theme";
+import Switch from "react-switch";
+import { Theme } from "../theme/useUserBrowserTheme";
+import { RiSunFill } from "react-icons/ri";
+import { BsMoon } from "react-icons/bs";
+
+const IconWrapper = styled.div({
+    display: "flex",
+    alignItems: "center",
+    height: "100%",
+    justifyContent: "center",
+});
 
 export const ThemeToggle: React.FC = () => {
-    const { theme, toggleTheme, colors, breakpoints, setTheme } = useTheme();
+    const { theme, toggleTheme, colors, breakpoints } = useTheme();
     return (
         <div
             css={{
@@ -14,10 +22,7 @@ export const ThemeToggle: React.FC = () => {
                 top: "50%",
                 transform: "translateY(-50%)",
                 right: 8,
-                border: colors.cardBorder,
                 display: "flex",
-                alignItems: "center",
-                "&:hover": { cursor: "pointer" },
                 [`@media screen and (min-width: ${breakpoints[3]})`]: {
                     right: 16,
                 },
@@ -26,13 +31,23 @@ export const ThemeToggle: React.FC = () => {
                 },
             }}
         >
-            <MdWbSunny onClick={() => setTheme(Theme.LIGHT)} />
             <Switch
                 checked={theme === Theme.DARK}
                 onChange={toggleTheme}
                 color="default"
+                checkedIcon={
+                    <IconWrapper>
+                        <BsMoon color={colors.moon} />
+                    </IconWrapper>
+                }
+                uncheckedIcon={
+                    <IconWrapper>
+                        <RiSunFill color={colors.sun} />
+                    </IconWrapper>
+                }
+                offColor={colors.toggleOff}
+                onColor={colors.toggleOn}
             />
-            <FiMoon onClick={() => setTheme(Theme.DARK)} />
         </div>
     );
 };
