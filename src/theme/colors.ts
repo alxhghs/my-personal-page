@@ -12,6 +12,10 @@ export const lightModeColors = {
     cardBackground: "#fff",
     cardBorder: "gray",
     blockQuoteBorder: "blue",
+    moon: "yellow",
+    sun: "yellow",
+    toggleOff: "#87ceeb",
+    toggleOn: "#000",
 };
 
 export const darkModeColors: Colors = {
@@ -26,4 +30,8 @@ export const darkModeColors: Colors = {
     cardBackground: "rgb(0,0,0,0.7)",
     cardBorder: "rgb(255,255,255,0.1)",
     blockQuoteBorder: "blue",
+    moon: "yellow",
+    sun: "yellow",
+    toggleOff: "#87ceeb",
+    toggleOn: "#000",
 };
