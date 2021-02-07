@@ -5,6 +5,16 @@ import Switch from "react-switch";
 import { Theme } from "../theme/useUserBrowserTheme";
 import { RiSunFill } from "react-icons/ri";
 import { BsMoon } from "react-icons/bs";
+import { keyframes } from "@emotion/core";
+
+const fadeIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 
 const IconWrapper = styled.div({
     display: "flex",
@@ -29,6 +39,7 @@ export const ThemeToggle: React.FC = () => {
                 transform: "translateY(-50%)",
                 right: 8,
                 display: "flex",
+                animation: `${fadeIn} 400ms ease-in`,
                 [`@media screen and (min-width: ${breakpoints[3]})`]: {
                     right: 16,
                 },
