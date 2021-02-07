@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 import { useTheme } from "../theme";
 import Switch from "react-switch";
@@ -15,15 +15,11 @@ const IconWrapper = styled.div({
 
 export const ThemeToggle: React.FC = () => {
     const { theme, toggleTheme, colors, breakpoints } = useTheme();
-    const [checked, setChecked] = useState(theme === Theme.DARK);
+    const isLoading = typeof window === "undefined";
 
-    useEffect(() => {
-        if (theme === Theme.DARK) {
-            setChecked(true);
-        } else {
-            setChecked(false);
-        }
-    }, [theme]);
+    if (isLoading || theme === null) {
+        return null;
+    }
 
     return (
         <div
@@ -42,7 +38,7 @@ export const ThemeToggle: React.FC = () => {
             }}
         >
             <Switch
-                checked={checked}
+                checked={theme === Theme.DARK}
                 onChange={toggleTheme}
                 color="default"
                 checkedIcon={
