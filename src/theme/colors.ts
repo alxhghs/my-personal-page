@@ -16,6 +16,7 @@ export const lightModeColors = {
     sun: "yellow",
     toggleOff: "#87ceeb",
     toggleOn: "#000",
+    toggleBorder: "#000",
 };
 
 export const darkModeColors: Colors = {
@@ -34,4 +35,5 @@ export const darkModeColors: Colors = {
     sun: "yellow",
     toggleOff: "#87ceeb",
     toggleOn: "#000",
+    toggleBorder: "#000",
 };
