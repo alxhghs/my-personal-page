@@ -7,7 +7,6 @@
   "dependencies": {
     "@babel/core": "^7.0.0-0",
     "@emotion/core": "^10.0.9",
-    "@emotion/react": "^11.1.5",
     "@emotion/styled": "^10.0.9",
     "dayjs": "^1.8.29",
     "dotenv": "^8.2.0",
