@@ -16,6 +16,7 @@ const IconWrapper = styled.div({
 export const ThemeToggle: React.FC = () => {
     const { theme, toggleTheme, colors, breakpoints } = useTheme();
     const [checked, setChecked] = useState(theme === Theme.DARK);
+
     useEffect(() => {
         if (theme === Theme.DARK) {
             setChecked(true);
@@ -23,7 +24,7 @@ export const ThemeToggle: React.FC = () => {
             setChecked(false);
         }
     }, [theme]);
-    console.log("theme in toggle", theme);
+
     return (
         <div
             css={{
