@@ -24,13 +24,7 @@ type ThemeValues = {
 const ThemeContext = createContext<ThemeValues>(null!);
 
 export const ThemeProvider: React.FC = ({ children }) => {
-    const now = dayjs();
-    const isDay = now.hour() > 7 && now.hour() < 19;
-    const userBrowserTheme = useUserBrowserTheme();
-    const timeBasedTheme = isDay ? Theme.LIGHT : Theme.DARK;
-    const [theme, setTheme] = useState<Theme>(
-        userBrowserTheme ?? timeBasedTheme,
-    );
+    const [theme, setTheme] = useState<Theme>(Theme.DARK);
     const colors = theme === Theme.DARK ? darkModeColors : lightModeColors;
 
     const toggleTheme = () => {
@@ -42,11 +36,14 @@ export const ThemeProvider: React.FC = ({ children }) => {
         });
     };
 
+    const userTheme = useUserBrowserTheme();
+
     useEffect(() => {
-        if (userBrowserTheme && userBrowserTheme !== theme) {
-            setTheme(userBrowserTheme);
-        }
-    }, [userBrowserTheme]);
+        const now = dayjs();
+        const isDay = now.hour() > 7 && now.hour() < 19;
+        const timeBasedTheme = isDay ? Theme.LIGHT : Theme.DARK;
+        userTheme ? setTheme(userTheme) : setTheme(timeBasedTheme);
+    }, [userTheme]);
 
     return (
         <ThemeContext.Provider
