@@ -44,6 +44,7 @@ const StyledHeader = styled.header<Colors>(({ colors }) => ({
 
 const StyledH2 = styled.h2<{ underline: boolean }>((props) => ({
     textDecoration: props.underline ? "underline" : undefined,
+    userSelect: "none",
 }));
 
 type Props = {
