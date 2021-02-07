@@ -1,20 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
 import { graphql } from "gatsby";
-import { breakPoints } from "../theme";
 import { BlogContent, BlogHeader, MarkdownWrapper, SEO } from "../components";
-
-const Wrapper = styled(MarkdownWrapper)`
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    height: 100%;
-    padding: 0 15px;
-    grid-template-columns: auto;
-    @media screen and (min-width: ${breakPoints[4]}) {
-        grid-template-columns: 900px;
-    }
-`;
 
 type Props = {
     data: {
@@ -44,7 +30,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
     const { frontmatter } = markdownRemark;
     if (data && markdownRemark) {
         return (
-            <Wrapper>
+            <MarkdownWrapper>
                 <SEO
                     title={
                         frontmatter.title +
@@ -62,7 +48,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                     date={frontmatter.date}
                 />
                 <BlogContent html={markdownRemark.html} />
-            </Wrapper>
+            </MarkdownWrapper>
         );
     }
     return <h2>Blog post not found</h2>;

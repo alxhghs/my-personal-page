@@ -2,11 +2,11 @@ import React from "react";
 import { NextPreviousLinks } from "./next-previous-links";
 import styled from "@emotion/styled";
 
-const Grid = styled("div")`
-    display: grid;
-    justify-content: center;
-    text-align: center;
-`;
+const Grid = styled.div({
+    display: "grid",
+    justifyContent: "center",
+    textAlign: "center",
+});
 
 type Props = {
     pageNumber: number;

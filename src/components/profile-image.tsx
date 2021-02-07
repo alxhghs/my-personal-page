@@ -18,13 +18,11 @@ type ProfileImageProps = {
 
 // this is necessary to fix a bug on mobile where
 // the border radius doesn't show for a half-second
-const StyledImg = styled(Img)`
-    div,
-    img,
-    picture {
-        border-radius: 50%;
-    }
-`;
+const StyledImg = styled(Img)({
+    "div, img, picture": {
+        borderRadius: "50%",
+    },
+});
 
 export const ProfileImage: React.FC<ProfileImageProps> = ({
     height,

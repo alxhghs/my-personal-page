@@ -9,9 +9,6 @@ type StyledLinkProps = {
 const StyledLink = styled(GatsbyLink)<StyledLinkProps>`
     color: ${(props) => (props.color ? props.color : "white")};
     text-decoration: none;
-    &:hover {
-        color: ${(props) => (props.hovercolor ? props.hovercolor : "intial")};
-    }
 `;
 
 type Props = {
@@ -31,8 +28,12 @@ export const Link: React.FC<Props> = ({
     <StyledLink
         to={to}
         color={color}
-        hovercolor={hovercolor}
         className={className}
+        css={{
+            "&:hover": {
+                color: hovercolor ? hovercolor : "initial",
+            },
+        }}
     >
         {children}
     </StyledLink>
