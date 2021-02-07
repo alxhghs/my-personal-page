@@ -11,7 +11,7 @@ const StyledCard = styled(Link)<Colors>(({ colors }) => ({
     border: `1px solid ${colors.cardBorder}`,
     padding: 15,
     boxShadow: `0 17.125px 70px -12.125px rgba(0, 0, 0, 0.1)`,
-    transition: "transform 250ms",
+    transition: "transform 250ms ease-out, background-color 600ms ease-out",
     backgroundColor: colors.cardBackground,
     "&:hover": {
         transform: "scale(1.03)",
