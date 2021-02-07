@@ -15,6 +15,7 @@ const IconWrapper = styled.div({
 
 export const ThemeToggle: React.FC = () => {
     const { theme, toggleTheme, colors, breakpoints } = useTheme();
+    console.log("theme in toggle", theme);
     return (
         <div
             css={{
