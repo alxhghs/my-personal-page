@@ -43,7 +43,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
     };
 
     useEffect(() => {
-        if (userBrowserTheme && userBrowserTheme !== theme) {
+        if (userBrowserTheme) {
             setTheme(userBrowserTheme);
         }
     }, [userBrowserTheme]);
