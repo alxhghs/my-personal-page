@@ -6,13 +6,13 @@ export enum Theme {
 }
 
 export const useUserBrowserTheme = () => {
-    const canMatch = Boolean(window?.matchMedia);
-
     const prefersDark =
-        canMatch && window.matchMedia(`(prefers-color-scheme: ${Theme.DARK})`);
+        typeof window !== "undefined" &&
+        window.matchMedia(`(prefers-color-scheme: ${Theme.DARK})`);
 
     const prefersLight =
-        canMatch && window.matchMedia(`(prefers-color-scheme: ${Theme.LIGHT})`);
+        typeof window !== "undefined" &&
+        window.matchMedia(`(prefers-color-scheme: ${Theme.LIGHT})`);
 
     const initialTheme =
         (prefersLight &&
