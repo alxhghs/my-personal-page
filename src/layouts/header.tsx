@@ -4,6 +4,7 @@ import { keyframes } from "@emotion/core";
 import { Link } from "../components";
 import { Page } from "gatsby";
 import { Colors, useTheme } from "../theme/ThemeProvider";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 const Animation = keyframes`
     0% {
@@ -20,7 +21,7 @@ const Animation = keyframes`
 const StyledHeader = styled.header<Colors>(({ colors }) => ({
     display: "grid",
     gridTemplateColumns: "repeat(2, auto)",
-    gap: 45,
+    gap: 32,
     color: colors.headerText,
     background: `linear-gradient(
         124deg,
@@ -36,9 +37,9 @@ const StyledHeader = styled.header<Colors>(({ colors }) => ({
     )`,
     backgroundSize: "1800% 1800%",
     justifyContent: "center",
-    paddingLeft: 32,
     animation: `${Animation} 90s ease infinite`,
     textShadow: `0 0 3px ${colors.textShadow}`,
+    position: "relative",
 }));
 
 const StyledH2 = styled.h2<{ underline: boolean }>((props) => ({
@@ -72,6 +73,7 @@ export const Header: React.FC<Props> = ({ path }) => {
                     Blog
                 </Link>
             </StyledH2>
+            <ThemeToggle />
         </StyledHeader>
     );
 };

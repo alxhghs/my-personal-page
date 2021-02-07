@@ -34,7 +34,6 @@ type Props = {
 
 export const BlogContent: React.FC<Props> = ({ html }) => {
     const { colors } = useTheme();
-    console.log("colors", colors);
     return (
         <StyledBlogContent
             dangerouslySetInnerHTML={{ __html: html }}

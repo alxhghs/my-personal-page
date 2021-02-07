@@ -15,15 +15,16 @@ export const useUserBrowserTheme = () => {
         canMatch && window.matchMedia(`(prefers-color-scheme: ${Theme.LIGHT})`);
 
     const initialTheme =
-        prefersLight &&
-        prefersDark &&
-        (prefersDark.matches
-            ? Theme.DARK
-            : prefersLight.matches
-            ? Theme.LIGHT
-            : null);
+        (prefersLight &&
+            prefersDark &&
+            (prefersDark.matches
+                ? Theme.DARK
+                : prefersLight.matches
+                ? Theme.LIGHT
+                : null)) ||
+        null;
 
-    const [theme, setTheme] = useState<Theme>(initialTheme as Theme);
+    const [theme, setTheme] = useState<Theme | null>(initialTheme);
 
     const checkDark = (e: MediaQueryListEvent) => {
         if (e.matches) {
@@ -33,7 +34,16 @@ export const useUserBrowserTheme = () => {
         }
     };
 
+    const checkLight = (e: MediaQueryListEvent) => {
+        if (e.matches) {
+            setTheme(Theme.LIGHT);
+        } else {
+            setTheme(Theme.DARK);
+        }
+    };
+
     prefersDark && prefersDark.addEventListener("change", checkDark);
+    prefersLight && prefersLight.addEventListener("change", checkLight);
 
     return theme;
 };

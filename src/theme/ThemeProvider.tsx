@@ -16,6 +16,7 @@ export type Breakpoints = { breakpoints: typeof breakpoints };
 
 type ThemeValues = {
     toggleTheme: () => void;
+    theme: Theme;
     setTheme: Dispatch<SetStateAction<Theme>>;
 } & Colors &
     Breakpoints;
@@ -50,6 +51,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
     return (
         <ThemeContext.Provider
             value={{
+                theme,
                 setTheme,
                 colors,
                 breakpoints,

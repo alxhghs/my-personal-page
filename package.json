@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Alex Hughes <alxhghs@gmail.com>",
   "dependencies": {
+    "@babel/core": "^7.0.0-0",
     "@emotion/core": "^10.0.9",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^10.0.9",
@@ -27,6 +28,7 @@
     "prismjs": "^1.15.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
+    "react-dark-mode-toggle": "^0.0.10",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.1.0",
     "ts-node": "^8.10.2"
