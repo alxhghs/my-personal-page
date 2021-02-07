@@ -38,7 +38,7 @@ const StyledHeader = styled.header<Colors>(({ colors }) => ({
     justifyContent: "center",
     paddingLeft: 32,
     animation: `${Animation} 90s ease infinite`,
-    textShadow: `0 0 3px ${colors.text}`,
+    textShadow: `0 0 3px ${colors.textShadow}`,
 }));
 
 const StyledH2 = styled.h2<{ underline: boolean }>((props) => ({
