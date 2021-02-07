@@ -39,7 +39,7 @@ export const ThemeToggle: React.FC = () => {
                 transform: "translateY(-50%)",
                 right: 8,
                 display: "flex",
-                animation: `${fadeIn} 200ms ease-in`,
+                animation: `${fadeIn} 400ms ease-in`,
                 [`@media screen and (min-width: ${breakpoints[3]})`]: {
                     right: 16,
                 },
