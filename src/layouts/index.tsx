@@ -10,7 +10,7 @@ import styled from "@emotion/styled";
 import { StaticQuery, graphql, Page } from "gatsby";
 import "./layout.css";
 import { Header } from "../components";
-import { Colors, ThemeProvider, useTheme } from "../theme/theme-provider";
+import { Colors, ThemeProvider, useTheme } from "../theme/ThemeProvider";
 
 const Wrapper = styled.div({
     display: "grid",

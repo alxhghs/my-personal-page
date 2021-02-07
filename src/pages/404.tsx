@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { SEO } from "../components/seo";
+import { SEO } from "../components/Seo";
 
 const Wrapper = styled.div({
     display: "grid",

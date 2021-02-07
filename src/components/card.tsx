@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { GatsbyLinkProps, Link } from "gatsby";
-import { Colors, useTheme } from "../theme/theme-provider";
+import { Colors, useTheme } from "../theme/ThemeProvider";
 
 const StyledCard = styled(Link)<Colors>(({ colors }) => ({
     display: "grid",

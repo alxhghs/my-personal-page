@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
 import { Link } from "../components";
 import { Page } from "gatsby";
-import { Colors, useTheme } from "../theme/theme-provider";
+import { Colors, useTheme } from "../theme/ThemeProvider";
 
 const Animation = keyframes`
     0% {
