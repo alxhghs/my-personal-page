@@ -20,5 +20,5 @@ body {
 }
 
 * {
-    transition: color 200ms ease-out, background-color 800ms ease-out;
+    transition: background-color 800ms ease-out;
 }
