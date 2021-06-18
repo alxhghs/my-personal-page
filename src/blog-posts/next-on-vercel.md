@@ -56,7 +56,7 @@ npm install --save-dev typescript @types/react @types/node
 ```
 "scripts": {
     "dev": "next",
-    "build: "next build",
+    "build": "next build",
     "start": "next start"
 }
 ```
