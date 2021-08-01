@@ -1,7 +1,7 @@
 // grid gap and grid shorthand syntax
 import React from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/core';
+import { css } from '@emotion/react';
 import { PresentationGridLayout } from '../../../components';
 
 const Grid = styled('div')`

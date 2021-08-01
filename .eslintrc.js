@@ -17,10 +17,12 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    "@emotion/eslint-plugin"
   ],
   rules: {
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "@emotion/pkg-renaming": "error"
   },
 };

@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import Switch from "react-switch";
 import { RiSunFill } from "react-icons/ri";
 import { BsMoon } from "react-icons/bs";
-import { keyframes } from "@emotion/core";
+import { keyframes } from '@emotion/react';
 import { Theme } from "../theme/useUserBrowserTheme";
 import { useTheme } from "../theme";
 
