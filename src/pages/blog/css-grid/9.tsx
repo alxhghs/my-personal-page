@@ -1,9 +1,9 @@
 // silly example
-import React from "react";
-import styled from "@emotion/styled";
-import { PresentationGridLayout } from "../../../components";
+import React from 'react';
+import styled from '@emotion/styled';
+import { PresentationGridLayout } from '../../../components';
 
-const Grid = styled("div")`
+const Grid = styled('div')`
     display: grid;
     grid: auto / repeat(14, auto);
     @media screen and (min-width: 400px) {
@@ -34,35 +34,34 @@ const Grid = styled("div")`
 type Props = {
     backgroundColor?: string;
 };
-const GridChild = styled("div")<Props>`
-    background-color: ${(props) =>
-        props.backgroundColor ? props.backgroundColor : "white"};
+const GridChild = styled('div')<Props>`
+    background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : 'white')};
     height: 30px;
     width: 30px;
 `;
 
 const lightModeColors = [
-    "red",
-    "orange",
-    "yellow",
-    "green",
-    "blue",
-    "indigo",
-    "violet",
+  'red',
+  'orange',
+  'yellow',
+  'green',
+  'blue',
+  'indigo',
+  'violet',
 ];
 
 const cards: React.ReactNode[] = [];
 
 for (let i = 0; i < 700; i++) {
-    cards[i] = (
-        <GridChild
-            backgroundColor={lightModeColors[i % lightModeColors.length]}
-        />
-    );
+  cards[i] = (
+    <GridChild
+      backgroundColor={lightModeColors[i % lightModeColors.length]}
+    />
+  );
 }
 
 export default () => (
-    <PresentationGridLayout pageNumber={9}>
-        <Grid>{cards.map((card) => card)}</Grid>
-    </PresentationGridLayout>
+  <PresentationGridLayout pageNumber={9}>
+    <Grid>{cards.map((card) => card)}</Grid>
+  </PresentationGridLayout>
 );

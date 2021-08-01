@@ -30,7 +30,7 @@ export const Page: React.FC<Page> = ({ path }) => {
             <H2 underline={path === "/" || path === ""}>
                 Home
             </H2>
-            <H2 underline={path.includes("blog)}>
+            <H2 underline={path.includes("blog")}>
                 Blog
             </H2>
         </>

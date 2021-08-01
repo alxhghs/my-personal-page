@@ -2,7 +2,10 @@
 title: "Jobs"
 ---
 ## Work Experience
-<b>Education First</b> | Software Engineer | <i>September 2018 to present</i>
+
+<b>Education First Go Ahead Tours</b> | Senior Software Engineer | <i>May 2021 to present</i>
+
+<b>Education First Go Ahead Tours</b> | Software Engineer | <i>September 2018 to May 2021</i>
 
 <b>City Year Boston</b> | Impact Manager | <i>August 2016 to June 2018</i>
 

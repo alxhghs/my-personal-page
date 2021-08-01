@@ -5,9 +5,9 @@ import {
     useContext,
     useEffect,
 } from "react";
+import dayjs from "dayjs";
 import { darkModeColors, lightModeColors } from "./colors";
 import { breakpoints } from "./breakpoints";
-import dayjs from "dayjs";
 import { Theme, useUserBrowserTheme } from "./useUserBrowserTheme";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 

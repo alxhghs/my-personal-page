@@ -9,20 +9,22 @@ title: "Skills"
 * NodeJS
 
 ### Frontend
-* React
-* Next
+* ReactJS
+* NextJS
 * Graphql
+* Apollo Client
+* REST
 * CSS3
 * HTML5
-* Gatsby
+* GatsbyJS
 
 ### Backend
-* Nest
-* Express
-* SQL
-* Prisma
+* NestJS
 * Mongo
-* Apollo
+* Prisma
+* Apollo Server
+* SQL
+* Express
 
 ### Foreign Languages
 * Spanish (fluent)

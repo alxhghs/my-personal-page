@@ -1,6 +1,5 @@
 import React from "react";
-import Img from "gatsby-image";
-import { FluidObject } from "gatsby-image";
+import Img, { FluidObject } from "gatsby-image";
 
 type Props = {
     fluid: FluidObject;

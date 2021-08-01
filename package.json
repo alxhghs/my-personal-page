@@ -36,8 +36,20 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-typescript": "^2.0.11",
-    "prettier": "^2.0.5",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.1",
+    "prettier": "2.3.2",
     "typescript": "^3.9.5"
   },
   "keywords": [
@@ -48,6 +60,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{ts,tsx}",
+    "lint": "eslint **/*.tsx --fix",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
@@ -59,5 +72,16 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.tsx": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

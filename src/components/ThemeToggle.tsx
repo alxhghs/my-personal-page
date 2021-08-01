@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { useTheme } from "../theme";
 import Switch from "react-switch";
-import { Theme } from "../theme/useUserBrowserTheme";
 import { RiSunFill } from "react-icons/ri";
 import { BsMoon } from "react-icons/bs";
 import { keyframes } from "@emotion/core";
+import { Theme } from "../theme/useUserBrowserTheme";
+import { useTheme } from "../theme";
 
 const fadeIn = keyframes`
     0% {

@@ -1,9 +1,9 @@
 // media query and some styling
-import React from "react";
-import styled from "@emotion/styled";
-import { PresentationGridLayout } from "../../../components";
+import React from 'react';
+import styled from '@emotion/styled';
+import { PresentationGridLayout } from '../../../components';
 
-const Grid = styled("div")`
+const Grid = styled('div')`
     display: grid;    
     text-align: center;
     font-size: 24px;
@@ -26,13 +26,13 @@ const Grid = styled("div")`
     overflow: hidden;
 `;
 
-const Header = styled("div")`
+const Header = styled('div')`
     background-color: green;
     grid-area: Header;
     line-height: 100px;
 `;
 
-const SideBar1 = styled("div")`
+const SideBar1 = styled('div')`
     background-color: purple;
     color: white;
     grid-area: SideBar1;
@@ -42,13 +42,13 @@ const SideBar1 = styled("div")`
     }
 `;
 
-const Main = styled("div")`
+const Main = styled('div')`
     background-color: white;
     grid-area: Main;
     line-height: 300px;
 `;
 
-const SideBar2 = styled("div")`
+const SideBar2 = styled('div')`
     background-color: red;
     color: white;
     grid-area: SideBar2;
@@ -58,7 +58,7 @@ const SideBar2 = styled("div")`
     }
 `;
 
-const Footer = styled("div")`
+const Footer = styled('div')`
     background-color: blue;
     color: white;
     grid-area: Footer;
@@ -66,13 +66,13 @@ const Footer = styled("div")`
 `;
 
 export default () => (
-    <PresentationGridLayout pageNumber={5}>
-        <Grid>
-            <Header>Header</Header>
-            <SideBar1>SideBar1</SideBar1>
-            <Main>Main</Main>
-            <SideBar2>SideBar2</SideBar2>
-            <Footer>Footer</Footer>
-        </Grid>
-    </PresentationGridLayout>
+  <PresentationGridLayout pageNumber={5}>
+    <Grid>
+      <Header>Header</Header>
+      <SideBar1>SideBar1</SideBar1>
+      <Main>Main</Main>
+      <SideBar2>SideBar2</SideBar2>
+      <Footer>Footer</Footer>
+    </Grid>
+  </PresentationGridLayout>
 );

@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "@emotion/styled";
-import { useStaticQuery, graphql } from "gatsby";
-import { PresentationGridLayout } from "../../../components";
-import Img, { FluidObject, }from "gatsby-image";
+import React from 'react';
+import styled from '@emotion/styled';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
+import { PresentationGridLayout } from '../../../components';
 
-const Grid = styled("div")`
+const Grid = styled('div')`
     display: grid;
     border-radius: 20px;
     overflow: hidden;
@@ -23,8 +23,8 @@ type KeanuPictureQuery = {
 };
 
 export default () => {
-    const { file }: KeanuPictureQuery = useStaticQuery(
-        graphql`
+  const { file }: KeanuPictureQuery = useStaticQuery(
+    graphql`
             query { 
                 file(relativePath: { eq: "keanu.png" }) {
                     childImageSharp {
@@ -34,14 +34,14 @@ export default () => {
                     }
                 }
             }
-        `
-    );
+        `,
+  );
 
-    return (
-        <PresentationGridLayout pageNumber={10}>
-            <Grid>
-                <Img fluid={file && file.childImageSharp && file.childImageSharp.fluid} />
-            </Grid>
-        </PresentationGridLayout>
-    );
+  return (
+    <PresentationGridLayout pageNumber={10}>
+      <Grid>
+        <Img fluid={file && file.childImageSharp && file.childImageSharp.fluid} />
+      </Grid>
+    </PresentationGridLayout>
+  );
 };

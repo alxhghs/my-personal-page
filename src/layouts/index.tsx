@@ -46,15 +46,13 @@ const Layout: React.FC<Page> = ({ path, children }) => (
                 }
             }
         `}
-        render={(data) => {
-            return (
-                <ThemeProvider>
-                    <Inner path={path} data={data}>
-                        {children}
-                    </Inner>
-                </ThemeProvider>
-            );
-        }}
+        render={(data) => (
+            <ThemeProvider>
+                <Inner path={path} data={data}>
+                    {children}
+                </Inner>
+            </ThemeProvider>
+        )}
     />
 );
 

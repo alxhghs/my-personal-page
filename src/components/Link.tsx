@@ -31,7 +31,7 @@ export const Link: React.FC<Props> = ({
         className={className}
         css={{
             "&:hover": {
-                color: hovercolor ? hovercolor : "initial",
+                color: hovercolor || "initial",
             },
         }}
     >

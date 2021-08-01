@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/core";
-import { Link } from "../components";
 import { Page } from "gatsby";
+import { Link } from "../components";
 import { Colors, useTheme } from "../theme/ThemeProvider";
 import { ThemeToggle } from "../components/ThemeToggle";
 
