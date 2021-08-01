@@ -82,7 +82,10 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
             <SEO title="Posts" keywords={keywords} />
             <h1 css={{ margin: "0" }}>Blog Posts</h1>
             <ProfileImage height="100px" width="100px" />
-            <p css={{ color: "gray" }}>by {author}</p>
+            <p css={{ color: "gray" }}>
+                by
+                {author}
+            </p>
             <PostsWrapper>
                 {blogPosts.map((post) => {
                     const now = dayjs();

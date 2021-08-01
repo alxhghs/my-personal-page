@@ -10,7 +10,7 @@ const StyledCard = styled(Link)<Colors>(({ colors }) => ({
     borderRadius: 4,
     border: `1px solid ${colors.cardBorder}`,
     padding: 15,
-    boxShadow: `0 17.125px 70px -12.125px rgba(0, 0, 0, 0.1)`,
+    boxShadow: "0 17.125px 70px -12.125px rgba(0, 0, 0, 0.1)",
     transition: "transform 250ms ease-out, background-color 300ms ease-out",
     backgroundColor: colors.cardBackground,
     "&:hover": {

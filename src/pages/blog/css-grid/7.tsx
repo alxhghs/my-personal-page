@@ -1,10 +1,10 @@
 // typescript example
-import React from "react";
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import { PresentationGridLayout } from "../../../components";
+import React from 'react';
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
+import { PresentationGridLayout } from '../../../components';
 
-const Grid = styled("div")`
+const Grid = styled('div')`
     display: grid;    
     text-align: center;
     font-size: 24px;
@@ -56,68 +56,66 @@ type Props = {
     color?: string;
     backgroundColor?: string;
 };
-const GridChild = styled("div")<Props>`
-    grid-area: ${props => props.gridArea};
-    color: ${props => props.color ? props.color : "black"};
-    background-color: ${props => props.backgroundColor ? props.backgroundColor : "white"};
+const GridChild = styled('div')<Props>`
+    grid-area: ${(props) => props.gridArea};
+    color: ${(props) => (props.color ? props.color : 'black')};
+    background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : 'white')};
 `;
 
 export default () => (
-    <PresentationGridLayout pageNumber={7}>
-        <Grid>
-            <GridChild
-                gridArea="Header"
-                backgroundColor="green"
-                css={css`line-height: 100px`}
-            >
-                Header
-            </GridChild>
-            <GridChild
-                gridArea="SideBar1"
-                color="white"
-                backgroundColor="purple"
-                css={css`
+  <PresentationGridLayout pageNumber={7}>
+    <Grid>
+      <GridChild
+        gridArea="Header"
+        backgroundColor="green"
+        css={css`line-height: 100px`}
+      >
+        Header
+      </GridChild>
+      <GridChild
+        gridArea="SideBar1"
+        color="white"
+        backgroundColor="purple"
+        css={css`
                     line-height: 100px;
                     @media screen and (min-width: 768px) {
                         line-height: 300px;
                     }
                     @media screen and (min-width: 992px) {
                         line-height: 100px;
-                    }`
-                }
-            >
-                SideBar1
-            </GridChild>
-            <GridChild
-                gridArea="Main"
-                css={css`line-height: 300px`}
-            >
-                Main
-            </GridChild>
-            <GridChild
-                gridArea="SideBar2"
-                backgroundColor="red"
-                color="white"
-                css={css`
+                    }`}
+      >
+        SideBar1
+      </GridChild>
+      <GridChild
+        gridArea="Main"
+        css={css`line-height: 300px`}
+      >
+        Main
+      </GridChild>
+      <GridChild
+        gridArea="SideBar2"
+        backgroundColor="red"
+        color="white"
+        css={css`
                     line-height: 100px;
                     @media screen and (min-width: 768px) {
                         line-height: 300px;
                     }
                     @media screen and (min-width: 992px) {
                         line-height: 100px;
-                    }`
-                }
-            >
-                SideBar2
-            </GridChild>
-            <GridChild
-                gridArea="Footer"
-                backgroundColor="blue"
-                color="white"
-                css={css`line-height: 100px`}
-            >
-                Footer
-            </GridChild>
-        </Grid>
-    </PresentationGridLayout>
+                    }`}
+      >
+        SideBar2
+      </GridChild>
+      <GridChild
+        gridArea="Footer"
+        backgroundColor="blue"
+        color="white"
+        css={css`line-height: 100px`}
+      >
+        Footer
+      </GridChild>
+    </Grid>
+  </PresentationGridLayout>
 );

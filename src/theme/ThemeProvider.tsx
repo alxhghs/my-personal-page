@@ -6,9 +6,9 @@ import {
     useEffect,
     useState,
 } from "react";
+import dayjs from "dayjs";
 import { darkModeColors, lightModeColors } from "./colors";
 import { breakpoints } from "./breakpoints";
-import dayjs from "dayjs";
 import { Theme, useUserBrowserTheme } from "./useUserBrowserTheme";
 
 export type Colors = { colors: typeof lightModeColors };

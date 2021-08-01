@@ -1,6 +1,6 @@
 import React from "react";
-import { NextPreviousLinks } from "./NextPreviousLinks";
 import styled from "@emotion/styled";
+import { NextPreviousLinks } from "./NextPreviousLinks";
 
 const Grid = styled.div({
     display: "grid",
@@ -23,7 +23,10 @@ export const PresentationGridLayout: React.FC<Props> = ({
 
     return (
         <Grid>
-            <h3>Page {pageNumber}</h3>
+            <h3>
+                Page
+                {pageNumber}
+            </h3>
             <NextPreviousLinks next={next} previous={previous}>
                 {children}
             </NextPreviousLinks>

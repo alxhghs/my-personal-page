@@ -35,7 +35,7 @@ const BlogPost: React.FC<Props> = ({ data }) => {
                     title={
                         frontmatter.title +
                         (frontmatter.subtitle
-                            ? ": " + frontmatter.subtitle
+                            ? `: ${frontmatter.subtitle}`
                             : "")
                     }
                     description={frontmatter.description}
