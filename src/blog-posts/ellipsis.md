@@ -30,7 +30,7 @@ The height of the container should be the `font-size` times the number of lines 
 
 The `-webkit-line-clamp` property is how we can specify the number of visible lines. It’s important to pair this with `webkit-box-orient: vertical` otherwise the content will be laid out horizontally. 
 
-Lastly, `overflow: hidden` keeps and text beyond the `line-clamp` value from being visible, and `text-overflow: ellipsis` gives us our nice ellipsis effect. 
+Lastly, `overflow: hidden` keeps any text beyond the `line-clamp` value from being visible, and `text-overflow: ellipsis` gives us our nice ellipsis effect. 
 
 Overall, it feels a little hacky. Hopefully someday there will be a cleaner solution. 
 
