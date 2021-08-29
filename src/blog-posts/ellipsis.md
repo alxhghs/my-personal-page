@@ -12,7 +12,7 @@ In order to get this to work, `-webkit-line-clamp` must include the following CS
 ```css
 .ellipsis {
     display: -webkit-box;
-    height: calc(16px * 4 * 1.6);  // font-size * lines to show * line-height
+    height: calc(16px * 4 * 1.6); /* font-size * lines to show * line-height */
     font-size: 16px;
     line-height: 1.6;
     -webkit-line-clamp: 4;
