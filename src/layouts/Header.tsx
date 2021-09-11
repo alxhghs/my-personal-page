@@ -21,7 +21,9 @@ const Animation = keyframes`
 const StyledHeader = styled.header<Colors>(({ colors }) => ({
     display: "grid",
     gridTemplateColumns: "repeat(2, auto)",
+    width: "100vw",
     gap: 32,
+    zIndex: 1,
     color: colors.headerText,
     background: `linear-gradient(
         124deg,
@@ -39,7 +41,7 @@ const StyledHeader = styled.header<Colors>(({ colors }) => ({
     justifyContent: "center",
     animation: `${Animation} 90s ease infinite`,
     textShadow: `0 0 3px ${colors.textShadow}`,
-    position: "relative",
+    position: "fixed",
 }));
 
 const StyledH2 = styled.h2<{ underline: boolean }>((props) => ({
