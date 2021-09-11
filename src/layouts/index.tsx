@@ -14,9 +14,10 @@ import { Colors, ThemeProvider, useTheme } from "../theme/ThemeProvider";
 
 const Wrapper = styled.div({
     display: "grid",
-    grid: "auto 1fr auto / auto",
+    grid: "1fr auto / auto",
     fontFamily: "sans-serif",
     height: "100%",
+    position: "relative",
 });
 
 const Footer = styled.footer({
@@ -32,6 +33,7 @@ const Main = styled.main<Colors>(({ colors }) => ({
     backgroundColor: colors.mainBackground,
     padding: "32px 0",
     color: colors.text,
+    marginTop: 68,
 }));
 
 const Layout: React.FC<Page> = ({ path, children }) => (
