@@ -28,15 +28,15 @@ export const ThemeProvider: React.FC = ({ children }) => {
         key: "theme",
         initialValue: Theme.DARK,
     });
-    const [userThemeOverride, setUserThemeOverride] = useLocalStorage<boolean>({
-        key: "userThemeOverride",
-        initialValue: false,
-    });
+    // const [userThemeOverride, setUserThemeOverride] = useLocalStorage<boolean>({
+    //     key: "userThemeOverride",
+    //     initialValue: false,
+    // });
 
     const colors = theme === Theme.DARK ? darkModeColors : lightModeColors;
 
     const toggleTheme = () => {
-        setUserThemeOverride(true);
+        // setUserThemeOverride(true);
         setTheme((t) => {
             if (t === Theme.DARK) {
                 return Theme.LIGHT;
@@ -46,7 +46,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
     };
 
     useEffect(() => {
-        if (userThemeOverride) return;
+        // if (userThemeOverride) return;
         const now = dayjs();
         const isDay = now.hour() > 7 && now.hour() < 19;
         const timeBasedTheme = isDay ? Theme.LIGHT : Theme.DARK;
@@ -56,7 +56,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
     const userTheme = useUserBrowserTheme();
 
     useEffect(() => {
-        if (userThemeOverride) return;
+        // if (userThemeOverride) return;
         userTheme && setTheme(userTheme);
     }, [userTheme]);
 
