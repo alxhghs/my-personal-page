@@ -83,8 +83,7 @@ const BlogPage: React.FC<PostPageProps> = ({ data }) => {
             <h1 css={{ margin: "0" }}>Blog Posts</h1>
             <ProfileImage height="100px" width="100px" />
             <p css={{ color: "gray" }}>
-                by
-                {author}
+                by {author}
             </p>
             <PostsWrapper>
                 {blogPosts.map((post) => {
