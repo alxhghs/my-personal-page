@@ -2,76 +2,16 @@
   "name": "alxhghs",
   "private": true,
   "description": "Personal website for Alex Hughes",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Alex Hughes <alxhghs@gmail.com>",
-  "dependencies": {
-    "@babel/core": "^7.0.0-0",
-    "@emotion/core": "^10.0.9",
-    "@emotion/styled": "^10.0.9",
-    "dayjs": "^1.8.29",
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.1.30",
-    "gatsby-image": "^2.0.32",
-    "gatsby-plugin-catch-links": "^2.0.13",
-    "gatsby-plugin-emotion": "^4.0.6",
-    "gatsby-plugin-layout": "^1.0.13",
-    "gatsby-plugin-manifest": "^2.0.23",
-    "gatsby-plugin-offline": "^3.2.9",
-    "gatsby-plugin-react-helmet": "^3.0.9",
-    "gatsby-plugin-sharp": "^2.0.27",
-    "gatsby-remark-images": "^3.0.10",
-    "gatsby-remark-prismjs": "^3.2.5",
-    "gatsby-source-filesystem": "^2.0.24",
-    "gatsby-transformer-remark": "^2.3.5",
-    "gatsby-transformer-sharp": "^2.1.16",
-    "prismjs": "^1.15.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.2.0",
-    "react-switch": "^6.0.0",
-    "socket.io": "^2.4.0",
-    "ts-node": "^8.10.2"
-  },
-  "devDependencies": {
-    "@types/react-helmet": "^6.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.28.5",
-    "@typescript-eslint/parser": "^4.28.5",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "gatsby-plugin-typescript": "^2.0.11",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.1.1",
-    "prettier": "2.3.2",
-    "typescript": "^3.9.5"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{ts,tsx}",
-    "lint": "eslint **/*.tsx --fix",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "typecheck": "npx tsc --noEmit --skipLibCheck"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "dev": "next",
+    "build": "next build",
+    "format": "npx prettier --write .",
+    "start": "next start",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -83,5 +23,17 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "dependencies": {
+    "dayjs": "^1.10.7",
+    "next": "^12.0.1",
+    "react": "^18.0.0-alpha-9c8161ba8-20211028",
+    "react-dom": "^18.0.0-alpha-9c8161ba8-20211028"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.4"
   }
 }

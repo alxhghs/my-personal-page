@@ -10,20 +10,18 @@
         "noUnusedLocals": true,
         "strict": true,
         "baseUrl": ".",
-        "typeRoots": [
-            "./node_modules/@types/",
-            "**/types/**/*.d.ts"
-        ],
+        "typeRoots": ["./node_modules/@types/", "**/types/**/*.d.ts"],
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "allowJs": true,
-        "lib": [
-            "es2017",
-            "dom"
-        ]
+        "lib": ["es2017", "dom"],
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "incremental": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true
     },
-    "exclude": [
-        "**/node_modules",
-        "**/__tests__"
-    ]
+    "exclude": ["**/node_modules", "**/__tests__"],
+    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
