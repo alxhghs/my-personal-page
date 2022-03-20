@@ -6,7 +6,6 @@ title: "Skills"
 ### Programming Languages
 * JavaScript (ES6)
 * TypeScript
-* NodeJS
 
 ### Frontend
 * ReactJS
