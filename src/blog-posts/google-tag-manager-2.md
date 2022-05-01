@@ -8,7 +8,7 @@ keywords: ["Google Tag Manager", "Gatsby", "GatsbyJS", "React", "GTM", "Google A
 
 In this guide, we will start tracking page views for our website using <b>Google Tag Manager</b> (GTM), <b>Google Analytics</b> (GA) and <b>GatsbyJS</b>.
 
-This is part 2 in a series on GTM, GA and Gatsby. If you need a general overview of GTM and instructions on how to get started, see <b>[Google Tag Manager and Gatsby (Part 1)](/blog/google-tag-manager)</b>.
+This is part 2 in a series on GTM, GA and Gatsby. If you need a general overview of GTM and instructions on how to get started, see <b>[Google Tag Manager and Gatsby (Part 1)](/blog/google-tag-manager-1)</b>.
 
 ## Sign up for GA 
 
