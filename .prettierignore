@@ -1,9 +1,0 @@
-package-lock.json
-package.json
-yarn.lock
-generated/types.ts
-*.yml
-*.md
-node_modules/**
-# Ignore all JS files:
-**/*.js
