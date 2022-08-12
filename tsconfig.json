@@ -1,27 +1,20 @@
 {
-    "compilerOptions": {
-        "target": "es2017",
-        "module": "commonjs",
-        "outDir": "dist",
-        "jsx": "preserve",
-        "moduleResolution": "node",
-        "removeComments": true,
-        "sourceMap": true,
-        "noUnusedLocals": true,
-        "strict": true,
-        "baseUrl": ".",
-        "typeRoots": ["./node_modules/@types/", "**/types/**/*.d.ts"],
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "allowJs": true,
-        "lib": ["es2017", "dom"],
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "noEmit": true,
-        "incremental": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true
-    },
-    "exclude": ["**/node_modules", "**/__tests__"],
-    "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
