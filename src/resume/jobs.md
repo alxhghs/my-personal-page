@@ -5,7 +5,7 @@ title: "Jobs"
 
 <b>Education First Go Ahead Tours</b> | Engineering Manager | <i>October 2022 to present</i>
 
-<b>Education First Go Ahead Tours</b> | Senior Software Engineer | <i>May 2021 to present</i>
+<b>Education First Go Ahead Tours</b> | Senior Software Engineer | <i>May 2021 to October 2022</i>
 
 <b>Education First Go Ahead Tours</b> | Software Engineer | <i>September 2018 to May 2021</i>
 
