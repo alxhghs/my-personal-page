@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import { ResumeContent, SEO } from "../components";
+import { ProfileImage, ResumeContent, SEO } from "../components";
 import { breakpoints, Colors, useTheme } from "../theme";
 
 const Wrapper = styled.div({
@@ -54,6 +54,7 @@ const Resume: React.FC<Props> = ({ data }) => {
         <Wrapper>
             <SEO title="Resume" />
             <ResumeHeaderWrapper colors={colors}>
+                <ProfileImage height="100px" width="100px" />
                 <ResumeContent html={header?.html} />
             </ResumeHeaderWrapper>
             <ResumeContent html={jobs?.html} />
