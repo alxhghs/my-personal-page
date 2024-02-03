@@ -4,8 +4,8 @@ title: "Skills"
 ## Skills
 
 ### Programming Languages
-* JavaScript (ES6)
 * TypeScript
+* JavaScript (ES6)
 
 ### Frontend
 * ReactJS
@@ -17,13 +17,24 @@ title: "Skills"
 * HTML5
 * GatsbyJS
 
+### Mobile
+* React Native
+* Expo
+
 ### Backend
+* NodeJS
 * NestJS
 * Mongo
 * Prisma
 * Apollo Server
 * SQL
 * Express
+
+### DevOps
+* AWS
+* GitHub Actions
+* Vercel
+* Netlify
 
 ### Foreign Languages
 * Spanish (fluent)
