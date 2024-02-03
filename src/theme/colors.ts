@@ -27,7 +27,7 @@ export const darkModeColors: Colors = {
     headerHoverText: "lightgray",
     textShadow: "#000",
     textLinkHover: "gray",
-    link: "green",
+    link: "##0000EE",
     cardBackground: "rgb(0,0,0,0.7)",
     cardBorder: "rgb(255,255,255,0.1)",
     blockQuoteBorder: "blue",
