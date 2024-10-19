@@ -3,7 +3,9 @@ title: "Jobs"
 ---
 ## Work Experience
 
-<b>Education First Go Ahead Tours</b> | Engineering Manager | <i>October 2022 to present</i>
+<b>Microsoft</b> | Senior Software Engineer | <i>August 2024 to present</i>
+
+<b>Education First Go Ahead Tours</b> | Engineering Manager | <i>October 2022 to July 2024</i>
 
 <b>Education First Go Ahead Tours</b> | Senior Software Engineer | <i>May 2021 to October 2022</i>
 
