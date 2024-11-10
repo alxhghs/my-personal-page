@@ -24,6 +24,7 @@ title: "Skills"
 ### Backend
 * NodeJS
 * NestJS
+* PostgreSQL
 * Mongo
 * Prisma
 * Apollo Server
@@ -31,6 +32,7 @@ title: "Skills"
 * Express
 
 ### DevOps
+* Azure
 * AWS
 * GitHub Actions
 * Vercel
