@@ -16,6 +16,7 @@ title: "Skills"
 * CSS3
 * HTML5
 * GatsbyJS
+* KnockoutJS
 
 ### Mobile
 * React Native
