@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import dayjs from "dayjs";
-import { graphql } from "gatsby";
+import { getMDXComponent } from "next-mdx-remote";
 import { Card, ProfileImage, SEO } from "../components";
 import { breakpoints, Colors, useTheme } from "../theme";
 
