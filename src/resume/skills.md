@@ -23,9 +23,9 @@ title: "Skills"
 * Expo
 
 ### Backend
+* PostgreSQL
 * NodeJS
 * NestJS
-* PostgreSQL
 * Mongo
 * Prisma
 * Apollo Server
