@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { getMDXComponent } from "next-mdx-remote";
 import { BlogContent, BlogHeader, MarkdownWrapper, SEO } from "../components";
 
 type Props = {

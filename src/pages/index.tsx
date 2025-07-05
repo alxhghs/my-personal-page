@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { Link, SEO, ProfileImage } from "../components";
+import Link from "next/link";
+import { SEO, ProfileImage } from "../components";
 import { Colors, useTheme } from "../theme";
 
 const Wrapper = styled.div({
@@ -51,11 +52,12 @@ const App: React.FC = () => {
                     LinkedIn
                 </ExternalLink>
                 <Link
-                    to="/resume"
-                    color="black"
-                    hovercolor={colors.textLinkHover}
+                    href="/resume"
+                    passHref
                 >
-                    Resume
+                    <a style={{ color: "black", textDecoration: "none", marginRight: 15, "&:hover": { color: colors.textLinkHover, textDecoration: "underline" } }}>
+                        Resume
+                    </a>
                 </Link>
             </Links>
         </Wrapper>

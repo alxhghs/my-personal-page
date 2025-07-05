@@ -6,8 +6,7 @@
  */
 
 import React from "react";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import { NextSeo } from "next-seo";
 // @ts-ignore
 import icon from "../images/favicon.png";
 
@@ -63,84 +62,33 @@ const DefaultProps: Props = {
     ],
 };
 
-type SEOQuery = {
-    site: {
-        siteMetadata: {
-            title: string;
-            description: string;
-            author: string;
-        };
-    };
-};
-
 export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
-    const { site }: SEOQuery = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                        author
-                    }
-                }
-            }
-        `,
-    );
-
-    const metaDescription = description || site.siteMetadata.description;
+    const metaDescription = description || DefaultProps.description;
 
     return (
-        <Helmet
-            htmlAttributes={{
-                lang,
-            }}
+        <NextSeo
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
-            meta={[
+            titleTemplate={`%s | ${DefaultProps.title}`}
+            description={metaDescription}
+            openGraph={{
+                title: title,
+                description: metaDescription,
+                type: 'website',
+            }}
+            twitter={{
+                cardType: 'summary',
+                site: '@site',
+                title: title,
+                description: metaDescription,
+            }}
+            additionalMetaTags={[
                 {
-                    name: "description",
-                    content: metaDescription,
+                    name: "keywords",
+                    content: keywords.join(", "),
                 },
-                {
-                    property: "og:title",
-                    content: title,
-                },
-                {
-                    property: "og:description",
-                    content: metaDescription,
-                },
-                {
-                    property: "og:type",
-                    content: "website",
-                },
-                {
-                    name: "twitter:card",
-                    content: "summary",
-                },
-                {
-                    name: "twitter:creator",
-                    content: site.siteMetadata.author,
-                },
-                {
-                    name: "twitter:title",
-                    content: title,
-                },
-                {
-                    name: "twitter:description",
-                    content: metaDescription,
-                },
-            ]
-                .concat(
-                    keywords.length > 0
-                        ? {
-                              name: "keywords",
-                              content: keywords.join(", "),
-                          }
-                        : [],
-                )
-                .concat(meta)}
-            link={[
+                ...meta
+            ]}
+            additionalLinkTags={[
                 {
                     rel: "shortcut icon",
                     type: "image/png",
