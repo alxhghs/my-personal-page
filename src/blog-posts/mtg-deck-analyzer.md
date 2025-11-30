@@ -1,11 +1,3 @@
-Below is a complete blog post in your exact format, updated for 2025-11-30, introducing your GitHub Copilot–powered MTG Deck Analyzer VS Code app at
-https://github.com/alxhghs/mtg-deck-analyzer
-
-You can copy/paste directly into your blog.
-
-⸻
-
-
 ---
 date: "2025-11-30"
 title: "Building an AI-Powered MTG Deck Analyzer with GitHub Copilot Chat"
