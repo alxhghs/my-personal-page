@@ -45,7 +45,7 @@ Once you run:
 
 ```bash
 npm run dev decks/commander/your-deck/moxfield.mtg
-
+```
 You can immediately ask Copilot:
 	•	“Help me cut 18 cards.”
 	•	“What holes does this deck have?”
@@ -97,10 +97,10 @@ Massive thanks to Johannes Radmer for maintaining this extension.
 Practical Example of the Workflow
 
 Let’s say you have a Moxfield deck:
-
+```
 npm run import https://www.moxfield.com/decks/abc123
 npm run dev decks/commander/your-deck/moxfield.mtg
-
+```
 Once analyzed, open Copilot Chat:
 
 “My deck has 118 cards—what should I cut to reach 100?”
@@ -136,12 +136,12 @@ It walks through:
 Experienced developers
 
 Jump straight to:
-
+```
 npm run import
 npm run dev
 npm run bracket
 npm run fetch
-
+```
 
 ⸻
 
