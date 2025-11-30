@@ -47,10 +47,10 @@ Once you run:
 npm run dev decks/commander/your-deck/moxfield.mtg
 ```
 You can immediately ask Copilot:
-	•	“Help me cut 18 cards.”
-	•	“What holes does this deck have?”
-	•	“Find budget alternatives under $5.”
-	•	“What bracket is this?”
+* “Help me cut 18 cards.”
+* “What holes does this deck have?”
+* “Find budget alternatives under $5.”
+* “What bracket is this?”
 
 Copilot reads directly from the per-deck cache file (usually only ~30–60KB), which keeps responses fast, grounded, and accurate.
 
@@ -59,20 +59,20 @@ Copilot reads directly from the per-deck cache file (usually only ~30–60KB), w
 A Quick Overview of What It Does
 
 The analyzer includes:
-	•	Decklist parser for common formats (.mtg, .txt, Moxfield exports)
-	•	Scryfall data fetcher with a unified cache system
-	•	Moxfield importer (npm run import <url>)
-	•	Deck analysis:
-	•	Color distribution
-	•	Type breakdown
-	•	Mana curve
-	•	Average CMC
-	•	Commander bracket analyzer (Brackets 1–5)
-	•	Color identity validator
-	•	Hypergeometric probability calculator
-	•	AI deck optimizer
-	•	Card categorizer used by the bracket system
-	•	239 test suite verifying all components
+* Decklist parser for common formats (.mtg, .txt, Moxfield exports)
+* Scryfall data fetcher with a unified cache system
+	*	Moxfield importer (npm run import <url>)
+	*	Deck analysis:
+	*	Color distribution
+	*	Type breakdown
+	*	Mana curve
+	*	Average CMC
+	*	Commander bracket analyzer (Brackets 1–5)
+	*	Color identity validator
+	*	Hypergeometric probability calculator
+	*	AI deck optimizer
+	*	Card categorizer used by the bracket system
+	*	239 test suite verifying all components
 
 Everything lives in a clean /src structure, with cache files and deck organization kept in predictable directories.
 
@@ -86,9 +86,9 @@ mtg-code by Johannes Radmer
 It adds syntax highlighting, card previews, and IntelliSense for MTG card names.
 
 This makes Copilot Chat even more useful because:
-	•	card names autocomplete
-	•	you can hover for oracle text
-	•	your decklists are much cleaner to maintain
+	*	card names autocomplete
+	*	you can hover for oracle text
+	*	your decklists are much cleaner to maintain
 
 Massive thanks to Johannes Radmer for maintaining this extension.
 
@@ -106,12 +106,12 @@ Once analyzed, open Copilot Chat:
 “My deck has 118 cards—what should I cut to reach 100?”
 
 The analyzer produces:
-	•	a categorized card breakdown
-	•	curve distribution
-	•	redundancy detection
-	•	power-level bracket data
-	•	cached oracle text
-	•	mana base recommendations
+	*	a categorized card breakdown
+	*	curve distribution
+	*	redundancy detection
+	*	power-level bracket data
+	*	cached oracle text
+	*	mana base recommendations
 
 Copilot uses all of this to give shockingly good suggestions:
 “Cut these four high-CMC cards, remove duplicate effects, replace X with Y, and here’s your updated curve and average CMC.”
@@ -128,10 +128,10 @@ Beginners
 
 Follow the GETTING_STARTED.md￼ guide.
 It walks through:
-	•	creating a GitHub account
-	•	installing VS Code
-	•	enabling Copilot
-	•	building your first deck with AI help
+	*	creating a GitHub account
+	*	installing VS Code
+	*	enabling Copilot
+	*	building your first deck with AI help
 
 Experienced developers
 
@@ -149,10 +149,10 @@ Final Thoughts
 
 This is one of the most fun and weirdly practical side projects I’ve built in years.
 It sits at the intersection of:
-	•	Magic: The Gathering
-	•	TypeScript tooling
-	•	GitHub Copilot intelligence
-	•	Pure nerd joy
+	*	Magic: The Gathering
+	*	TypeScript tooling
+	*	GitHub Copilot intelligence
+	*	Pure nerd joy
 
 If you want to try it, contribute, or use it as a base for your own MTG tools, the repo is here:
 
