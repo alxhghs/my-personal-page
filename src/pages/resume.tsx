@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { getMDXComponent } from "next-mdx-remote";
 import styled from "@emotion/styled";
 import { ProfileImage, ResumeContent, SEO } from "../components";
 import { breakpoints, Colors, useTheme } from "../theme";
