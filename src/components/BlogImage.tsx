@@ -1,17 +1,18 @@
 import React from "react";
-import Img, { FluidObject } from "gatsby-image";
 
 type Props = {
-    fluid: FluidObject;
+  src: string;
+  alt?: string;
 };
 
-export const BlogImage: React.FC<Props> = ({ fluid }) => (
-    <Img
-        fluid={fluid}
-        css={{
-            width: "100%",
-            height: "100px",
-            objectFit: "cover",
-        }}
-    />
+export const BlogImage: React.FC<Props> = ({ src, alt = "Blog image" }) => (
+  <img
+    src={src}
+    alt={alt}
+    style={{
+      width: "100%",
+      height: "100px",
+      objectFit: "cover",
+    }}
+  />
 );

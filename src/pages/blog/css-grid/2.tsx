@@ -1,6 +1,5 @@
 // layout the grid
-import React from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { PresentationGridLayout } from '../../../components';
 
 const Grid = styled('div')`

@@ -1,154 +1,90 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react";
-import Helmet from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
-// @ts-ignore
+import React, { useEffect } from "react";
 import icon from "../images/favicon.png";
+import { siteMetadata } from "../siteMetadata";
+
+type MetaTag = {
+  name?: string;
+  property?: string;
+  content: string;
+};
 
 type Props = {
-    description: string;
-    lang: string;
-    meta:
-        | {
-              name: string;
-              content: any;
-              property?: undefined;
-          }
-        | {
-              name?: undefined;
-              content: any;
-              property: string;
-          }
-        | ConcatArray<
-              | {
-                    name: string;
-                    content: any;
-                    property?: undefined;
-                }
-              | {
-                    name?: undefined;
-                    content: any;
-                    property: string;
-                }
-          >;
-    keywords: string[];
-    title: string;
+  description?: string;
+  lang?: string;
+  meta?: MetaTag[];
+  keywords?: string[];
+  title?: string;
 };
 
-const DefaultProps: Props = {
-    lang: "en",
-    description: "Alex Fenwood Hughes's personal website",
-    title: "Alex Fenwood Hughes",
-    meta: [],
-    keywords: [
-        "ReactJS",
-        "React",
-        "TypeScript",
-        "JavaScript",
-        "CSS Grid",
-        "NodeJS",
-        "Python",
-        "Django",
-        "FlexBox",
-        "CSS-in-JS",
-        "Google Tag Manager",
-        "GatsbyJS",
-        "Gatsby",
-    ],
+const defaultKeywords = [
+  "ReactJS",
+  "React",
+  "TypeScript",
+  "JavaScript",
+  "CSS Grid",
+  "NodeJS",
+  "Python",
+  "Django",
+  "FlexBox",
+  "CSS-in-JS",
+  "Google Tag Manager",
+  "Vite",
+];
+
+const setMetaTag = (meta: MetaTag) => {
+  const selector = meta.name ? `meta[name="${meta.name}"]` : `meta[property="${meta.property}"]`;
+  let tag = document.head.querySelector(selector) as HTMLMetaElement | null;
+  if (!tag) {
+    tag = document.createElement("meta");
+    if (meta.name) {
+      tag.setAttribute("name", meta.name);
+    }
+    if (meta.property) {
+      tag.setAttribute("property", meta.property);
+    }
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute("content", meta.content);
 };
 
-type SEOQuery = {
-    site: {
-        siteMetadata: {
-            title: string;
-            description: string;
-            author: string;
-        };
-    };
+export const SEO: React.FC<Props> = ({
+  description = siteMetadata.description,
+  lang = "en",
+  meta = [],
+  keywords = defaultKeywords,
+  title = siteMetadata.title,
+}) => {
+  useEffect(() => {
+    const metaDescription = description || siteMetadata.description;
+    document.documentElement.lang = lang;
+    document.title = `${title} | ${siteMetadata.title}`;
+
+    const tags: MetaTag[] = [
+      { name: "description", content: metaDescription },
+      { property: "og:title", content: title },
+      { property: "og:description", content: metaDescription },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:creator", content: siteMetadata.author },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: metaDescription },
+      ...(keywords.length > 0
+        ? [{ name: "keywords", content: keywords.join(", ") }]
+        : []),
+      ...meta,
+    ];
+
+    tags.forEach(setMetaTag);
+
+    let favicon = document.querySelector('link[rel="shortcut icon"]') as HTMLLinkElement | null;
+    if (!favicon) {
+      favicon = document.createElement("link");
+      favicon.rel = "shortcut icon";
+      favicon.type = "image/png";
+      document.head.appendChild(favicon);
+    }
+    favicon.href = icon;
+  }, [description, keywords, lang, meta, title]);
+
+  return null;
 };
-
-export const SEO = ({ description, lang, meta, keywords, title }: Props) => {
-    const { site }: SEOQuery = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                        author
-                    }
-                }
-            }
-        `,
-    );
-
-    const metaDescription = description || site.siteMetadata.description;
-
-    return (
-        <Helmet
-            htmlAttributes={{
-                lang,
-            }}
-            title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
-            meta={[
-                {
-                    name: "description",
-                    content: metaDescription,
-                },
-                {
-                    property: "og:title",
-                    content: title,
-                },
-                {
-                    property: "og:description",
-                    content: metaDescription,
-                },
-                {
-                    property: "og:type",
-                    content: "website",
-                },
-                {
-                    name: "twitter:card",
-                    content: "summary",
-                },
-                {
-                    name: "twitter:creator",
-                    content: site.siteMetadata.author,
-                },
-                {
-                    name: "twitter:title",
-                    content: title,
-                },
-                {
-                    name: "twitter:description",
-                    content: metaDescription,
-                },
-            ]
-                .concat(
-                    keywords.length > 0
-                        ? {
-                              name: "keywords",
-                              content: keywords.join(", "),
-                          }
-                        : [],
-                )
-                .concat(meta)}
-            link={[
-                {
-                    rel: "shortcut icon",
-                    type: "image/png",
-                    href: icon,
-                },
-            ]}
-        />
-    );
-};
-
-SEO.defaultProps = DefaultProps;

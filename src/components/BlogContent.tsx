@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { Colors, useTheme } from "../theme/ThemeProvider";
 
 const StyledBlogContent = styled.div<Colors>(({ colors }) => ({

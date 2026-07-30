@@ -1,3 +1,4 @@
+import React from "react";
 import {
     createContext,
     Dispatch,
@@ -24,7 +25,7 @@ type ThemeValues = {
 
 const ThemeContext = createContext<ThemeValues>(null!);
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     // const [theme, setTheme] = useLocalStorage<Theme>({
     //     key: "theme",
     //     initialValue: Theme.DARK,
