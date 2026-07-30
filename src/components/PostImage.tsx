@@ -1,17 +1,17 @@
 import React from "react";
-import Img, { FluidObject, FixedObject } from "gatsby-image";
 
 type PostImageProps = {
-    fluid: FluidObject;
-    fixed: FixedObject;
+  src: string;
+  alt?: string;
 };
 
-export const PostImage: React.FC<PostImageProps> = ({ fluid, fixed }) => (
-    <Img
-        fluid={fluid}
-        fixed={fixed}
-        css={{
-            borderRadius: "4px",
-        }}
-    />
+export const PostImage: React.FC<PostImageProps> = ({ src, alt = "Post image" }) => (
+  <img
+    src={src}
+    alt={alt}
+    css={{
+      borderRadius: "4px",
+      maxWidth: "100%",
+    }}
+  />
 );

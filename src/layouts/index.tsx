@@ -1,79 +1,58 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react";
 import styled from "@emotion/styled";
-import { StaticQuery, graphql, Page } from "gatsby";
+import { useLocation } from "react-router-dom";
 import "./layout.css";
 import { Header } from "../components";
+import { siteMetadata } from "../siteMetadata";
 import { Colors, ThemeProvider, useTheme } from "../theme/ThemeProvider";
 
 const Wrapper = styled.div({
-    display: "grid",
-    grid: "1fr auto / auto",
-    fontFamily: "sans-serif",
-    height: "100%",
-    position: "relative",
+  display: "grid",
+  grid: "1fr auto / auto",
+  fontFamily: "sans-serif",
+  minHeight: "100%",
+  position: "relative",
 });
 
 const Footer = styled.footer({
-    backgroundColor: "#000",
-    color: "white",
-    width: "100%",
-    bottom: 0,
-    textAlign: "center",
-    padding: "16px 0 32px",
+  backgroundColor: "#000",
+  color: "white",
+  width: "100%",
+  bottom: 0,
+  textAlign: "center",
+  padding: "16px 0 32px",
 });
 
 const Main = styled.main<Colors>(({ colors }) => ({
-    backgroundColor: colors.mainBackground,
-    padding: "32px 0",
-    color: colors.text,
-    marginTop: 68,
+  backgroundColor: colors.mainBackground,
+  padding: "32px 0",
+  color: colors.text,
+  marginTop: 68,
 }));
 
-const Layout: React.FC<Page> = ({ path, children }) => (
-    <StaticQuery
-        query={graphql`
-            query SiteTitleQuery {
-                site {
-                    siteMetadata {
-                        title
-                        author
-                    }
-                }
-            }
-        `}
-        render={(data) => (
-            <ThemeProvider>
-                <Inner path={path} data={data}>
-                    {children}
-                </Inner>
-            </ThemeProvider>
-        )}
-    />
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+const Layout: React.FC<LayoutProps> = ({ children }) => (
+  <ThemeProvider>
+    <Inner>{children}</Inner>
+  </ThemeProvider>
 );
 
-type InnerProps = {
-    path: string;
-    data: any;
-};
-const Inner: React.FC<InnerProps> = ({ data, children, path }) => {
-    const { colors } = useTheme();
-    return (
-        <Wrapper>
-            <Header path={path} />
-            <Main colors={colors}>{children}</Main>
-            <Footer>
-                © {new Date().getFullYear()} |{" "}
-                {data.author ? data.author : "Alex Fenwood Hughes"}
-            </Footer>
-        </Wrapper>
-    );
+const Inner: React.FC<LayoutProps> = ({ children }) => {
+  const { colors } = useTheme();
+  const location = useLocation();
+
+  return (
+    <Wrapper>
+      <Header path={location.pathname} />
+      <Main colors={colors}>{children}</Main>
+      <Footer>
+        © {new Date().getFullYear()} | {siteMetadata.author}
+      </Footer>
+    </Wrapper>
+  );
 };
 
 export default Layout;

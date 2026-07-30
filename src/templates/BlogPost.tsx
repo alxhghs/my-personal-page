@@ -1,80 +1,33 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { useParams } from "react-router-dom";
 import { BlogContent, BlogHeader, MarkdownWrapper, SEO } from "../components";
+import { getBlogPostBySlug } from "../content";
+import { siteMetadata } from "../siteMetadata";
 
-type Props = {
-    data: {
-        markdownRemark: {
-            frontmatter: {
-                date: string;
-                title: string;
-                subtitle?: string;
-                description: string;
-                keywords: string[];
-            };
-            html: string;
-            fields: {
-                slug: string;
-            };
-        };
-        site: {
-            siteMetadata: {
-                author: string;
-            };
-        };
-    };
-};
+const BlogPostPage: React.FC = () => {
+  const { slug } = useParams();
+  const post = slug ? getBlogPostBySlug(slug) : undefined;
 
-const BlogPost: React.FC<Props> = ({ data }) => {
-    const { markdownRemark, site } = data;
-    const { frontmatter } = markdownRemark;
-    if (data && markdownRemark) {
-        return (
-            <MarkdownWrapper>
-                <SEO
-                    title={
-                        frontmatter.title +
-                        (frontmatter.subtitle
-                            ? `: ${frontmatter.subtitle}`
-                            : "")
-                    }
-                    description={frontmatter.description}
-                    keywords={frontmatter.keywords}
-                />
-                <BlogHeader
-                    title={frontmatter.title}
-                    subtitle={frontmatter.subtitle}
-                    author={site.siteMetadata.author}
-                    date={frontmatter.date}
-                />
-                <BlogContent html={markdownRemark.html} />
-            </MarkdownWrapper>
-        );
-    }
+  if (!post) {
     return <h2>Blog post not found</h2>;
+  }
+
+  return (
+    <MarkdownWrapper>
+      <SEO
+        title={post.frontmatter.title + (post.frontmatter.subtitle ? `: ${post.frontmatter.subtitle}` : "")}
+        description={post.frontmatter.description}
+        keywords={post.frontmatter.keywords}
+      />
+      <BlogHeader
+        title={post.frontmatter.title}
+        subtitle={post.frontmatter.subtitle}
+        author={siteMetadata.author}
+        date={post.frontmatter.date}
+      />
+      <BlogContent html={post.html} />
+    </MarkdownWrapper>
+  );
 };
 
-export const pageQuery = graphql`
-    query BlogPostByPath($slug: String!) {
-        markdownRemark(fields: { slug: { eq: $slug } }) {
-            frontmatter {
-                title
-                subtitle
-                date(formatString: "MMMM DD, YYYY")
-                description
-                keywords
-            }
-            html
-            fields {
-                slug
-            }
-        }
-        site {
-            siteMetadata {
-                author
-            }
-        }
-    }
-`;
-
-export default BlogPost;
+export default BlogPostPage;
