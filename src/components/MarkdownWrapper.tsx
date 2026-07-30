@@ -1,4 +1,5 @@
-import styled from "@emotion/styled";
+import React from "react";
+import styled from "styled-components";
 import { breakpoints, Colors, useTheme } from "../theme";
 
 const StyledMarkdown = styled.div<Colors>(({ colors }) => ({

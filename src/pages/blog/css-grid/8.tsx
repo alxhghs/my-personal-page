@@ -1,7 +1,5 @@
 // grid gap and grid shorthand syntax
-import React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/react';
+import styled from 'styled-components';
 import { PresentationGridLayout } from '../../../components';
 
 const Grid = styled('div')`
@@ -59,60 +57,40 @@ const GridChild = styled('div')<Props>`
     background-color: ${(props) => (props.backgroundColor ? props.backgroundColor : 'white')};
 `;
 
+const Header = styled(GridChild)`
+    line-height: 100px;
+`;
+
+const Main = styled(GridChild)`
+    line-height: 300px;
+`;
+
+const Footer = styled(GridChild)`
+    line-height: 100px;
+`;
+
+const SideBar = styled(GridChild)`
+    line-height: 100px;
+    @media screen and (min-width: 768px) {
+        line-height: 300px;
+    }
+    @media screen and (min-width: 992px) {
+        line-height: 100px;
+    }
+`;
+
 export default () => (
   <PresentationGridLayout pageNumber={8}>
     <Grid>
-      <GridChild
-        gridArea="Header"
-        backgroundColor="green"
-        css={css`line-height: 100px`}
-      >
-        Header
-      </GridChild>
-      <GridChild
-        gridArea="SideBar1"
-        color="white"
-        backgroundColor="purple"
-        css={css`
-                    line-height: 100px;
-                    @media screen and (min-width: 768px) {
-                        line-height: 300px;
-                    }
-                    @media screen and (min-width: 992px) {
-                        line-height: 100px;
-                    }`}
-      >
+      <Header gridArea="Header" backgroundColor="green">Header</Header>
+      <SideBar gridArea="SideBar1" color="white" backgroundColor="purple">
         SideBar1
-      </GridChild>
-      <GridChild
-        gridArea="Main"
-        css={css`line-height: 300px`}
-      >
-        Main
-      </GridChild>
-      <GridChild
-        gridArea="SideBar2"
-        backgroundColor="red"
-        color="white"
-        css={css`
-                    line-height: 100px;
-                    @media screen and (min-width: 768px) {
-                        line-height: 300px;
-                    }
-                    @media screen and (min-width: 992px) {
-                        line-height: 100px;
-                    }`}
-      >
+      </SideBar>
+      <Main gridArea="Main">Main</Main>
+      <SideBar gridArea="SideBar2" backgroundColor="red" color="white">
         SideBar2
-      </GridChild>
-      <GridChild
-        gridArea="Footer"
-        backgroundColor="blue"
-        color="white"
-        css={css`line-height: 100px`}
-      >
-        Footer
-      </GridChild>
+      </SideBar>
+      <Footer gridArea="Footer" backgroundColor="blue" color="white">Footer</Footer>
     </Grid>
   </PresentationGridLayout>
 );

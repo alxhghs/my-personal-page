@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "@emotion/styled";
-import { keyframes } from "@emotion/react";
+import styled from "styled-components";
+import { keyframes } from "styled-components";
 import { Link } from "../components";
 import { Colors, useTheme } from "../theme/ThemeProvider";
 import { ThemeToggle } from "../components/ThemeToggle";

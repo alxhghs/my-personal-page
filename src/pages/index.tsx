@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { Link, SEO, ProfileImage } from "../components";
 import { Colors, useTheme } from "../theme";
 
@@ -30,11 +30,6 @@ const ExternalLink = styled.a({
     marginRight: 15,
 });
 
-ExternalLink.defaultProps = {
-    target: "__blank",
-    rel: "noopener",
-};
-
 const App: React.FC = () => {
     const { colors } = useTheme();
     return (
@@ -44,10 +39,10 @@ const App: React.FC = () => {
             <h3>hello, world!</h3>
             <p>My name is Alex and I am a software engineer.</p>
             <Links colors={colors}>
-                <ExternalLink href="https://github.com/alxhghs">
+                <ExternalLink href="https://github.com/alxhghs" target="_blank" rel="noopener">
                     Github
                 </ExternalLink>
-                <ExternalLink href="https://www.linkedin.com/in/alxhughes/">
+                <ExternalLink href="https://www.linkedin.com/in/alxhughes/" target="_blank" rel="noopener">
                     LinkedIn
                 </ExternalLink>
                 <Link

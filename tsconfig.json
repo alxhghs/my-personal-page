@@ -4,7 +4,6 @@
     "module": "ESNext",
     "outDir": "dist",
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "removeComments": true,
@@ -12,10 +11,6 @@
     "noUnusedLocals": true,
     "strict": true,
     "baseUrl": ".",
-    "typeRoots": [
-      "./node_modules/@types/",
-      "**/types/**/*.d.ts"
-    ],
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
@@ -24,7 +19,9 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "types": ["vite/client"]
+    "types": [
+      "vite/client"
+    ]
   },
   "exclude": [
     "**/node_modules",

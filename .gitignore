@@ -73,3 +73,6 @@ yarn-error.log
 # VS Code files
 .vscode/
 
+
+# Vite build output
+dist

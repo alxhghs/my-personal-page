@@ -16,7 +16,7 @@ export const NextPreviousLinks: React.FC<Props> = ({ previous, next, children })
 
 const NextPreviousLink: React.FC<Omit<Props, "children">> = ({ previous, next }) => (
   <div
-    css={{
+    style={{
       display: "flex",
       justifyContent: previous && next ? "space-between" : "center",
       textAlign: "center",

@@ -9,7 +9,7 @@ export const PostImage: React.FC<PostImageProps> = ({ src, alt = "Post image" })
   <img
     src={src}
     alt={alt}
-    css={{
+    style={{
       borderRadius: "4px",
       maxWidth: "100%",
     }}

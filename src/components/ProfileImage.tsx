@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import me from "../images/me.png";
 
 type ProfileImageProps = {
@@ -16,7 +16,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({ height, width }) => 
   <StyledImg
     src={me}
     alt="Profile"
-    css={{
+    style={{
       borderRadius: "50%",
       height,
       width,

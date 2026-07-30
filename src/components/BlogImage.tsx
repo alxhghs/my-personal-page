@@ -9,7 +9,7 @@ export const BlogImage: React.FC<Props> = ({ src, alt = "Blog image" }) => (
   <img
     src={src}
     alt={alt}
-    css={{
+    style={{
       width: "100%",
       height: "100px",
       objectFit: "cover",

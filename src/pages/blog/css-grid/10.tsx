@@ -1,5 +1,4 @@
-import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { PresentationGridLayout } from "../../../components";
 import keanu from "../../../images/keanu.png";
 
@@ -19,7 +18,7 @@ export default () => (
       <img
         src={keanu}
         alt="Keanu Reeves"
-        css={{
+        style={{
           width: "100%",
           height: "100%",
           objectFit: "cover",

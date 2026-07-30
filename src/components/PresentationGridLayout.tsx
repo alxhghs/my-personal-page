@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import { NextPreviousLinks } from "./NextPreviousLinks";
 
 const Grid = styled.div({
@@ -9,6 +9,7 @@ const Grid = styled.div({
 });
 
 type Props = {
+    children: React.ReactNode;
     pageNumber: number;
     lastPage?: boolean;
 };
